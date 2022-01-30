@@ -23,9 +23,7 @@
             $.post("cookies.php");
          });
 
-         if (getCookie("adStatus") == 'no') {
-            return
-         } else if(getCookie("adStatus") == "yes") {
+         if (getCookie("adStatus") == 'yes') {
             document.getElementsByClassName("navaddpage").item(0).innerHTML += '<div class="p-2"><a href="admin.php">Admin</a></div>';
          }
       });
