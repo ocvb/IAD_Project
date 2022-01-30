@@ -4,12 +4,9 @@ include_once "db.php";
 $sql = "SELECT id, email, administrator FROM members";
 $result = mysqli_query($db, $sql);
 $row = mysqli_fetch_array($result);
-if (mysqli_error($db) == false) {
-   echo "failed";
-}
+echo "hiii";
 
-echo $_COOKIE["user"];
-if ($_COOKIE["user"] == "admin@admin.com" && $row['administrator'] == 'yes' && $row['id'] == 2) {
+if ($row['email'] == $_COOKIE['user'] && $row['id'] == 2) {
    setcookie("adStatus", 'yes', null, "/");
 } else {
    setcookie("adStatus", 'no', null, "/");
