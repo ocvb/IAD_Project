@@ -15,6 +15,9 @@
       import { getCookie, logout } from "./js/cookies.js";
 
       $(document).ready(function() {
+         if (getCookie("user") == '') {
+            $.post("cookies.php");
+         }
          $.post("admin_check.php");
          if (getCookie("user") != "notlogged") {
             document.getElementById("login").href = "";
