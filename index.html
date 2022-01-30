@@ -9,9 +9,11 @@
    <link rel="stylesheet" href="css/style.css" type="text/css">
    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
    
+   <script src="js/bootstrap.js" type="application/javascript"></script>
    <script src="js/jquery-3.6.0.min.js" type="application/javascript"></script>
    <script type="module">
       import { getCookie, logout } from "./js/cookies.js";
+
       $(document).ready(function() {
          $.post("admin_check.php");
          if (getCookie("user") != "notlogged") {
