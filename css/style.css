@@ -10,7 +10,6 @@ nav {
    padding: 7px;
 }
 nav div {
-   margin-top: 7px;
    display: inline-flex;
    list-style: none;
    font-size: 19px;
