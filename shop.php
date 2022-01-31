@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/shop.css" type="text/css">
 
-
     <script src="js/jquery-3.6.0.min.js"></script>
     <script type="module">
         import {
@@ -20,7 +19,7 @@
 
         $(document).ready(function() {
             if (getCookie("user") != "notlogged") {
-                document.getElementById("login").href = "";
+                document.getElementById("login").href = "#";
                 document.getElementById("login").innerHTML = "Logout";
                 document.getElementById("login").id = "logout";
             }
@@ -38,7 +37,7 @@
         <div class="navbar-nav navaddpage">
             <a class="nav-item nav-link" href="index.html">Home</a>
             <a class="nav-item nav-link active">Shop</a>
-            <a class="nav-item nav-link" href="login.php">Login</a>
+            <a class="nav-item nav-link" id="login" href="login.php">Login</a>
         </div>
     </nav>
     <header class="bg-dark py-5">
