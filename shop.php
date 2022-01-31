@@ -35,9 +35,11 @@
 <body>
     <!--TODO: Header, Nav, Article, Aside-->
     <nav class="nav navbar-expand-lg navbar-light justify-content-center">
-        <div class="p-2"><a href="index.html">Home</a></div>
-        <div class="p-2">Shop</div>
-        <div class="p-2"><a id="login" href="login.php">Login</a></div>
+        <div class="navbar-nav navaddpage">
+            <a class="nav-item nav-link" href="index.html">Home</a>
+            <a class="nav-item nav-link active">Shop</a>
+            <a class="nav-item nav-link" href="login.php">Login</a>
+        </div>
     </nav>
     <header class="bg-dark py-5">
         <div class="container px-4 px-lg-5 my-5">
