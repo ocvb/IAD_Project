@@ -17,18 +17,21 @@
          if (getCookie("user") == '') {
             $.post("cookies.php");
          }
+
          $.post("admin_check.php");
          if (getCookie("user") != "notlogged") {
-            document.getElementById("login").href = "";
             document.getElementById("login").innerHTML = "Logout";
+            document.getElementById("login").href = "javascript:logout();";
+            //document.getElementById("login").href = "javascript:alert('Hello World!')";
             document.getElementById("login").id = "logout";
          }
-         document.getElementById("logout").addEventListener("click", function () {
-            $.post("cookies.php");
-         });
-
+         
          if (getCookie("adStatus") == 'yes') {
-            document.getElementsByClassName("navaddpage").item(0).innerHTML += '<div class="p-2"><a href="admin.php">Admin</a></div>';
+            document.getElementsByClassName("navaddpage").item(0).innerHTML += '<a class="nav-item nav-link" href="admin.php">Admin</a>';
+         }
+
+         function logout() {
+            $.post("cookies.php");
          }
       });
    </script>
@@ -38,9 +41,9 @@
    <!--TODO: Header, Nav, Article, Aside-->
    <nav class="nav navbar-expand-lg navbar-light justify-content-center">
       <div class="navbar-nav navaddpage">
-         <a class="nav-item nav-link active">Home</a>
+         <a class="nav-item nav-link active" href="#">Home</a>
          <a class="nav-item nav-link" href="shop.php">Shop</a>
-         <a class="nav-item nav-link" href="login.php">Login</a>
+         <a class="nav-item nav-link" id="login" href="login.php">Login</a>
       </div>
    </nav>
 
