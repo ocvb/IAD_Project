@@ -5,12 +5,11 @@ $sql = "SELECT ID, email, administrator FROM members";
 $result = mysqli_query($db, $sql);
 
 while ($row = mysqli_fetch_assoc($result) > 0) {
-   if ($row['email'] == $_COOKIE['user']) {
+   if ($_COOKIE['user'] == $row['email'] && $row['administrator'] == 'yes') {
       setcookie("adStatus", 'yes', null, "/");
    } else {
-      setcookie("adStatus", 'yes', null, "/");
+      setcookie("adStatus", 'no', null, "/");
    }
-
 }
 ?>
 

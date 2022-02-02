@@ -5,7 +5,6 @@ include_once "db.php";
 if (isset($_COOKIE["user"]) == null) {
    setcookie("user", "notlogged", null, "/");
 }
-
 if (isset($_POST['submit'])) {
    $email = mysqli_escape_string($db, $_POST['email']);
    $password = mysqli_escape_string($db, md5($_POST['password']));
@@ -14,8 +13,8 @@ if (isset($_POST['submit'])) {
    $row = mysqli_fetch_assoc($result);
    if ($password == $row['password'] && $email == $row['email']) {
       setcookie("user", $email, null, "/");
+      header("Location: ./index.html");
    }
-   header("Location: ./index.html");
 }
 
 ?>
@@ -26,18 +25,18 @@ if (isset($_POST['submit'])) {
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    <link rel="stylesheet" href="css/style.css" type="text/css">
-   <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-   <script src="js/bootstrap.js"></script>
-   <script src="js/jquery-3.6.0.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
    <title>Login</title>
 </head>
 
 <body>
-   <nav class="nav navbar-expand-lg navbar-light justify-content-center">
+   <nav class="navbar navbar-light justify-content-center">
       <div class="navaddpage">
          <a class="nav-item nav-link active" href="index.html">Home</a>
          <a class="nav-item nav-link" href="shop.php">Shop</a>
-         <a class="nav-item nav-link" id="login" href="#">Login</a>
+         <a class="nav-item nav-link" id="login" href="login.php">Login</a>
       </div>
    </nav>
 
@@ -57,8 +56,8 @@ if (isset($_POST['submit'])) {
                <div class="form-group loginstatus">
                   <?php
                   if (isset($_POST["submit"])) {
-                     if (!$_POST["email"] == null || !$_POST["password"] == null) {
-                        while ($row = mysqli_fetch_assoc($result)) {
+                     if (!$_POST["email"] == '' || !$_POST["password"] == '') {
+                        while ($row = mysqli_fetch_assoc($result) > 0) {
                            if ($email == $row["email"] and $password == $row["password"]) {
                               echo "<p style='color: green;'>You have logged in</p>";
                            } else {
