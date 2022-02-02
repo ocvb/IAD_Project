@@ -34,10 +34,10 @@ if (isset($_POST['submit'])) {
 
 <body>
    <nav class="nav navbar-expand-lg navbar-light justify-content-center">
-      <div class="navbar-nav navaddpage">
-         <a class="nav-item nav-link" href="index.html">Home</a>
+      <div class="navaddpage">
+         <a class="nav-item nav-link active" href="index.html">Home</a>
          <a class="nav-item nav-link" href="shop.php">Shop</a>
-         <a class="nav-item nav-link active">Login</a>
+         <a class="nav-item nav-link" id="login" href="#">Login</a>
       </div>
    </nav>
 

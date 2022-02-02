@@ -6,7 +6,7 @@ body {
 }
 
 nav {
-   background-color: rgb(216, 216, 216);
+   background-color: black !important;
    padding: 7px;
 }
 nav div {
@@ -16,13 +16,13 @@ nav div {
    margin-bottom: 7px;
    font-weight: bold;
 }
-nav div a {
+.navaddpage a {
    font-weight: normal;
    color: rgb(56, 56, 56);
    text-decoration: none;
    text-shadow: 1.5px 1.7px rgb(211, 209, 209);
 }
-nav div a:hover {
+.navaddpage a:hover {
    text-decoration: overline;
    transition: ease-in 0.2s;
    color: rgb(0, 0, 0);
@@ -40,4 +40,8 @@ nav div a:hover {
 }
 .form-container .form-group {
    padding: 5px;
+}
+
+.container {
+   background-color: black;
 }

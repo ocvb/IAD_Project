@@ -13,3 +13,8 @@ export function getCookie(cname) {
    }
    return "";
 }
+
+export function logout() {
+   $.post("cookies.php");
+   window.location.reload();
+}
