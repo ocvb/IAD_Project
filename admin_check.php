@@ -1,26 +1,26 @@
+<script>
+   var storage = sessionStorage.getItem("user");
+</script>
+
 <?php
 include_once "db.php";
 
-$sql = "SELECT ID, email, administrator FROM members";
+$sql = "SELECT email, administrator FROM members";
 $result = mysqli_query($db, $sql);
-
-while ($row = mysqli_fetch_assoc($result) > 0) {
-   if ($_COOKIE['user'] == $row['email'] && $row['administrator'] == 'yes') {
+while ($row = mysqli_fetch_array($result)) {
+   echo $row['email'];
+   if ($row['email'] == $_COOKIE['user']) {
       setcookie("adStatus", 'yes', null, "/");
+      return true;
+   } else {
+      setcookie("adStatus", 'no', null, "/");
+   }
+
+   if ($row['email'] == $_COOKIE['user']) {
+      setcookie("adStatus", 'yes', null, "/");
+      return true;
    } else {
       setcookie("adStatus", 'no', null, "/");
    }
 }
 ?>
-
-<!--<head>
-   <script src="js/jquery-3.6.0.min.js" type="application/javascript"></script>
-   <script type="module">
-      import { getCookie } from "./js/cookies.js";
-
-      $(document).ready(function() {
-         if (getCookie("user") == 'admin%40admin.com') {
-         }
-      });
-      </script>
-</head>-->
