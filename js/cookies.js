@@ -1,4 +1,4 @@
-export function getCookie(cname) {
+function getCookie(cname) {
    let name = cname + "=";
    let decodedCookie = decodeURIComponent(document.cookie);
    let ca = decodedCookie.split(';');
@@ -12,9 +12,4 @@ export function getCookie(cname) {
       }
    }
    return "";
-}
-
-export function logout() {
-   $.post("cookies.php");
-   window.location.reload();
 }

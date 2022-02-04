@@ -1,3 +1,1 @@
-import { getCookie } from "./cookies.js";
-
-alert(getCookie("user"));
+console.log("hi");

@@ -18,19 +18,25 @@ include_once "db.php";
       crossorigin="anonymous"></script>
    <link rel="stylesheet" href="css/style.css" type="text/css">
    
-   <script src="js/jquery-3.6.0.min.js" type="application/javascript"></script>
    <script type="module">
-      import { getCookie, logout } from "./js/cookies.js";
-      $(document).ready(function() {
-         if (getCookie("user") != "notlogged") {
-            document.getElementById("login").href = "";
-            document.getElementById("login").innerHTML = "Logout";
-            document.getElementById("login").id = "logout";
-         }
-         document.getElementById("logout").addEventListener("click", function () {
-            $.post("cookies.php");
-         });
+      import { getCookie } from "./js/cookies.js";
 
+      sessionStorage.setItem("user", "notlogged");
+      $(document).ready(function () {
+         if (getCookie("user") == '') {
+            $.post("cookies.php");
+         }
+
+         $.post("admin_check.php");
+         if (getCookie("user") != "notlogged") {
+            document.querySelector("#login").innerHTML = "Logout";
+            document.querySelector("#login").href = "javascript:logout();";
+            document.querySelector("#login").id = "logout";
+         }
+
+         if (getCookie("adStatus") == 'yes') {
+            document.querySelector(".navaddpage").innerHTML += '<a class="nav-item nav-link" href="admin.php">Admin</a>';
+         }
       });
    </script>
 </head>
