@@ -13,6 +13,9 @@
       crossorigin="anonymous"></script>
    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
       crossorigin="anonymous"></script>
+   <script>
+      sessionStorage.setItem("user", "notlogged");
+   </script>
    <link rel="stylesheet" href="css/style.css" type="text/css">
    <link rel="stylesheet" href="css/home.css" type="text/css">
 
@@ -26,17 +29,17 @@
 
          $.post("admin_check.php");
          if (getCookie("user") != "notlogged") {
-            document.getElementById("login").innerHTML = "Logout";
-            document.getElementById("login").href = "javascript:logout();";
-            //document.getElementById("login").href = "javascript:alert('Hello World!')";
-            document.getElementById("login").id = "logout";
+            document.querySelector("#login").innerHTML = "Logout";
+            document.querySelector("#login").href = "javascript:logout();";
+            document.querySelector("#login").id = "logout";
+         }
+         if (sessionStorage.getItem('user') == 'notlogged') {
+            document.querySelector("#para").innerHTML = "test test";
          }
 
          if (getCookie("adStatus") == 'yes') {
-            document.getElementsByClassName("navaddpage").item(0).innerHTML += '<a class="nav-item nav-link" href="admin.php">Admin</a>';
+            document.querySelector(".navaddpage").innerHTML += '<a class="nav-item nav-link" href="admin.php">Admin</a>';
          }
-
-
       });
    </script>
 </head>
@@ -62,7 +65,7 @@
 
    <div class="container">
       <div class="container-lg">
-         <p>efeaf</p>
+         <p id="para">efeaf</p>
       </div>
    </div>
 
