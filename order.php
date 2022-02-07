@@ -1,7 +1,28 @@
 <?php
+include_once "db.php";
 include_once "check_admin.php";
 echo "<script>var storage = sessionStorage.getItem('user');</script>";
 $storage = '<script>document.write(storage);</script>';
+
+function update_product($id)
+{
+    global $db;
+    $productid = $id;
+    $sql = "SELECT price FROM burgers WHERE id = $productid";
+    $result = mysqli_query($db, $sql);
+    $row = mysqli_fetch_array($result);
+    return $row['price'];
+}
+function product_name($id)
+{
+    global $db;
+    $productid = $id;
+    $sql = "SELECT burger_name FROM burgers WHERE id = $productid";
+    $result = mysqli_query($db, $sql);
+    $row = mysqli_fetch_array($result);
+    return $row['burger_name'];
+}
+
 ?>
 
 
@@ -21,18 +42,20 @@ $storage = '<script>document.write(storage);</script>';
         } from "./js/cookies.js";
 
         $(document).ready(function() {
-            if (getCookie("user") != "notlogged") {
-                document.querySelector("#login").href = "#";
-                document.querySelector("#login").innerHTML = "Logout";
-                document.querySelector("#login").id = "logout";
+            function loggedin() {
+                if (getCookie("user") != "notlogged") {
+                    document.querySelector("#login").textContent = "Logout";
+                    document.querySelector("#login").href = "javascript:logout();";
+                    document.querySelector("#login").id = "logout";
+                    if (getCookie("adStatus") == 'yes') {
+                        $('.navaddpage').append('<a class="nav-item nav-link" href="admin.php">Admin</a>');
+                    }
+                }
             }
+            loggedin();
             document.querySelector("#logout").addEventListener("click", function() {
                 $.post("cookies.php");
             });
-
-            if (getCookie("adStatus") == 'yes') {
-            document.querySelector(".navaddpage").innerHTML += '<a class="nav-item nav-link" href="admin.php">Admin</a>';
-         }
 
         });
     </script>
@@ -62,14 +85,21 @@ $storage = '<script>document.write(storage);</script>';
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <img class="card-img-top" src="images/bison-burgers.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Product name-->
-                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <h5 class="fw-bolder"><?php echo product_name(1); ?></h5>
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill">★</div>
+                                    <div class="bi-star-fill">★</div>
+                                    <div class="bi-star-fill">★</div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
                                 <!-- Product price-->
-                                $40.00 - $80.00
+                                $<?php echo update_product(1); ?>
                             </div>
                         </div>
                         <!-- Product actions-->
@@ -83,23 +113,23 @@ $storage = '<script>document.write(storage);</script>';
                         <!-- Sale badge-->
                         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                         <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <img class="card-img-top" src="images/classic-beef-burger.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Product name-->
-                                <h5 class="fw-bolder">Special Item</h5>
+                                <h5 class="fw-bolder"><?php echo product_name(2); ?></h5>
                                 <!-- Product reviews-->
                                 <div class="d-flex justify-content-center small text-warning mb-2">
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill">★</div>
+                                    <div class="bi-star-fill">★</div>
+                                    <div class="bi-star-fill">★</div>
+                                    <div class="bi-star-fill">★</div>
                                     <div class="bi-star-fill"></div>
                                 </div>
                                 <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">$20.00</span>
-                                $18.00
+                                <span class="text-muted text-decoration-line-through">$10.00</span>
+                                $<?php echo update_product(2); ?>
                             </div>
                         </div>
                         <!-- Product actions-->
@@ -118,10 +148,17 @@ $storage = '<script>document.write(storage);</script>';
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Product name-->
-                                <h5 class="fw-bolder">Sale Item</h5>
+                                <h5 class="fw-bolder"><?php echo product_name(3); ?></h5>
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill">★</div>
+                                    <div class="bi-star-fill">★</div>
+                                    <div class="bi-star-fill">★</div>
+                                    <div class="bi-star-fill">★</div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
                                 <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">$50.00</span>
-                                $25.00
+                                <span class="text-muted text-decoration-line-through">$14.00</span>
+                                $<?php echo update_product(3); ?>
                             </div>
                         </div>
                         <!-- Product actions-->
@@ -138,17 +175,17 @@ $storage = '<script>document.write(storage);</script>';
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Product name-->
-                                <h5 class="fw-bolder">Popular Item</h5>
+                                <h5 class="fw-bolder"><?php echo product_name(4); ?></h5>
                                 <!-- Product reviews-->
                                 <div class="d-flex justify-content-center small text-warning mb-2">
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill">★</div>
+                                    <div class="bi-star-fill">★</div>
+                                    <div class="bi-star-fill">★</div>
+                                    <div class="bi-star-fill">★</div>
                                     <div class="bi-star-fill"></div>
                                 </div>
                                 <!-- Product price-->
-                                $40.00
+                                $<?php echo update_product(4); ?>
                             </div>
                         </div>
                         <!-- Product actions-->
