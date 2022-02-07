@@ -21,22 +21,25 @@
 
       sessionStorage.setItem("user", "notlogged");
       $(document).ready(function () {
+         function loggedin() {
+            if (getCookie("user") != "notlogged") {
+               document.querySelector("#login").textContent = "Logout";
+               document.querySelector("#login").href = "javascript:logout();";
+               document.querySelector("#login").id = "logout";
+               if (getCookie("adStatus") == 'yes') {
+                  $("#admin").show();
+               }
+            }
+         }
          if (getCookie("user") == '') {
             $.post("cookies.php");
+            window.location.reload();
          }
-
          $.post("admin_check.php");
-         if (getCookie("user") != "notlogged") {
-            document.querySelector("#login").innerHTML = "Logout";
-            document.querySelector("#login").href = "javascript:logout();";
-            document.querySelector("#login").id = "logout";
-         }
-         if (sessionStorage.getItem('user') == 'notlogged') {
-            document.querySelector("#para").innerHTML = "test test";
-         }
+         loggedin();
 
-         if (getCookie("adStatus") == 'yes') {
-            document.querySelector(".navaddpage").innerHTML += '<a class="nav-item nav-link" href="admin.php">Admin</a>';
+         if (sessionStorage.getItem('user') == 'notlogged') {
+            document.querySelector("#para").textContent = "test test";
          }
       });
    </script>
@@ -47,8 +50,9 @@
    <nav class="navbar navbar-light justify-content-center">
       <div class="navaddpage">
          <a class="nav-item nav-link active" href="index.html">Home</a>
-         <a class="nav-item nav-link" href="shop.php">Shop</a>
+         <a class="nav-item nav-link" href="order.php">Order</a>
          <a class="nav-item nav-link" id="login" href="login.php">Login</a>
+         <a class="nav-item nav-link" id="admin" style="display: none;" href="admin.php">Admin</a>
       </div>
    </nav>
 
