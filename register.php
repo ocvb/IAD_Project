@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
    <nav class="navbar navbar-light justify-content-center">
       <div class="navaddpage">
          <a class="nav-item nav-link active" href="index.html">Home</a>
-         <a class="nav-item nav-link" href="shop.php">Shop</a>
+         <a class="nav-item nav-link" href="order.php">Order</a>
          <a class="nav-item nav-link" href="register.php">Register</a>
          <a class="nav-item nav-link" id="login" href="login.php">Login</a>
       </div>

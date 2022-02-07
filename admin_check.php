@@ -20,7 +20,7 @@ $id = getID();
 while ($row = mysqli_fetch_array($result)) {
    if ($row['email'] == $_COOKIE['user'] && $row['administrator'] == 'yes' && $row['id'] == $id) {
       setcookie("adStatus", 'yes', null, "/");
-      return true;
+      return false;
    } else {
       setcookie("adStatus", 'no', null, "/");
    }

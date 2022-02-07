@@ -10,10 +10,12 @@ if (isset($_POST['submit'])) {
    $password = mysqli_escape_string($db, md5($_POST['password']));
    $sql = "SELECT email, password FROM `members` WHERE email = '$email'";
    $result = mysqli_query($db, $sql);
-   $row = mysqli_fetch_assoc($result);
-   if ($password == $row['password'] && $email == $row['email']) {
-      setcookie("user", $email, null, "/");
-      header("Location: ./index.html");
+   while ($row = mysqli_fetch_assoc($result)) {
+      if ($password == $row['password'] && $email == $row['email']) {
+         setcookie("user", $email, null, "/");
+         header("Location: ./index.html");
+         return false;
+      }
    }
 }
 
@@ -35,7 +37,7 @@ if (isset($_POST['submit'])) {
    <nav class="navbar navbar-light justify-content-center">
       <div class="navaddpage">
          <a class="nav-item nav-link active" href="index.html">Home</a>
-         <a class="nav-item nav-link" href="shop.php">Shop</a>
+         <a class="nav-item nav-link" href="order.php">Order</a>
          <a class="nav-item nav-link" id="login" href="login.php">Login</a>
       </div>
    </nav>
@@ -57,11 +59,13 @@ if (isset($_POST['submit'])) {
                   <?php
                   if (isset($_POST["submit"])) {
                      if (!$_POST["email"] == '' || !$_POST["password"] == '') {
-                        while ($row = mysqli_fetch_assoc($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
                            if ($email == $row["email"] and $password == $row["password"]) {
                               echo "<p style='color: green;'>You have logged in</p>";
+                              return false;
                            } else {
                               echo "<p style='color: red;'>Invalid login or password</p>";
+                              return false;
                            }
                         }
                      } else {
