@@ -25,17 +25,17 @@
                   $('.navaddpage').append('<li class="nav-item"><a class="nav-link active" href="admin.php">Admin</a></li>');
                }
             }
+            $.post("admin_check.php");
          }
          if (getCookie("user") == '') {
             $.post("cookies.php");
             window.location.reload();
          }
-         $.post("admin_check.php");
          loggedin();
 
-         if (sessionStorage.getItem('user') == 'notlogged') {
+         /*if (sessionStorage.getItem('user') == 'notlogged') {
             document.querySelector("#para").textContent = "test test";
-         }
+         }*/
 
       });
    </script>
