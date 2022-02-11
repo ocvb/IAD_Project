@@ -1,0 +1,19 @@
+body {
+  background-color: rgb(51, 51, 51);
+}
+.main-container {
+  margin-top: 150px;
+  border-radius: 9px;
+  width: 500px;
+  background-color: rgb(206, 206, 206);
+}
+
+.form-container {
+  padding: 10px;
+  border-radius: inherit;
+  box-shadow: 3px 5px 7px 1px rgb(58, 58, 58);
+  padding-bottom: 5px;
+}
+.form-container .form-group {
+  padding: 5px;
+}

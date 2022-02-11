@@ -8,10 +8,17 @@ body {
   padding: 0;
 }
 
+body {
+  height: 1900px;
+  background-color: rgb(51, 51, 51);
+}
+
 .nav {
   background-color: rgb(51, 51, 51);
   opacity: 0.9;
   padding: 5px;
+  left: 0;
+  right: 0;
 }
 .nav-item a {
   font-weight: normal;
@@ -24,19 +31,6 @@ body {
   color: rgb(0, 0, 0);
 }
 
-.main-container {
-  margin-top: 100px;
-}
-
-.form-container {
-  padding: 10px;
-  border-radius: 9px;
-  box-shadow: 3px 5px 7px 1px rgb(175, 175, 175);
-  padding-bottom: 5px;
-}
-.form-container .form-group {
-  padding: 5px;
-}
 
 #preloader {
   position: fixed;

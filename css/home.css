@@ -1,13 +1,43 @@
+h1, h2, h3, h4, h5, p {
+  color: white;
+}
+
+.main {
+  margin-top: -50px;
+}
+
+.big-container {
+  margin-top: 50px;
+  width: 100%;
+  height: 75vh;
+  background: url("../images/about-bg.jpg") top center;
+  background-size: cover;
+  position: relative;
+  background-attachment: fixed;
+  padding: 0;
+}
+
+.big-container:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.25);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.content {
+  text-align: left;
+}
 .main-container {
   padding: 0;
   position: relative;
   top: 0;
 }
 
-.main-container .row .col-auto img {
-  background-size: contain;
+.main-container .img {
   width: 100%;
-  object-fit: contain;
 }
 
 #hero {
@@ -15,13 +45,12 @@
   height: 100vh;
   background: url("../images/bg.jpg") top center;
   background-size: cover;
-  object-fit: contain;
   position: relative;
   padding: 0;
 }
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.35);
   position: absolute;
   bottom: 0;
   top: 0;
