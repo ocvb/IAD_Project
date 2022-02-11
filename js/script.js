@@ -1,1 +1,8 @@
-console.log("hi");
+(function () {
+   let preloader = document.querySelector('#preloader');
+   if (preloader) {
+      window.addEventListener('load', () => {
+         preloader.remove()
+      });
+   }
+})();
