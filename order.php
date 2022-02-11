@@ -8,7 +8,7 @@ function update_product($id)
 {
     global $db;
     $productid = $id;
-    $sql = "SELECT price FROM burgers WHERE id = $productid";
+    $sql = "SELECT price FROM burgers WHERE burger_id = $productid";
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result);
     return $row['price'];
@@ -17,7 +17,7 @@ function product_name($id)
 {
     global $db;
     $productid = $id;
-    $sql = "SELECT burger_name FROM burgers WHERE id = $productid";
+    $sql = "SELECT burger_name FROM burgers WHERE burger_id = $productid";
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result);
     return $row['burger_name'];

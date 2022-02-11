@@ -1,7 +1,44 @@
-header {
-   background-color: yellowgreen;
+body {
+   height: 1900px;
 }
 
 nav {
    margin-bottom: -5px;
+}
+
+header {
+   position: relative;
+   top: 0;
+}
+
+header img {
+   position: absolute;
+   width: 100%;
+   height: 600px;
+   top: 0;
+   background-repeat: no-repeat;
+   object-fit: cover;
+   z-index: -1;
+}
+
+header h1, header p {
+   position: relative;
+   height: 100%;
+   width: 100%;
+   top: 130px;
+   text-shadow: 0 2px black;
+}
+
+.text-white-100 {
+   opacity: 0.7;
+}
+
+.main-container {
+   position:relative;
+   top: 150px;
+
+}
+
+.main-container img {
+   height: 50%;
 }
