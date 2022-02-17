@@ -1,6 +1,6 @@
 <?php
 include_once "db.php";
-include_once "check_admin.php";
+include_once "admin_check.php";
 echo "<script>var storage = sessionStorage.getItem('user');</script>";
 $storage = '<script>document.write(storage);</script>';
 
