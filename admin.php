@@ -41,6 +41,7 @@ include_once "db.php";
 </head>
 
 <body>
+   <div id="preloader"></div>
    <!--TODO: Header, Nav, Article, Aside-->
    <nav>
       <ul class="nav d-flex justify-content-center fixed-top navaddpage">
@@ -54,6 +55,9 @@ include_once "db.php";
          <p>ruhe</p>
       </div>
    </header>
+
+   <!--javascript -->
+   <script src="js/script.js"></script>
 </body>
 
 </html>

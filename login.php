@@ -33,6 +33,8 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body class="overflow-hidden">
+   <div id="preloader"></div>
+
    <nav>
       <ul class="nav d-flex justify-content-center fixed-top navaddpage">
          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
@@ -40,19 +42,19 @@ if (isset($_POST['submit'])) {
          <li class="nav-item"><a id="login" class="nav-link" href="login.php">Login</a></li>
       </ul>
    </nav>
-   
+
    <div class="container main-container justify-content-center">
       <div class="row form-container g-4">
          <h3 class="h3 text-center">Login Panel</h3>
          <div class="form">
-            <form method="POST" class="col">
+            <form method="POST" class="col" name="f1">
                <div class="top-form form-group">
                   <label for="">Email:</label>
-                  <input type="email" name="email" class="form-control" placeholder="Email" required>
+                  <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
                </div>
                <div class="top-form form-group">
                   <label for="">Password:</label>
-                  <input type="password" name="password" class="form-control" placeholder="Password" required>
+                  <input type="password" name="password" id="pass" class="form-control" placeholder="Password" required>
                </div>
                <div class="form-group loginstatus">
                   <?php
@@ -61,7 +63,6 @@ if (isset($_POST['submit'])) {
                         while ($row = mysqli_fetch_assoc($result)) {
                            if ($email == $row["email"] and $password == $row["password"]) {
                               echo "<p style='color: green;'>You have logged in</p>";
-                              return false;
                            } else {
                               echo "<p style='color: red;'>Invalid login or password</p>";
                               return false;
@@ -85,8 +86,18 @@ if (isset($_POST['submit'])) {
    </div>
 
    <!-- Javscript -->
+   <script>
+      function validation() {
+         var id = document.f1.email.value;
+         var pass = document.f1.pass.value;
+         console.log(id, pass, "e");
+
+      }
+      validation();
+   </script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+   <script src="js/script.js"></script>
 </body>
 
 </html>
