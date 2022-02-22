@@ -2,10 +2,6 @@
 html,
 body {
   font-family: "Raleway", sans-serif;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -16,8 +12,7 @@ body {
   background-color: rgb(51, 51, 51);
   opacity: 0.9;
   padding: 5px;
-  left: 0;
-  right: 0;
+  align-items: center;
 }
 .nav-item a {
   font-weight: normal;
