@@ -33,14 +33,15 @@ if (isset($_POST['submit'])) {
    <title>Login</title>
 </head>
 
-<body class="overflow-hidden">
+<body>
    <div id="preloader"></div>
 
    <nav>
       <ul class="nav d-flex justify-content-center fixed-top navaddpage">
          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
          <li class="nav-item"><a class="nav-link" href="course.php">Course</a></li>
-         <li class="nav-item"><a id="login" class="nav-link" href="account.php"><i class="fa-solid fa-user"></i></a></li>
+         <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+         <li class="nav-item"><a class="nav-link" href="account.php"><i class="fa-solid fa-user"></i></a></li>
       </ul>
    </nav>
 
@@ -87,15 +88,6 @@ if (isset($_POST['submit'])) {
    </div>
 
    <!-- Javscript -->
-   <script>
-      function validation() {
-         var id = document.f1.email.value;
-         var pass = document.f1.pass.value;
-         console.log(id, pass, "e");
-
-      }
-      validation();
-   </script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
    <script src="js/script.js"></script>

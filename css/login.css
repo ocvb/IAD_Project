@@ -3,13 +3,11 @@ body {
 }
 
 .nav {
-   clear: both;
-   left: -17;
-   right: 0;
+  left: -17;
 }
 
 .main-container {
-  margin-top: 150px;
+  margin-top: 200px;
   border-radius: 9px;
   width: 500px;
   background-color: rgb(206, 206, 206);
