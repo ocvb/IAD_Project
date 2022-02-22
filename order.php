@@ -12,8 +12,7 @@ function update_product($id) {
     $row = mysqli_fetch_array($result);
     return $row['price'];
 }
-function product_name($id)
-{
+function product_name($id) {
     global $db;
     $productid = $id;
     $sql = "SELECT burger_name FROM burgers WHERE burger_id = $productid";
