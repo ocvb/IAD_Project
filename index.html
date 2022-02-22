@@ -10,8 +10,9 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
    <link rel="stylesheet" href="css/style.css" type="text/css">
    <link rel="stylesheet" href="css/home.css" type="text/css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" type="text/css">
-   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      type="text/css">
+
 
    <script type="module">
       import { getCookie } from "./js/cookies.js";
@@ -19,21 +20,18 @@
       sessionStorage.setItem("user", "notlogged");
       $(document).ready(function () {
          function loggedin() {
+            if (getCookie("user") == '') {
+               $.post("cookies.php");
+               window.location.reload();
+            }
             if (getCookie("user") != "notlogged") {
-               $('#loginicon').removeClass("fa-lock-open");
-               $('#loginicon').addClass("fa-lock");
-               document.querySelector("#login").href = "javascript:logout();";
-               document.querySelector("#login").id = "logout";
                if (getCookie("adStatus") == 'yes') {
                   $('.navaddpage').append('<li class="nav-item"><a class="nav-link active" href="admin.php">Admin</a></li>');
                }
             }
             $.post("admin_check.php");
          }
-         if (getCookie("user") == '') {
-            $.post("cookies.php");
-            window.location.reload();
-         }
+
          loggedin();
 
          /*if (sessionStorage.getItem('user') == 'notlogged') {
@@ -51,7 +49,6 @@
       <ul class="nav d-flex justify-content-center fixed-top navaddpage">
          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
          <li class="nav-item"><a class="nav-link" href="course.php">Course</a></li>
-         <li class="nav-item"><a id="login" class="nav-link" href="login.php"><i id="loginicon" class="fa-solid fa-lock-open"></i></a></li>
          <li class="nav-item"><a id="login" class="nav-link" href="account.php"><i class="fa-solid fa-user"></i></a></li>
       </ul>
    </nav>
@@ -78,10 +75,10 @@
                </aside>
                <aside class="col-lg-6 content">
                   <h1>About Us</h1>
-                  <p>In higher education in various countries, such as Canada, Nigeria and the United States, 
-                  a course is a unit of teaching that typically lasts one academic term, 
-                  is led by one or more instructors, and has a fixed roster of students. 
-                  A course usually covers an individual subject.
+                  <p>In higher education in various countries, such as Canada, Nigeria and the United States,
+                     a course is a unit of teaching that typically lasts one academic term,
+                     is led by one or more instructors, and has a fixed roster of students.
+                     A course usually covers an individual subject.
                   </p>
                </aside>
             </div>
@@ -102,7 +99,7 @@
          <p class="m-0 text-center text-white">Copyright &copy; ITE 2022</p>
       </div>
    </footer>
-   
+
 
 
    <!--javascript-->
