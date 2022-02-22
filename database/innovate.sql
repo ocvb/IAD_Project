@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 11, 2022 at 12:59 PM
+-- Generation Time: Feb 22, 2022 at 12:14 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -18,33 +18,33 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `burgurpro`
+-- Database: `innovate`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `burgers`
+-- Table structure for table `course`
 --
 
-CREATE TABLE `burgers` (
-  `burger_id` int(255) NOT NULL,
-  `burger_name` varchar(250) NOT NULL,
+CREATE TABLE `course` (
+  `course_id` int(255) NOT NULL,
+  `course_name` varchar(250) NOT NULL,
   `price` decimal(65,2) NOT NULL,
-  `description` varchar(250) NOT NULL,
-  `popularity` int(8) NOT NULL,
-  `availability` int(8) NOT NULL
+  `description` varchar(255) NOT NULL,
+  `course_duration` int(8) NOT NULL,
+  `seats` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `burgers`
+-- Dumping data for table `course`
 --
 
-INSERT INTO `burgers` (`burger_id`, `burger_name`, `price`, `description`, `popularity`, `availability`) VALUES
-(1, 'Classic Burger', '8.70', 'with baby gem salad, beef tomato, red onions, gherkin.', 5, 10),
-(2, 'Beef Burgers', '11.00', 'with melted cheese, baby gem salad,beef tomato,red onions,gherkin', 5, 10),
-(3, 'Turkey Burgers', '10.00', 'with melted cheese, crispy bacon and onion rings,baby gem salad\r\n', 5, 10),
-(4, 'Butterfly  \r\nChicken Burger\r\n', '15.00', 'with cranberry sauce and brie cheese\r\n', 5, 10);
+INSERT INTO `course` (`course_id`, `course_name`, `price`, `description`, `course_duration`, `seats`) VALUES
+(1, 'AdobePhotoshop', '449.99', 'Adobe Photoshop is an extremely powerful application that\'s used by many professional photographers and designers. You can use Photoshop for almost any kind of image editing, such as touching up photos, creating high-quality graphics, and much, much more.', 3, 10),
+(2, 'Creating website\r\nwith HTML5', '399.99', 'with melted cheese, baby gem salad,beef tomato,red onions,gherkin', 2, 2),
+(3, 'Turkey Burgers', '299.99', 'Adobe InDesign is a desktop publishing software application produced by Adobe Systems. It \r\ncan be used to create works such as posters, flyers, brochures, magazines, newspapers, \r\npresentations, books and eBooks.', 3, 3),
+(4, 'Butterfly  \r\nChicken Burger\r\n', '699.99', 'Swift is a powerful and intuitive programming language for macOS, iOS, watchOS and \r\ntvOS. Writing Swift code is interactive and fun, the syntax is concise yet expressive, and \r\nSwift includes modern features developers love.', 4, 3);
 
 -- --------------------------------------------------------
 
@@ -96,10 +96,10 @@ INSERT INTO `order_info` (`orderid`, `customer_name`, `email`, `date`) VALUES
 --
 
 --
--- Indexes for table `burgers`
+-- Indexes for table `course`
 --
-ALTER TABLE `burgers`
-  ADD PRIMARY KEY (`burger_id`);
+ALTER TABLE `course`
+  ADD PRIMARY KEY (`course_id`);
 
 --
 -- Indexes for table `members`
@@ -118,10 +118,10 @@ ALTER TABLE `order_info`
 --
 
 --
--- AUTO_INCREMENT for table `burgers`
+-- AUTO_INCREMENT for table `course`
 --
-ALTER TABLE `burgers`
-  MODIFY `burger_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `course`
+  MODIFY `course_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `members`

@@ -7,7 +7,7 @@ $storage = '<script>document.write(storage);</script>';
 function update_product($id) {
     global $db;
     $productid = $id;
-    $sql = "SELECT price FROM burgers WHERE burger_id = $productid";
+    $sql = "SELECT price FROM course WHERE course_id = $productid";
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result);
     return $row['price'];
@@ -15,10 +15,10 @@ function update_product($id) {
 function product_name($id) {
     global $db;
     $productid = $id;
-    $sql = "SELECT burger_name FROM burgers WHERE burger_id = $productid";
+    $sql = "SELECT course_name FROM course WHERE course_id = $productid";
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result);
-    return $row['burger_name'];
+    return $row['course_name'];
 }
 
 ?>
