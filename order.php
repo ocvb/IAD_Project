@@ -4,8 +4,7 @@ include_once "admin_check.php";
 echo "<script>var storage = sessionStorage.getItem('user');</script>";
 $storage = '<script>document.write(storage);</script>';
 
-function update_product($id)
-{
+function update_product($id) {
     global $db;
     $productid = $id;
     $sql = "SELECT price FROM burgers WHERE burger_id = $productid";
