@@ -67,14 +67,20 @@
       </div>
 
       <div class="container position-absolute border dynamic-table">
-         <table class="text-white" cellpadding="3" cellspacing="2">
-            <tr>
-               <td class="nav-item account-item"><a class="nav-link" href="#">View</a></td>
-               <td class="nav-item account-item"><a class="nav-link" href="#">Delete</a></td>
-               <td class="nav-item account-item"><a class="nav-link" href="#">Update</a></td>
-            </tr>
+         <nav class="border">
+            <ul class="nav list-unstyled bg-transparent">
+               <li class="nav-item account-item"><a class="nav-link" href="#">View</a></li>
+               <li class="nav-item account-item"><a class="nav-link" href="#">Delete</a></li>
+               <li class="nav-item account-item"><a class="nav-link" href="#">Update</a></li>
+               <li class="nav-item account-item"><a class="nav-link" href="#">Delete</a></li>
+            </ul>
+         </nav>
 
-         </table>
+         <div class="data float-left border text-white">
+            <div>
+               aiwjfioawuenf
+            </div>
+         </div>
       </div>
    </div>
 
@@ -96,6 +102,8 @@
          $.post("cookies.php");
          window.location.reload();
       }
+
+      $()
    </script>
 </body>
 
