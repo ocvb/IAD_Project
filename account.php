@@ -25,9 +25,7 @@
             }
 
             if (getCookie("user") != "notlogged") {
-               document.querySelector("#login").textContent = "Logout";
-               document.querySelector("#login").href = "javascript:logout();";
-               document.querySelector("#login").id = "logout";
+               document.querySelector("#logout").href = "javascript:logout();";
                if (getCookie("adStatus") == 'yes') {
                   $("#accountpage li:first").append('<li class="nav-item account-item">- <a href="#">Admin</a></li>');
                }
@@ -65,7 +63,7 @@
          <ul class="text-white list-unstyled accountpage" id="accountpage">
             <li class="nav-item account-item">- <a href="#">Account Details</a></li>
             <li class="nav-item account-item">- <a href="#">Order</a></li>
-            <li class="nav-item account-item">- <a id="login" href="#">Logout</a></li>
+            <li class="nav-item account-item">- <a id="logout" href="#">Logout</a></li>
          </ul>
       </div>
 
