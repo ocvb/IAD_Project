@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Feb 22, 2022 at 12:14 PM
--- Server version: 5.7.24
--- PHP Version: 8.0.1
+-- Host: 127.0.0.1
+-- Generation Time: Feb 23, 2022 at 05:52 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,8 +43,8 @@ CREATE TABLE `course` (
 INSERT INTO `course` (`course_id`, `course_name`, `price`, `description`, `course_duration`, `seats`) VALUES
 (1, 'AdobePhotoshop', '449.99', 'Adobe Photoshop is an extremely powerful application that\'s used by many professional photographers and designers. You can use Photoshop for almost any kind of image editing, such as touching up photos, creating high-quality graphics, and much, much more.', 3, 10),
 (2, 'Creating website\r\nwith HTML5', '399.99', 'with melted cheese, baby gem salad,beef tomato,red onions,gherkin', 2, 2),
-(3, 'Turkey Burgers', '299.99', 'Adobe InDesign is a desktop publishing software application produced by Adobe Systems. It \r\ncan be used to create works such as posters, flyers, brochures, magazines, newspapers, \r\npresentations, books and eBooks.', 3, 3),
-(4, 'Butterfly  \r\nChicken Burger\r\n', '699.99', 'Swift is a powerful and intuitive programming language for macOS, iOS, watchOS and \r\ntvOS. Writing Swift code is interactive and fun, the syntax is concise yet expressive, and \r\nSwift includes modern features developers love.', 4, 3);
+(3, 'Adobe InDesgin', '299.99', 'Adobe InDesign is a desktop publishing software application produced by Adobe Systems. It \r\ncan be used to create works such as posters, flyers, brochures, magazines, newspapers, \r\npresentations, books and eBooks.', 3, 3),
+(4, 'Swift programming\r\n', '699.99', 'Swift is a powerful and intuitive programming language for macOS, iOS, watchOS and \r\ntvOS. Writing Swift code is interactive and fun, the syntax is concise yet expressive, and \r\nSwift includes modern features developers love.', 4, 3);
 
 -- --------------------------------------------------------
 
@@ -53,11 +53,12 @@ INSERT INTO `course` (`course_id`, `course_name`, `price`, `description`, `cours
 --
 
 CREATE TABLE `members` (
-  `ID` int(255) NOT NULL,
+  `regid` int(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `phone` int(8) NOT NULL,
+  `course` int(18) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `address` varchar(255) DEFAULT NULL,
+  `hp_no` int(8) NOT NULL,
+  `reg_date` datetime DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `administrator` varchar(128) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -66,10 +67,10 @@ CREATE TABLE `members` (
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`ID`, `name`, `phone`, `email`, `address`, `password`, `administrator`) VALUES
-(1, 'john', 2132132, 'awefwune@gmail.com', NULL, 'c13367945d5d4c91047b3b50234aa7ab', NULL),
-(2, 'Admin', 0, 'admin@admin.com', NULL, '21232f297a57a5a743894a0e4a801fc3', 'yes'),
-(3, 'awfjiawen', 21378213, 'awenfio@gmail.com', NULL, '21232f297a57a5a743894a0e4a801fc3', NULL);
+INSERT INTO `members` (`regid`, `name`, `course`, `email`, `hp_no`, `reg_date`, `password`, `administrator`) VALUES
+(1, 'john', 0, 'awefwune@gmail.com', 2132132, NULL, 'c13367945d5d4c91047b3b50234aa7ab', NULL),
+(2, 'Admin', 0, 'admin@admin.com', 0, NULL, '81dc9bdb52d04dc20036dbd8313ed055', 'yes'),
+(3, 'awfjiawen', 0, 'awenfio@gmail.com', 21378213, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL);
 
 -- --------------------------------------------------------
 
@@ -81,7 +82,7 @@ CREATE TABLE `order_info` (
   `orderid` int(255) NOT NULL,
   `customer_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -105,7 +106,7 @@ ALTER TABLE `course`
 -- Indexes for table `members`
 --
 ALTER TABLE `members`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`regid`);
 
 --
 -- Indexes for table `order_info`
@@ -127,7 +128,7 @@ ALTER TABLE `course`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `regid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `order_info`
