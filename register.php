@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
    $phone = mysqli_escape_string($db, $_POST['phone']);
    $password = mysqli_escape_string($db, md5($_POST['password']));
    echo $name . $phone . $email . $password;
-   $sql = "INSERT INTO `members` (`name`, `phone`, `email`, `password`) VALUES ('$name', $phone, '$email', '$password')";
+   $sql = "INSERT INTO `members` (`name`, `hp_no`, `email`, `password`) VALUES ('$name', $phone, '$email', '$password')";
    mysqli_query($db, $sql);
    $i = 0;
    echo mysqli_error($db);
