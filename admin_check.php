@@ -11,7 +11,7 @@ function getID() {
    $sql = "SELECT regid FROM members WHERE email = '$email'";
    $getID = mysqli_query($db, $sql);
    $row = mysqli_fetch_array($getID);
-   return $row['id'];
+   return $row['regid'];
 }
 
 $sql = "SELECT regid, email, administrator FROM members";
