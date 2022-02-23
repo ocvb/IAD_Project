@@ -25,6 +25,9 @@
             }
 
             if (getCookie("user") != "notlogged") {
+               document.querySelector("#login").textContent = "Logout";
+               document.querySelector("#login").href = "javascript:logout();";
+               document.querySelector("#login").id = "logout";
                if (getCookie("adStatus") == 'yes') {
                   $("#accountpage li:first").append('<li class="nav-item account-item">- <a href="#">Admin</a></li>');
                }
