@@ -27,11 +27,7 @@
                document.querySelector("#login").href = "javascript:logout();";
                document.querySelector("#login").id = "logout";
                if (getCookie("adStatus") == 'yes') {
-                  console.log("ghege");
-                  var here = document.getElementsByClassName("accountpage");
-                  var list = document.createElement("li");
-                  list.appendChild(document.createTextNode('<li class="nav-item">- <a href="admin.php">Admin</a></li>'));
-                  here.appendChild(list);
+                  $("#accountpage li:first").append('<li class="nav-item account-item">- <a href="admin.php">Admin</a></li>');
                }
             } else {
                window.location.href = "login.php";
@@ -54,7 +50,7 @@
    <div id="preloader"></div>
    <!--TODO: Header, Nav, Article, Aside-->
    <nav>
-      <ul class="nav d-flex justify-content-center fixed-top navaddpage">
+      <ul class="nav d-flex justify-content-center fixed-top navaddpage" id="navaddpage">
          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
          <li class="nav-item"><a class="nav-link" href="course.php">Course</a></li>
          <li class="nav-item"><a class="nav-link" href="account.php"><i class="fa-solid fa-user"></i></a></li>
@@ -64,7 +60,7 @@
 
    <div class="container d-flex align-items-center">
       <div class="container position-relative float-left" data-aos="zoom-in" data-aos-delay="100">
-         <ul class="text-white list-unstyled accountpage">
+         <ul class="text-white list-unstyled accountpage" id="accountpage">
             <li class="nav-item account-item">- <a href="#">Account Details</a></li>
             <li class="nav-item account-item">- <a href="#">Order</a></li>
             <li class="nav-item account-item">- <a id="login" href="#">Logout</a></li>

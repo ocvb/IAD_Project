@@ -32,7 +32,7 @@ function product_name($id) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/shop.css" type="text/css">
+    <link rel="stylesheet" href="css/course.css" type="text/css">
     <script type="module">
         import {
             getCookie
@@ -79,13 +79,13 @@ function product_name($id) {
 
     <!-- Section-->
     <section class="py-5">
-        <h2 class="text-white justify-content-center text-center">Burgers</h2>
+        <h2 class="text-white justify-content-center text-center">Courses</h2>
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-3 gx-lg-4 row-cols-2 row-cols-md-2 row-cols-xl-3 justify-content-center">
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" style="width:350px; height:350px; margin-left:auto; margin-right:auto;" src="images/photoshop.jpg" alt="..." />
+                        <img class="card-img-top" style="width:300px; height:300px; margin-left:auto; margin-right:auto;" src="images/photoshop.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -143,7 +143,7 @@ function product_name($id) {
                         <!-- Sale badge-->
                         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                         <!-- Product image-->
-                        <img class="card-img-top" style="width:350px; height:350px; margin-left:auto; margin-right:auto;" src="images/indesign.jpg" alt="..." />
+                        <img class="card-img-top" style="width:300px; height:300px; margin-left:auto; margin-right:auto;" src="images/indesign.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
