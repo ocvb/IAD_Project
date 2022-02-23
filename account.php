@@ -27,7 +27,7 @@
                document.querySelector("#login").href = "javascript:logout();";
                document.querySelector("#login").id = "logout";
                if (getCookie("adStatus") == 'yes') {
-                  $('.navaddpage').append('<li class="nav-item"><a class="nav-link active" href="admin.php">Admin</a></li>');
+                  $('.accountpage li:first').append('<li class="nav-item">- <a href="admin.php">Admin</a></li>');
                }
             } else {
                window.location.href = "login.php";
@@ -60,7 +60,7 @@
 
    <div class="container d-flex align-items-center">
       <div class="container position-relative float-left" data-aos="zoom-in" data-aos-delay="100">
-         <ul class="text-white list-unstyled">
+         <ul class="text-white list-unstyled accountpage">
             <li class="nav-item">- <a href="#">Account Details</a></li>
             <li class="nav-item">- <a href="#">Order</a></li>
             <li class="nav-item">- <a id="login" href="#">Logout</a></li>
