@@ -65,7 +65,7 @@ function product_name($id) {
         <ul class="nav d-flex justify-content-center fixed-top navaddpage">
             <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="course.php">Course</a></li>
-            <li class="nav-item"><a id="login" class="nav-link" href="account.php"><i class="fa-solid fa-user"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href="account.php"><i class="fa-solid fa-user"></i></a></li>
         </ul>
     </nav>
     <header class="bg-dark py-5">
