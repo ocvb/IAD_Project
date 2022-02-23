@@ -79,13 +79,13 @@ function product_name($id) {
 
     <!-- Section-->
     <section class="py-5">
-        <h2 class="text-white justify-content-center text-center">Courses</h2>
+        <h2 class="text-white justify-content-center text-center">Burgers</h2>
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-3 gx-lg-4 row-cols-2 row-cols-md-2 row-cols-xl-3 justify-content-center">
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="images/classic-beef-burger.jpg" alt="..." />
+                        <img class="card-img-top" style="width:350px; height:350px; margin-left:auto; margin-right:auto;" src="images/photoshop.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -113,7 +113,7 @@ function product_name($id) {
                         <!-- Sale badge-->
                         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                         <!-- Product image-->
-                        <img class="card-img-top" src="images/classic-beef-burger.jpg" alt="..." />
+                        <img class="card-img-top" style="width:300px; height:300px; margin-left:auto; margin-right:auto;" src="images/html5.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -143,7 +143,7 @@ function product_name($id) {
                         <!-- Sale badge-->
                         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                         <!-- Product image-->
-                        <img class="card-img-top" src="images/classic-beef-burger.jpg" alt="..." />
+                        <img class="card-img-top" style="width:350px; height:350px; margin-left:auto; margin-right:auto;" src="images/indesign.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -170,7 +170,7 @@ function product_name($id) {
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <img class="card-img-top" style="width:300px; height:300px; margin-left:auto; margin-right:auto;" src="images/swift-og.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
