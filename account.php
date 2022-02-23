@@ -27,7 +27,11 @@
                document.querySelector("#login").href = "javascript:logout();";
                document.querySelector("#login").id = "logout";
                if (getCookie("adStatus") == 'yes') {
-                  $('.accountpage li:first').append('<li class="nav-item">- <a href="admin.php">Admin</a></li>');
+                  console.log("ghege");
+                  var here = document.getElementsByClassName("accountpage");
+                  var list = document.createElement("li");
+                  list.appendChild(document.createTextNode('<li class="nav-item">- <a href="admin.php">Admin</a></li>'));
+                  here.appendChild(list);
                }
             } else {
                window.location.href = "login.php";
@@ -61,9 +65,9 @@
    <div class="container d-flex align-items-center">
       <div class="container position-relative float-left" data-aos="zoom-in" data-aos-delay="100">
          <ul class="text-white list-unstyled accountpage">
-            <li class="nav-item">- <a href="#">Account Details</a></li>
-            <li class="nav-item">- <a href="#">Order</a></li>
-            <li class="nav-item">- <a id="login" href="#">Logout</a></li>
+            <li class="nav-item account-item">- <a href="#">Account Details</a></li>
+            <li class="nav-item account-item">- <a href="#">Order</a></li>
+            <li class="nav-item account-item">- <a id="login" href="#">Logout</a></li>
          </ul>
       </div>
    </div>
