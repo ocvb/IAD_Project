@@ -1,4 +1,23 @@
-.container {
+.account-tabs {
+   height: 438px;
    margin-top: 150px;
    margin-bottom: 150px;
+}
+
+.account-tabs {
+   display: flex;
+}
+
+.account-item a:hover {
+   color: white;
+   text-decoration: none;
+}
+
+.dynamic-table {
+   top: 170px;
+   height: 400px;
+   display: flex;
+   margin-left: 220px;
+   width: 60%;
+   align-items: baseline;
 }

@@ -13,7 +13,9 @@
 
 
    <script type="module">
-      import { getCookie } from "./js/cookies.js";
+      import {
+         getCookie
+      } from "./js/cookies.js";
 
       $(document).ready(function() {
          function checklogin() {
@@ -23,11 +25,8 @@
             }
 
             if (getCookie("user") != "notlogged") {
-               
-               document.querySelector("#login").href = "javascript:logout();";
-               document.querySelector("#login").id = "logout";
                if (getCookie("adStatus") == 'yes') {
-                  $("#accountpage li:first").append('<li class="nav-item account-item">- <a href="admin.php">Admin</a></li>');
+                  $("#accountpage li:first").append('<li class="nav-item account-item">- <a href="#">Admin</a></li>');
                }
             } else {
                window.location.href = "login.php";
@@ -58,7 +57,7 @@
    </nav>
 
 
-   <div class="container d-flex align-items-center">
+   <div class="account-tabs container d-flex align-items-center border">
       <div class="container position-relative float-left" data-aos="zoom-in" data-aos-delay="100">
          <ul class="text-white list-unstyled accountpage" id="accountpage">
             <li class="nav-item account-item">- <a href="#">Account Details</a></li>
@@ -66,11 +65,19 @@
             <li class="nav-item account-item">- <a id="login" href="#">Logout</a></li>
          </ul>
       </div>
+
+      <div class="container position-absolute border dynamic-table">
+         <table class="text-white" cellpadding="3" cellspacing="2">
+            <tr>
+               <td class="nav-item account-item"><a class="nav-link" href="#">View</a></td>
+               <td class="nav-item account-item"><a class="nav-link" href="#">Delete</a></td>
+               <td class="nav-item account-item"><a class="nav-link" href="#">Update</a></td>
+            </tr>
+
+         </table>
+      </div>
    </div>
 
-   <div>
-
-   </div>
 
    <footer class="py-5 bg-dark">
       <div class="container">
