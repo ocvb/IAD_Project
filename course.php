@@ -57,8 +57,8 @@ function product_name($id)
     <!--TODO: Header, Nav, Article, Aside-->
     <nav>
         <ul class="nav d-flex justify-content-center fixed-top navaddpage">
-            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="course.php">Course</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active fw-bold" href="course.php">Course</a></li>
             <li class="nav-item"><a class="nav-link" href="account.php"><i class="fa-solid fa-user"></i></a></li>
         </ul>
     </nav>
@@ -75,7 +75,7 @@ function product_name($id)
     <section class="py-5">
         <h2 class="text-white justify-content-center text-center">Courses</h2>
         <div class="container px-4 px-lg-5 mt-5">
-            <div class="row gx-3 gx-lg-4 row-cols-2 row-cols-md-2 row-cols-xl-2 justify-content-center">
+            <div class="row gx-3 gx-lg-4 row-cols-1 row-cols-md-2 row-cols-xl-2 justify-content-center">
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
