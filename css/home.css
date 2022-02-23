@@ -14,17 +14,31 @@ h1, h2, h3, h4, h5, p {
   padding-top: 100px;
   margin-bottom: 0px;
 }
+.container-media::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.329);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.container-media h1::before {
+  color: white;
+}
 
 .container-media .box {
+  color: white;
   display: inline-block;
   position: relative;
-  width: calc(400px - 30px);
-  height: calc(300px - 30px);
+  width: calc(400px - 40px);
+  height: calc(300px - 50px);
   background: #000;
   margin: 15px;
   box-sizing: border-box;
-  border-radius: 10px;
-  background-image: url('../images/bg.jpg');
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0);
   background-size: cover;
 }
 
@@ -182,6 +196,7 @@ h1, h2, h3, h4, h5, p {
   transition: 0.3s;
   line-height: 1;
   color: white;
+  background: #ebbf73;
   border: 2px solid #cda45e;
 }
 #hero .btn-menu:hover,
