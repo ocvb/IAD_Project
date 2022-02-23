@@ -29,7 +29,6 @@ body {
   text-decoration: underline;
 }
 
-
 #preloader {
   position: fixed;
   top: 0;
@@ -54,6 +53,17 @@ body {
   height: 60px;
   -webkit-animation: animate-preloader 1s linear infinite;
   animation: animate-preloader 1s linear infinite;
+}
+
+.footer {
+  height: 5px;
+  bottom: 0px;
+  line-height: 20px;
+}
+
+.footer p{
+  line-height: 20px;
+  align-items: center;
 }
 
 @-webkit-keyframes animate-preloader {

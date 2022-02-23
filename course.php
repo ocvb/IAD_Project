@@ -122,7 +122,7 @@ function product_name($id)
                                     <div class="bi-star-fill"></div>
                                 </div>
                                 <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">$10.00</span>
+                                <span class="text-muted text-decoration-line-through">$420.00</span>
                                 $<?php echo update_product(2); ?>
                             </div>
                         </div>
@@ -151,7 +151,7 @@ function product_name($id)
                                     <div class="bi-star-fill"></div>
                                 </div>
                                 <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">$14.00</span>
+                                <span class="text-muted text-decoration-line-through">$340.00</span>
                                 $<?php echo update_product(3); ?>
                             </div>
                         </div>
