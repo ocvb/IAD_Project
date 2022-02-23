@@ -4,7 +4,8 @@ include_once "admin_check.php";
 echo "<script>var storage = sessionStorage.getItem('user');</script>";
 $storage = '<script>document.write(storage);</script>';
 
-function update_product($id) {
+function update_product($id)
+{
     global $db;
     $productid = $id;
     $sql = "SELECT price FROM course WHERE course_id = $productid";
@@ -12,7 +13,8 @@ function update_product($id) {
     $row = mysqli_fetch_array($result);
     return $row['price'];
 }
-function product_name($id) {
+function product_name($id)
+{
     global $db;
     $productid = $id;
     $sql = "SELECT course_name FROM course WHERE course_id = $productid";
@@ -40,19 +42,11 @@ function product_name($id) {
 
         $(document).ready(function() {
             function loggedin() {
-                if (getCookie("user") != "notlogged") {
-                    document.querySelector("#login").textContent = "Logout";
-                    document.querySelector("#login").href = "javascript:logout();";
-                    document.querySelector("#login").id = "logout";
-                    if (getCookie("adStatus") == 'yes') {
-                        $('.navaddpage').append('<li class="nav-item"><a class="nav-link active" href="admin.php">Admin</a></li>');
-                    }
-                }
+                document.querySelector("#logout").addEventListener("click", function() {
+                    $.post("cookies.php");
+                });
             }
             loggedin();
-            document.querySelector("#logout").addEventListener("click", function() {
-                $.post("cookies.php");
-            });
 
         });
     </script>
