@@ -16,16 +16,12 @@ h1, h2, h3, h4, h5, p {
 }
 .container-media::before {
   content: "";
-  background: rgba(0, 0, 0, 0.329);
+  background: rgba(0, 0, 0, 0.37);
   position: absolute;
   bottom: 0;
   top: 0;
   left: 0;
   right: 0;
-}
-
-.container-media h1::before {
-  color: white;
 }
 
 .container-media .box {
