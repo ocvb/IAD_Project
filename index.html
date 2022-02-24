@@ -21,23 +21,14 @@
 
       sessionStorage.setItem("user", "notlogged");
       $(document).ready(function () {
-         function loggedin() {
-            if (getCookie("user") != "notlogged") {
-               $('#loginicon').removeClass("fa-lock-open");
-               $('#loginicon').addClass("fa-lock");
-               document.querySelector("#login").href = "javascript:logout();";
-               document.querySelector("#login").id = "logout";
-               if (getCookie("adStatus") == 'yes') {
-                  $('.navaddpage').append('<li class="nav-item"><a class="nav-link active" href="admin.php">Admin</a></li>');
-               }
+         function checkadmin() {
+            if (getCookie("user") == '') {
+               $.post("cookies.php");
+               window.location.reload();
             }
             $.post("admin_check.php");
          }
-         if (getCookie("user") == '') {
-            $.post("cookies.php");
-            window.location.reload();
-         }
-         loggedin();
+         checkadmin();
 
          /*if (sessionStorage.getItem('user') == 'notlogged') {
             document.querySelector("#para").textContent = "test test";
