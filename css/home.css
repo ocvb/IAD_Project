@@ -299,7 +299,7 @@ h1, h2, h3, h4, h5, p {
   flex-wrap: wrap;
 }
 .review{
-  margin: 0 1rem;
+  margin: 0 2rem;
   min-width: 300px;
   flex: 1;
 }
