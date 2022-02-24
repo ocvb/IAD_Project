@@ -41,12 +41,14 @@ function product_name($id)
         } from "./js/cookies.js";
 
         $(document).ready(function() {
-            function loggedin() {
-                document.querySelector("#logout").addEventListener("click", function() {
-                    $.post("cookies.php");
-                });
+            function checkadmin() {
+            if (getCookie("user") == '') {
+               $.post("cookies.php");
+               window.location.reload();
             }
-            loggedin();
+            $.post("admin_check.php");
+         }
+         checkadmin();
 
         });
     </script>
