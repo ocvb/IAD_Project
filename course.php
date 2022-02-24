@@ -62,7 +62,7 @@ function product_name($id) {
             <li class="nav-item"><a class="nav-link" href="account.php"><i class="fa-solid fa-user"></i></a></li>
         </ul>
     </nav>
-    <header class="bg-dark py-5">
+    <header class="py-5">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
                 <h1 class="display-4 fw-bolder">Apply the courses you want!</h1>
@@ -72,7 +72,7 @@ function product_name($id) {
     </header>
 
     <!-- Section-->
-    <section class="py-5">
+    <section class="py-1">
         <h2 class="text-white justify-content-center text-center">Courses</h2>
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-3 gx-lg-4 row-cols-1 row-cols-md-2 row-cols-xl-2 justify-content-center">
@@ -89,7 +89,7 @@ function product_name($id) {
                                     <div class="bi-star-fill">★</div>
                                     <div class="bi-star-fill">★</div>
                                     <div class="bi-star-fill">★</div>
-                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill">★</div>
                                     <div class="bi-star-fill"></div>
                                 </div>
                                 <!-- Product price-->
@@ -98,7 +98,7 @@ function product_name($id) {
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Get course</a></div>
                         </div>
                     </div>
                 </div>
@@ -128,7 +128,7 @@ function product_name($id) {
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Get course</a></div>
                         </div>
                     </div>
                 </div>
@@ -157,7 +157,7 @@ function product_name($id) {
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Get course</a></div>
                         </div>
                     </div>
                 </div>
@@ -184,7 +184,7 @@ function product_name($id) {
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Get course</a></div>
                         </div>
                     </div>
                 </div>

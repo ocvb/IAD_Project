@@ -8,15 +8,9 @@
    text-decoration: none;
 }
 
-
 .payload {
-   top: 170px;
+   top: 80px;
    height: 600px;
-}
-
-.dynamic-table {
-   margin-top: 150px;
-   align-items: baseline;
 }
 
 .data {
