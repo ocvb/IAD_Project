@@ -33,9 +33,9 @@
             } else {
                window.location.href = "login.php";
             }
-            
+
             $.post("admin_check.php");
-            
+
          }
          checklogin();
          /*if (sessionStorage.getItem('user') == 'notlogged') {
@@ -58,16 +58,24 @@
    </nav>
 
 
-   <div class="account-tabs container-fluid">
-      <div class="container position-relative float-left" data-aos="zoom-in" data-aos-delay="100">
-         <ul class="text-white list-unstyled accountpage" id="accountpage">
-            <li class="nav-item account-item">- <a href="#">Account Details</a></li>
-            <li class="nav-item account-item">- <a href="#">Order</a></li>
-            <li class="nav-item account-item">- <a id="logout" href="#">Logout</a></li>
-         </ul>
+   <div class="container py-5">
+      <div class="navbar">
+         <div class="navbar">
+            <ul class="navbar">
+               <li class="nav-item account-item active">
+                  <a class="nav-link" href="#">Account Details</a>
+               </li>
+               <li class="nav-item account-item active">
+                  <a class="nav-link" href="#">Order</a>
+               </li>
+               <li class="nav-item account-item active">
+                  <a class="nav-link" id="logout" href="#">Logout</a>
+               </li>
+            </ul>
+         </div>
       </div>
 
-      <div class="container payload ml-4 align-center text-center"></div>
+      <div class="container payload py-5"></div>
 
       <script type="text/javascript">
          $(".payload").load("./adminpages/admin.php");
