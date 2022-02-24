@@ -1,11 +1,10 @@
 .account-tabs {
-   height: 438px;
-   width: 100%;
-   padding: 500px 0;
-}
-
-.account-tabs {
-   display: flex;
+   display: block;
+   top: 60px;
+   height: 838px;
+   padding-top: 100px;
+   padding-bottom: 400px;
+   padding-left: 200px;
 }
 
 .account-item a:hover {
@@ -13,19 +12,19 @@
    text-decoration: none;
 }
 
-.dynamic-table {
+.payload {
    top: 170px;
    height: 600px;
-   display: flex;
-   margin-left: 220px;
-   width: 60%;
+   margin-right: 500px;
+}
+
+.dynamic-table {
+   margin-top: 150px;
    align-items: baseline;
 }
 
 .data {
-   position: absolute;
    top: 80px;
-   width: 90%;
    height: inherit;
 }
 
