@@ -28,7 +28,7 @@
             if (getCookie("user") != "notlogged") {
                document.querySelector("#logout").href = "javascript:logout();";
                if (getCookie("adStatus") == 'yes') {
-                  $("#accountpage li:first").append('<li class="nav-item account-item">- <a id="admin" href="#">Admin</a></li>');
+                  $("#accountpage").append('<li class="nav-item account-item active"><a id="admin" class="nav-link" href="javascript:admin()">Admin</a></li>');
                }
             } else {
                window.location.href = "login.php";
@@ -57,18 +57,17 @@
       </ul>
    </nav>
 
-
    <div class="container py-5">
       <div class="navbar">
          <div class="navbar">
-            <ul class="navbar">
+            <ul class="navbar list-unstyled" id='accountpage'>
                <li class="nav-item account-item active">
-                  <a class="nav-link" href="#">Account Details</a>
+                  <a class="nav-link" href="javascript:test()">Account Details</a>
                </li>
-               <li class="nav-item account-item active">
+               <li class="nav-item account-item">
                   <a class="nav-link" href="#">Order</a>
                </li>
-               <li class="nav-item account-item active">
+               <li class="nav-item account-item">
                   <a class="nav-link" id="logout" href="#">Logout</a>
                </li>
             </ul>
@@ -76,10 +75,6 @@
       </div>
 
       <div class="container payload py-5"></div>
-
-      <script type="text/javascript">
-         $(".payload").load("./adminpages/admin.php");
-      </script>
    </div>
 
 
@@ -100,7 +95,15 @@
       }
 
       function admin() {
-         $.post("./adminpages/admin.php");
+         $(".payload").load("./adminpages/admin.php");
+      }
+
+      /*function test() {
+         var text = '<p>YEAYAYA</p>'
+         return this.innerHTML = "fefe";
+      }*/
+      function test() {
+         return `<p>YEAYAYA</p>`;
       }
    </script>
 </body>
