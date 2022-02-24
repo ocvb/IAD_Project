@@ -6,7 +6,8 @@ $query = "SELECT `regid`, `name`, `course`, `email`, `hp_no`, `reg_date` FROM me
 $result = mysqli_query($db, $query);
 $row = mysqli_fetch_array($result);
 
-function td($i) {
+function td($i)
+{
    return "<td>$i</td>";
 }
 ?>
@@ -18,8 +19,8 @@ function td($i) {
          <li class="nav-item account-item"><a id="updatephp" class="nav-link" href="#">Update</a></li>
          <li class="nav-item account-item"><a id="deletephp" class="nav-link" href="#">Delete</a></li>
       </ul>
+      <hr class="text-white" width="20%">
    </nav>
-   <hr class="text-white">
    <div class="container data text-white view" style="display:none">
       <!--echo "<tr>".td($row['regid']). td($row['name']). td($row['course'])."</tr>";-->
       <div class="row">
@@ -39,7 +40,7 @@ function td($i) {
             <div>Phone</div>
          </div>
       </div>
-      <hr class="position-relative">
+      <hr class="position-relative" width="85%">
       <div class="row">
          <div class="col">
             <div><?php echo $row['regid']; ?></div>
@@ -78,7 +79,7 @@ function td($i) {
             <div>Phone</div>
          </div>
       </div>
-      <hr class="position-relative">
+      <hr class="position-relative" width="85%">
       <div class="row">
          <div class="col">
             <div><?php echo $row['regid']; ?></div>
@@ -117,7 +118,7 @@ function td($i) {
             <div>Phone</div>
          </div>
       </div>
-      <hr class="position-relative">
+      <hr class="position-relative" width="85%">
       <div class="row">
          <div class="col">
             <div><?php echo $row['regid']; ?></div>
