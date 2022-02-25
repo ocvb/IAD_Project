@@ -7,7 +7,6 @@ p {
   color: white;
 }
 
-
 .container-media {
   position: relative;
   background: url("../images/about-bg.jpg") top center;
@@ -47,8 +46,6 @@ p {
   background-size: cover;
 }
 
-
-
 .container-media .box .icon {
   text-shadow: 1px 4px 5px black;
   position: absolute;
@@ -67,17 +64,6 @@ p {
   height: 80px;
   border-radius: 50%;
 }
-
-.container-media .box:hover .icon .fa-facebook {
-  left: 50px;
-}
-.container-media .box:hover .icon .fa-instagram {
-  left: calc(100% - 30px);
-  /*left: 50px;*/
-}
-/*#images-instagarm {
-  padding-left: 10px;
-}*/
 
 .container-media .box .icon .fa-brands {
   position: absolute;
@@ -126,7 +112,7 @@ p {
   margin-top: 50px;
   width: 100%;
   height: 75vh;
-  background: url("../images/aboutt.jpg") top left;
+  background: url("../images/about_review.jpg") top left;
   background-size: cover;
   position: relative;
   background-attachment: fixed;
@@ -226,7 +212,7 @@ p {
 }
 
 .rev-section {
-  background: url("../images/aboutt.jpg");
+  background: url("../images/about_review.jpg");
   background-size: cover;
   position: relative;
   background-attachment: fixed;
@@ -296,7 +282,7 @@ p {
   margin-bottom: 0.25rem;
 }
 .place-review {
-  color: rgb(134, 134, 134);
+  color: rgb(255, 255, 255);
   font-style: italic;
 }
 .rating {
