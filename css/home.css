@@ -8,10 +8,6 @@ p {
 }
 
 
-#images-instagarm {
-  padding-left: 10px;
-}
-
 .container-media {
   position: relative;
   background: url("../images/about-bg.jpg") top center;
@@ -75,6 +71,9 @@ p {
 .container-media .box:hover .icon .fa-instagram {
   left: 50px;
 }
+/*#images-instagarm {
+  padding-left: 10px;
+}*/
 
 .container-media .box .icon .fa-brands {
   position: absolute;
