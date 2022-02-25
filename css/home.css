@@ -68,8 +68,12 @@ p {
   border-radius: 50%;
 }
 
-.container-media .box:hover .icon .fa-instagram {
+.container-media .box:hover .icon .fa-facebook {
   left: 50px;
+}
+.container-media .box:hover .icon .fa-instagram {
+  left: calc(100% - 30px);
+  /*left: 50px;*/
 }
 /*#images-instagarm {
   padding-left: 10px;
