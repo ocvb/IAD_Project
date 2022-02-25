@@ -20,19 +20,20 @@ if (isset($_POST['submit'])) {
    $email = mysqli_escape_string($db, $_POST['email']);
    $phone = mysqli_escape_string($db, $_POST['phone']);
    $password = mysqli_escape_string($db, md5($_POST['password']));
-   echo $name . $course . $phone . $email . $password;
+   //echo $name . $course . $phone . $email . $password;
+
    $sql = "INSERT INTO `members` (`name`, `course`, `email`, `hp_no`, `reg_date`, `password`) VALUES ('$name ' , '$course' , '$email' , $phone , '$date' , '$password')";
    mysqli_query($db, $sql);
-   $i = 0;
    echo mysqli_error($db);
+
+   $i = 0;
    if (mysqli_error($db)) {
       $i = 0;
    } else {
       $i = 1;
    }
 
-   function timeout($set, $here)
-   {
+   function timeout($set, $here) {
       $i = 0;
       while ($i < $set) {
          sleep(1);
@@ -40,8 +41,6 @@ if (isset($_POST['submit'])) {
       }
       header("Location: ./$here");
    }
-
-   
 }
 ?>
 
