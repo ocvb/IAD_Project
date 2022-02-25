@@ -46,6 +46,8 @@ p {
   background-size: cover;
 }
 
+
+
 .container-media .box .icon {
   text-shadow: 1px 4px 5px black;
   position: absolute;
@@ -63,6 +65,10 @@ p {
   width: 80px;
   height: 80px;
   border-radius: 50%;
+}
+
+.container-media .box:hover .icon .fa-instagram {
+  left: 50px;
 }
 
 .container-media .box .icon .fa-brands {
