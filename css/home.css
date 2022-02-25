@@ -1,4 +1,9 @@
-h1, h2, h3, h4, h5, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
   color: white;
 }
 
@@ -10,12 +15,12 @@ h1, h2, h3, h4, h5, p {
   width: 100%;
   height: 70vh;
   padding-top: 100px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .container-media::before {
   content: "";
-  background: rgba(0, 0, 0, 0.37);
+  background: rgba(0, 0, 0, 0.253);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -23,7 +28,7 @@ h1, h2, h3, h4, h5, p {
   right: 0;
 }
 
-.container-media a{
+.container-media a {
   color: transparent;
 }
 
@@ -53,29 +58,28 @@ h1, h2, h3, h4, h5, p {
 }
 
 .container-media .box:hover .icon {
-  top:20px;
+  top: 20px;
   left: calc(50% - 40px);
   width: 80px;
   height: 80px;
-  border-radius: 50%
-  
+  border-radius: 50%;
 }
 
-.container-media .box .icon .fa-brands{
+.container-media .box .icon .fa-brands {
   position: absolute;
   top: 50%;
-  left:50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   font-size: 80px;
   transition: 0.5s;
   color: #fff;
 }
 
-.container-media .box:hover .icon .fa-brands{
+.container-media .box:hover .icon .fa-brands {
   font-size: 40px;
 }
 
-.container-media .box .media-text{
+.container-media .box .media-text {
   position: absolute;
   margin-left: 15%;
   top: 50%;
@@ -83,17 +87,19 @@ h1, h2, h3, h4, h5, p {
   color: red !important;
 }
 
-.media-text h4, .media-text p {
+.media-text h4,
+.media-text p {
   color: rgba(255, 255, 255, 0);
   transition: ease-in 0.1s;
 }
 
 .container-media .box:hover .media-text {
   top: 50%;
-  display:block;
+  display: block;
 }
 
-.box:hover .media-text h4, .box:hover .media-text p {
+.box:hover .media-text h4,
+.box:hover .media-text p {
   text-shadow: 1px 4px 5px black;
   color: rgb(255, 255, 255);
 }
@@ -106,7 +112,7 @@ h1, h2, h3, h4, h5, p {
   margin-top: 50px;
   width: 100%;
   height: 75vh;
-  background: url("../images/aboutt.jpg") top center;
+  background: url("../images/aboutt.jpg") top left;
   background-size: cover;
   position: relative;
   background-attachment: fixed;
@@ -115,7 +121,8 @@ h1, h2, h3, h4, h5, p {
 
 .big-container:before {
   content: "";
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.158);
+  background-size: cover;
   position: absolute;
   bottom: 0;
   top: 0;
@@ -136,7 +143,8 @@ h1, h2, h3, h4, h5, p {
   width: 100%;
   height: 100%;
 }
-#hero {
+
+.hero {
   width: 100%;
   height: 100vh;
   background: url("../ite/banner.jpg") top center;
@@ -144,28 +152,21 @@ h1, h2, h3, h4, h5, p {
   position: relative;
   padding: 0;
 }
-#hero:before {
+.hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.226);
   position: absolute;
   bottom: 0;
   top: 0;
   left: 0;
   right: 0;
 }
-#hero .container {
+.hero .container {
   padding-top: 0;
   top: -100px;
 }
-@media (max-width: 992px) {
-  #hero .container {
-    padding-top: 98px;
-  }
-  .container-media {
-    height: 200%;
-  }
-}
-#hero h1 {
+
+.hero h1 {
   margin: 0;
   font-size: 48px;
   font-weight: 700;
@@ -173,19 +174,19 @@ h1, h2, h3, h4, h5, p {
   color: #fff;
   font-family: "Poppins", sans-serif;
 }
-#hero h1 span {
+.hero h1 span {
   color: #cda45e;
 }
-#hero h2 {
+.hero h2 {
   color: #eee;
   margin-bottom: 10px 0 0 0;
   font-size: 22px;
 }
-#hero .btns {
+.hero .btns {
   margin-top: 30px;
 }
-#hero .btn-menu,
-#hero .btn-book {
+.hero .btn-menu,
+.hero .btn-book {
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.5px;
@@ -199,22 +200,112 @@ h1, h2, h3, h4, h5, p {
   background: #ebbf73;
   border: 2px solid #cda45e;
 }
-#hero .btn-menu:hover,
-#hero .btn-book:hover {
+.hero .btn-menu:hover,
+.hero .btn-book:hover {
   background: #cda45e;
   color: #fff;
 }
-#hero .btn-book {
+.hero .btn-book {
   margin-left: 15px;
 }
 
+.rev-section {
+  margin: auto;
+  padding: 0 1rem;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+.note {
+  font-size: 1.1rem;
+  color: rgb(150, 150, 150);
+  font-style: italic;
+  color: white;
+}
+
+.reviews {
+  margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.review {
+  margin: 0 2rem;
+  min-width: 300px;
+  flex: 1;
+}
+
+.head-review {
+  margin: 1.75rem auto;
+  width: 100px;
+  height: 100px;
+}
+.head-review img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-position: top left;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.body-review {
+  color: white;
+  padding: 1.3rem;
+  box-shadow: 3px 3px 5px 0 rgba(185, 185, 185, 0.459);
+  border-radius: 17px;
+  background-color: rgba(189, 189, 189, 0.562);
+}
+.name-review {
+  font-size: 1.1rem;
+  color: inherit;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+.place-review {
+  color: rgb(0, 0, 0);
+  font-style: italic;
+}
+.rating {
+  color: rgb(253, 180, 42);
+  margin: 1rem 0;
+}
+.desc-review {
+  padding-top: 5px;
+  margin: auto;
+  width: 70%;
+  line-height: 1.1rem;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 992px) {
+  .hero .container {
+    padding-top: 98px;
+  }
+  .container-media {
+    height: 200%;
+  }
+}
+
+@media (max-width: 678px) {
+  .review {
+    margin-top: 1.5rem;
+  }
+}
+
 @media (min-width: 1024px) {
-  #hero {
+  .hero {
     background-attachment: fixed;
   }
 }
 @media (max-width: 992px) {
-  #hero .play-btn {
+  .hero .play-btn {
     margin-top: 30px;
   }
   .img {
@@ -232,20 +323,20 @@ h1, h2, h3, h4, h5, p {
   }
 }
 @media (max-height: 500px) {
-  #hero {
+  .hero {
     height: auto;
   }
-  #hero .container {
+  .hero .container {
     padding-top: 130px;
     padding-bottom: 60px;
   }
 }
 @media (max-width: 768px) {
-  #hero h1 {
+  .hero h1 {
     font-size: 28px;
     line-height: 36px;
   }
-  #hero h2 {
+  .hero h2 {
     font-size: 18px;
     line-height: 24px;
   }
@@ -270,79 +361,5 @@ h1, h2, h3, h4, h5, p {
   100% {
     transform: scale(1, 1);
     opacity: 0;
-  }
-}
-
-.rev-section{
-  margin: auto;
-  padding: 0 1rem;
-  max-width: 1100px;
-  text-align: center;
-}
-
-.title{
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  color: white;
-  margin-bottom: .5rem;
-}
-.note{
-  font-size: 1.1rem;
-  color: rgb(150, 150, 150);
-  font-style: italic;
-  color: white;
-}
-
-.reviews{
-  margin: 2rem auto;
-  display: flex;
-  flex-wrap: wrap;
-}
-.review{
-  margin: 0 2rem;
-  min-width: 300px;
-  flex: 1;
-}
-
-.head-review{
-  margin: 1.75rem auto;
-  width: 150px;
-  height: 150px;
-}
-img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, .25);
-}
-
-.body-review{
-  background-color: rgb(238, 238, 238);
-  padding: 2.5rem;
-  box-shadow: 2px 2px 10px 3px rgb(225, 225, 225);
-}
-.name-review{
-  font-size: 1.5rem;
-  color: rgb(50, 50, 50);
-  margin-bottom: .25rem;
-}
-.place-review{
-  color: red;
-  font-style: italic;
-}
-.rating{
-  color: rgb(253, 180, 42);
-  margin: 1rem 0;
-}
-.desc-review{
-  line-height: 1.5rem;
-  letter-spacing: 1px;
-  color: rgb(150, 150, 150);
-}
-
-@media (max-width: 678px){
-  .review{
-    margin-top: 1.5rem;
   }
 }
