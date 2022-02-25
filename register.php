@@ -5,11 +5,12 @@ include_once "db.php";
 
 if (isset($_POST['submit'])) {
    $name = mysqli_escape_string($db, $_POST['name']);
+   $course = mysqli_escape_string($db, $_POST['courses']);
    $email = mysqli_escape_string($db, $_POST['email']);
    $phone = mysqli_escape_string($db, $_POST['phone']);
    $password = mysqli_escape_string($db, md5($_POST['password']));
-   echo $name . $phone . $email . $password;
-   $sql = "INSERT INTO `members` (`name`, `hp_no`, `email`, `password`) VALUES ('$name', $phone, '$email', '$password')";
+   echo $name . $course . $phone . $email . $password;
+   $sql = "INSERT INTO `members` (`name`, `courses`, `email`, `hp_no`, `password`) VALUES ('$name ' , '$course' , '$email' , $phone , '$password')";
    mysqli_query($db, $sql);
    $i = 0;
    echo mysqli_error($db);
@@ -65,6 +66,15 @@ if (isset($_POST['submit'])) {
             <div class="top-form form-group">
                <label for="">Name:</label>
                <input type="text" name="name" class="form-control">
+            </div>
+            <div class="form-group">
+               <label for="courses">Course:</label><br>
+               <select name="courss" id="courses">
+                  <option value="photoshop">AdobePhotoshop</option>
+                  <option value="html5">Creating website with HTML5</option>
+                  <option value="InDesign">Adobe InDesign</option>
+                  <option value="Swift">Swift programming</option>
+               </select>
             </div>
             <div class="form-group">
                <label for="">Email:</label>
