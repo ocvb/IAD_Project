@@ -64,19 +64,19 @@ if (isset($_POST['submit'])) {
          <form method="POST" class="col">
             <div class="top-form form-group">
                <label for="">Name:</label>
-               <input type="text" name="name" class="form-control">
+               <input type="text" name="name" placeholder="Name" class="form-control">
             </div>
             <div class="form-group">
                <label for="">Email:</label>
-               <input type="email" name="email" class="form-control">
+               <input type="email" name="email" placeholder="Email" class="form-control">
             </div>
             <div class="form-group">
                <label for="">Phone Number:</label>
-               <input type="number" name="phone" oninput="if (this.value.length > 8) {this.value = this.value.slice(0, 8);}" class="form-control">
+               <input type="number" name="phone" placeholder="Phone No." oninput="if (this.value.length > 8) {this.value = this.value.slice(0, 8);}" class="form-control">
             </div>
             <div class="form-group">
                <label for="">Password:</label>
-               <input type="password" name="password" class="form-control">
+               <input type="password" name="password" placeholder="Password" class="form-control">
             </div>
             <div class="form-group loginstatus">
                <?php
