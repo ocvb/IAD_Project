@@ -10,17 +10,18 @@ $result = mysqli_query($db, $query);
 while ($row = mysqli_fetch_array($result)) {
    $coursename[] = $row['course_name'];
 }
-print_r( $coursename );
 
 
 if (isset($_POST['submit'])) {
+   $date = date('Y-m-d H:i:s');
+
    $name = mysqli_escape_string($db, $_POST['name']);
    $course = mysqli_escape_string($db, $_POST['course']);
    $email = mysqli_escape_string($db, $_POST['email']);
    $phone = mysqli_escape_string($db, $_POST['phone']);
    $password = mysqli_escape_string($db, md5($_POST['password']));
    echo $name . $course . $phone . $email . $password;
-   $sql = "INSERT INTO `members` (`name`, `course`, `email`, `hp_no`, `password`) VALUES ('$name ' , '$course' , '$email' , $phone , '$password')";
+   $sql = "INSERT INTO `members` (`name`, `course`, `email`, `hp_no`, `reg_date`, `password`) VALUES ('$name ' , '$course' , '$email' , $phone , '$date' , '$password')";
    mysqli_query($db, $sql);
    $i = 0;
    echo mysqli_error($db);
