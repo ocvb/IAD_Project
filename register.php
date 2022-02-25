@@ -2,6 +2,7 @@
 include_once "db.php";
 
 //$sql = "INSERT INTO `members`(`name`, `phone`, `email`, `address`) VALUES ('john', 2132132, 'awefwune@gmail.com', 'address')"; mysqli_query($db, $sql);
+$coursearray = array('photoshop', 'html5', 'indesign', 'swift');
 
 if (isset($_POST['submit'])) {
    $name = mysqli_escape_string($db, $_POST['name']);
@@ -29,6 +30,8 @@ if (isset($_POST['submit'])) {
       }
       header("Location: ./$here");
    }
+
+   
 }
 ?>
 
@@ -70,10 +73,15 @@ if (isset($_POST['submit'])) {
             <div class="form-group">
                <label for="courses">Course:</label><br>
                <select name="courss" id="courses">
+                  <?php 
+                  foreach ($coursearray as $value) {
+                     echo "<option value='$value'>AdobePhotoshop</option>";
+                  }
+                  ?>
                   <option value="photoshop">AdobePhotoshop</option>
                   <option value="html5">Creating website with HTML5</option>
-                  <option value="InDesign">Adobe InDesign</option>
-                  <option value="Swift">Swift programming</option>
+                  <option value="indesign">Adobe InDesign</option>
+                  <option value="swift">Swift programming</option>
                </select>
             </div>
             <div class="form-group">
