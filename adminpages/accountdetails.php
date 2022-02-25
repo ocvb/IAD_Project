@@ -97,6 +97,11 @@ function td($i)
             <div><?php echo $row['hp_no']; ?></div>
          </div>
       </div>
+      <form method="POST">
+         <div class="col">
+            <div><input type="submit" name></div>
+         </div>
+      </form>
    </div>
 
    <div class="container data text-white update" style="display:none">

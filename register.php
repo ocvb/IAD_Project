@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
    <nav>
       <ul class="nav d-flex justify-content-center fixed-top navaddpage">
          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-         <li class="nav-item"><a class="nav-link" href="order.php">Order</a></li>
+         <li class="nav-item"><a class="nav-link" href="course.php">Course</a></li>
          <li class="nav-item"><a class="nav-link" href="register.php">Register</a></li>
          <li class="nav-item"><a class="nav-link" href="account.php"><i class="fa-solid fa-user"></i></a></li>
       </ul>

@@ -95,7 +95,7 @@
       }
 
       function admin() {
-         $(".payload").load("./adminpages/admin.php");
+         $(".payload").load("admin.php");
       }
 
       /*function test() {
