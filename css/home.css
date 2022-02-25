@@ -9,8 +9,8 @@ p {
 
 .container-media {
   position: relative;
-  background: url("../images/about-bg.jpg") top center;
-  background-size: fit;
+  background: url("../images/aboutt.jpg") center center;
+  background-size: cover;
   background-attachment: fixed;
   width: 100%;
   height: 70vh;
