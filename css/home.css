@@ -7,6 +7,11 @@ p {
   color: white;
 }
 
+
+#images-instagarm {
+  padding-left: 10px;
+}
+
 .container-media {
   position: relative;
   background: url("../images/about-bg.jpg") top center;
