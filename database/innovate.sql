@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 23, 2022 at 05:52 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- Host: localhost:3306
+-- Generation Time: Feb 25, 2022 at 09:54 AM
+-- Server version: 5.7.24
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -55,10 +55,10 @@ INSERT INTO `course` (`course_id`, `course_name`, `price`, `description`, `cours
 CREATE TABLE `members` (
   `regid` int(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `course` int(18) NOT NULL,
+  `course` varchar(18) NOT NULL,
   `email` varchar(255) NOT NULL,
   `hp_no` int(8) NOT NULL,
-  `reg_date` datetime DEFAULT NULL,
+  `reg_date` datetime DEFAULT CURRENT_TIMESTAMP,
   `password` varchar(255) NOT NULL,
   `administrator` varchar(128) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -68,9 +68,11 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`regid`, `name`, `course`, `email`, `hp_no`, `reg_date`, `password`, `administrator`) VALUES
-(1, 'john', 0, 'awefwune@gmail.com', 2132132, NULL, 'c13367945d5d4c91047b3b50234aa7ab', NULL),
-(2, 'Admin', 0, 'admin@admin.com', 0, NULL, '81dc9bdb52d04dc20036dbd8313ed055', 'yes'),
-(3, 'awfjiawen', 0, 'awenfio@gmail.com', 21378213, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL);
+(1, 'john', '0', 'awefwune@gmail.com', 2132132, '2022-02-02 17:49:11', 'c13367945d5d4c91047b3b50234aa7ab', NULL),
+(2, 'Admin', 'null', 'admin@admin.com', 21378213, '2022-02-01 17:49:09', '81dc9bdb52d04dc20036dbd8313ed055', 'yes'),
+(3, 'awfjiawen', 'null', 'awenfio@gmail.com', 21378213, '2022-02-21 17:49:06', '21232f297a57a5a743894a0e4a801fc3', NULL),
+(4, 'awefawef ', 'photoshop', 'awef@gmail.com', 21837129, '2022-02-25 17:48:42', '202cb962ac59075b964b07152d234b70', NULL),
+(5, '21312321 ', 'photoshop', 'awioken@gmail.com', 81273891, '2022-02-25 09:53:19', '202cb962ac59075b964b07152d234b70', NULL);
 
 -- --------------------------------------------------------
 
@@ -82,7 +84,7 @@ CREATE TABLE `order_info` (
   `orderid` int(255) NOT NULL,
   `customer_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -128,7 +130,7 @@ ALTER TABLE `course`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `regid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `regid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `order_info`
