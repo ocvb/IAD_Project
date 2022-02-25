@@ -121,7 +121,7 @@ p {
 
 .big-container:before {
   content: "";
-  background: rgba(0, 0, 0, 0.158);
+  background: rgba(0, 0, 0, 0.089);
   background-size: cover;
   position: absolute;
   bottom: 0;
@@ -132,6 +132,7 @@ p {
 
 .content {
   text-align: left;
+  text-shadow: 1px 2px 2px black;
 }
 .main-container {
   padding: 0;
@@ -142,6 +143,7 @@ p {
 .img {
   width: 100%;
   height: 100%;
+  border-radius: 13px;
 }
 
 .hero {
@@ -210,10 +212,23 @@ p {
 }
 
 .rev-section {
+  background: url("../images/aboutt.jpg");
+  background-size: cover;
+  position: relative;
+  background-attachment: fixed;
   margin: auto;
   padding: 0 1rem;
-  max-width: 1100px;
   text-align: center;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.308);
+}
+.rev-section::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.089);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .title {
@@ -248,19 +263,17 @@ p {
 .head-review img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  background-position: top left;
-  background-size: cover;
+  background: rgba(0, 0, 0, 0.411);
+  object-fit: fill;
   border-radius: 50%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.25);
 }
 
 .body-review {
   color: white;
   padding: 1.3rem;
-  box-shadow: 3px 3px 5px 0 rgba(185, 185, 185, 0.459);
   border-radius: 17px;
-  background-color: rgba(189, 189, 189, 0.562);
+  
 }
 .name-review {
   font-size: 1.1rem;
@@ -269,7 +282,7 @@ p {
   margin-bottom: 0.25rem;
 }
 .place-review {
-  color: rgb(0, 0, 0);
+  color: rgb(134, 134, 134);
   font-style: italic;
 }
 .rating {
@@ -282,6 +295,7 @@ p {
   width: 70%;
   line-height: 1.1rem;
   letter-spacing: 1px;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.712);
 }
 
 @media (max-width: 992px) {
