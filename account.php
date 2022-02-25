@@ -95,7 +95,8 @@
       }
 
       function admin() {
-         $(".payload").load("admin.php");
+         location.href = "./adminpages/admin.php";
+         //$(".payload").load("admin.php");
       }
 
       /*function test() {

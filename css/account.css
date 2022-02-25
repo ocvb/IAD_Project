@@ -12,6 +12,16 @@
    top: 80px;
    height: 600px;
 }
+.dynamic-table {
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+
+}
+.dynamic-table nav{
+   margin-top: 60px;
+   margin-left: 50px;
+}
 
 .data {
    top: 80px;
