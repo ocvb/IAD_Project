@@ -30,9 +30,9 @@ function td($i)
    <!--TODO: Header, Nav, Article, Aside-->
    <nav>
       <ul class="nav d-flex justify-content-center align-items-center  fixed-top navaddpage">
-         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-         <li class="nav-item"><a class="nav-link" href="course.php">Course</a></li>
-         <li class="nav-item"><a class="nav-link" href="account.php"><i class="fa-solid fa-user"></i></a></li>
+         <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+         <li class="nav-item"><a class="nav-link" href="../course.php">Course</a></li>
+         <li class="nav-item"><a class="nav-link" href="../account.php"><i class="fa-solid fa-user"></i></a></li>
       </ul>
    </nav>
    <div class="container-fluid dynamic-table justify-content-center">
@@ -42,7 +42,7 @@ function td($i)
             <li class="nav-item account-item"><a id="updatephp" class="nav-link" href="update.php">Update</a></li>
             <li class="nav-item account-item"><a id="deletephp" class="nav-link" href="delete.php">Delete</a></li>
          </ul>
-         <hr class="text-white" width="20%">
+         <hr class="text-white" width="250px">
       </nav>
       <div class="container data text-white view">
          <!--echo "<tr>".td($row['regid']). td($row['name']). td($row['course'])."</tr>";-->

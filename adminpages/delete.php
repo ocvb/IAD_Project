@@ -30,9 +30,9 @@ function td($i)
    <!--TODO: Header, Nav, Article, Aside-->
    <nav>
       <ul class="nav d-flex justify-content-center align-items-center  fixed-top navaddpage">
-         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-         <li class="nav-item"><a class="nav-link" href="course.php">Course</a></li>
-         <li class="nav-item"><a class="nav-link" href="account.php"><i class="fa-solid fa-user"></i></a></li>
+         <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+         <li class="nav-item"><a class="nav-link" href="../course.php">Course</a></li>
+         <li class="nav-item"><a class="nav-link" href="../account.php"><i class="fa-solid fa-user"></i></a></li>
       </ul>
    </nav>
    <div class="container-fluid dynamic-table justify-content-center">
@@ -42,16 +42,13 @@ function td($i)
             <li class="nav-item account-item"><a id="updatephp" class="nav-link" href="update.php">Update</a></li>
             <li class="nav-item account-item"><a id="deletephp" class="nav-link" href="#">Delete</a></li>
          </ul>
-         <hr class="text-white" width="20%">
+         <hr class="text-white" width="250px">
       </nav>
 
       <div class="container data text-white delete">
          <!--echo "<tr>".td($row['regid']). td($row['name']). td($row['course'])."</tr>";-->
          <form method="POST">
             <table class="table text-white" cellpadding="3" cellspacing="3">
-               <tr>
-                  <td><input type="text"></td>
-               </tr>
                <tr>
                   <td scope="col">ID</td>
                   <td scope="col">Name</td>
@@ -65,7 +62,10 @@ function td($i)
                   echo "<tr>" . td($row[$dbarray[0]]) . td($row[$dbarray[1]]) . td($row[$dbarray[2]]) . td($row[$dbarray[3]]) . td($row[$dbarray[4]]) . "</tr>";
                }
                ?>
+            </table>
+            <table>
                <tr>
+                  <td class="text-white">Please enter member ID to delete: <input type="number" name="id"></td>
                   <td><input type="submit" name="delete" value="Delete"></td>
                </tr>
             </table>

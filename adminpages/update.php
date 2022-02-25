@@ -3,7 +3,7 @@ include_once "../db.php";
 
 $array = array('ID', 'Name', 'Course', 'Email', 'Phone');
 $dbarray = array('regid', 'name', 'course', 'email', 'hp_no');
-$dbarray = array('regid', 'name', 'course', 'email', 'hp_no');
+
 
 $email = $_COOKIE['user'];
 //$query = "SELECT `regid`, `name`, `course`, `email`, `hp_no`, `reg_date` FROM members WHERE email = '$email'";
@@ -11,8 +11,16 @@ $query = "SELECT `regid`, `name`, `course`, `email`, `hp_no`, `reg_date` FROM me
 $result = mysqli_query($db, $query);
 
 
-function td($i)
-{
+if (isset($_POST['getid'])) {
+   $id = $_POST['regid'];
+   $name = $_POST['name'];
+   $course = $_POST['course'];
+   $email = $_POST['email'];
+   $phone = $_POST['hp_no'];
+   $query = "UPDATE `members` SET `regid`=$id,`name`='$name',`course`='$course',`email`='$email',`hp_no`=$phone,`reg_date`=[value-6],`password`=[value-7],`administrator`=[value-8] WHERE 1";
+}
+
+function td($i) {
    return "<td>$i</td>";
 }
 ?>
@@ -30,19 +38,19 @@ function td($i)
    <!--TODO: Header, Nav, Article, Aside-->
    <nav>
       <ul class="nav d-flex justify-content-center align-items-center  fixed-top navaddpage">
-         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-         <li class="nav-item"><a class="nav-link" href="course.php">Course</a></li>
-         <li class="nav-item"><a class="nav-link" href="account.php"><i class="fa-solid fa-user"></i></a></li>
+         <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+         <li class="nav-item"><a class="nav-link" href="../course.php">Course</a></li>
+         <li class="nav-item"><a class="nav-link" href="../account.php"><i class="fa-solid fa-user"></i></a></li>
       </ul>
    </nav>
    <div class="container-fluid dynamic-table justify-content-center">
       <nav>
          <ul class="nav list-unstyled bg-transparent">
             <li class="nav-item account-item"><a id='viewphp' class="nav-link" href="admin.php">View</a></li>
-            <li class="nav-item account-item"><a id="updatephp" class="nav-link" href="#">Update</a></li>
+            <li class="nav-item account-item"><a id="updatephp" class="nav-link" href="update.php">Update</a></li>
             <li class="nav-item account-item"><a id="deletephp" class="nav-link" href="delete.php">Delete</a></li>
          </ul>
-         <hr class="text-white" width="20%">
+         <hr class="text-white" width="250px">
       </nav>
 
       <div class="container data text-white update">
@@ -51,17 +59,10 @@ function td($i)
             <table>
                <tr>
                   <td class="text-white">Please enter member ID: <input type="number" name="id"></td>
-                  <td><input type="submit" class="btn" name="getid" value="Submit"></td>
+                  <td><input type="submit" name="getid" value="Submit"></td>
                </tr>
             </table>
-            <table class="table text-white" cellpadding="3" cellspacing="3">
-               <tr>
-                  <td scope="col">ID</td>
-                  <td scope="col">Name</td>
-                  <td scope="col">Course</td>
-                  <td scope="col">Email</td>
-                  <td scope="col">Phone</td>
-               </tr>
+            <table class="text-white" cellpadding="3" cellspacing="3">
                <?php
                if (isset($_POST['getid'])) {
                   $i = 0;
@@ -70,10 +71,10 @@ function td($i)
                      echo "<tr>" . td("$array[$i]: <input type='text' name='$dbarray[$i]'>") . "</tr>";
                      $i++;
                   }
+                  echo "<tr>" . td('<input type="submit" name="update" value="Update">') . "</tr>";
                }
                ?>
                <tr>
-                  <td><input type="submit" name="update" value="Update"></td>
                   <td>
                      <p class="message"></p>
                   </td>
