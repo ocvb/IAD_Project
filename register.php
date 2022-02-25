@@ -3,15 +3,24 @@ include_once "db.php";
 
 //$sql = "INSERT INTO `members`(`name`, `phone`, `email`, `address`) VALUES ('john', 2132132, 'awefwune@gmail.com', 'address')"; mysqli_query($db, $sql);
 $coursearray = array('photoshop', 'html5', 'indesign', 'swift');
+$coursename = array();
+$query = "SELECT course_name FROM course";
+$result = mysqli_query($db, $query);
+
+while ($row = mysqli_fetch_array($result)) {
+   $coursename[] = $row['course_name'];
+}
+print_r( $coursename );
+
 
 if (isset($_POST['submit'])) {
    $name = mysqli_escape_string($db, $_POST['name']);
-   $course = mysqli_escape_string($db, $_POST['courses']);
+   $course = mysqli_escape_string($db, $_POST['course']);
    $email = mysqli_escape_string($db, $_POST['email']);
    $phone = mysqli_escape_string($db, $_POST['phone']);
    $password = mysqli_escape_string($db, md5($_POST['password']));
    echo $name . $course . $phone . $email . $password;
-   $sql = "INSERT INTO `members` (`name`, `courses`, `email`, `hp_no`, `password`) VALUES ('$name ' , '$course' , '$email' , $phone , '$password')";
+   $sql = "INSERT INTO `members` (`name`, `course`, `email`, `hp_no`, `password`) VALUES ('$name ' , '$course' , '$email' , $phone , '$password')";
    mysqli_query($db, $sql);
    $i = 0;
    echo mysqli_error($db);
@@ -71,17 +80,15 @@ if (isset($_POST['submit'])) {
                <input type="text" name="name" placeholder="Name" class="form-control">
             </div>
             <div class="form-group">
-               <label for="courses">Course:</label><br>
-               <select name="courss" id="courses">
+               <label for="course">Course:</label><br>
+               <select name="course" id="course">
                   <?php 
-                  foreach ($coursearray as $value) {
-                     echo "<option value='$value'>AdobePhotoshop</option>";
+                  $i = 0;
+                  foreach ($coursearray as $course) {
+                     echo "<option value='$course'>$coursename[$i]</option>";
+                     $i++;
                   }
                   ?>
-                  <option value="photoshop">AdobePhotoshop</option>
-                  <option value="html5">Creating website with HTML5</option>
-                  <option value="indesign">Adobe InDesign</option>
-                  <option value="swift">Swift programming</option>
                </select>
             </div>
             <div class="form-group">
