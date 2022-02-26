@@ -36,8 +36,7 @@ if (isset($_POST['submit'])) {
    }
 }
 
-function td($i)
-{
+function td($i) {
    return "<td>$i</td>";
 }
 ?>
