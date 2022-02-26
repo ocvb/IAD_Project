@@ -46,7 +46,7 @@ function td($i)
       </nav>
       <div class="container d-flex data text-white view">
          <!--echo "<tr>".td($row['regid']). td($row['name']). td($row['course'])."</tr>";-->
-         <table class="table text-white" cellpadding="3" cellspacing="3">
+         <table class="table text-center text-white" cellpadding="3" cellspacing="3">
             <tr>
                <td scope="col">ID</td>
                <td scope="col">Name</td>

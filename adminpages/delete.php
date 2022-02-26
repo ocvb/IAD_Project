@@ -56,7 +56,7 @@ function td($i)
       <div class="container data text-white delete">
          <!--echo "<tr>".td($row['regid']). td($row['name']). td($row['course'])."</tr>";-->
          <form method="POST">
-            <table class="table text-white" cellpadding="3" cellspacing="3">
+            <table class="table text-center text-white" cellpadding="3" cellspacing="3">
                <tr>
                   <td scope="col">ID</td>
                   <td scope="col">Name</td>
