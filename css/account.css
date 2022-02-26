@@ -27,12 +27,11 @@
    top: 80px;
    height: inherit;
 }
-
 .nav-link .fa-user{
    animation: blink 0.6s infinite alternate-reverse;
 }
 
 @keyframes blink {
    from { color: rgba(255, 255, 255, 0.2);}
-   to { color: rgb(255, 255, 255);}
+   to { color: rgb(255, 196, 196);}
 }

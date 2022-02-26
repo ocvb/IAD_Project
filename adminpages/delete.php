@@ -11,6 +11,13 @@ $query = "SELECT `regid`, `name`, `course`, `email`, `hp_no`, `reg_date` FROM me
 $result = mysqli_query($db, $query);
 
 
+if (isset($_POST['delete'])) {
+   $id = $_POST['id'];
+   $query = "DELETE FROM `members` WHERE regid = $id";
+   mysqli_query($db, $query);
+   header("Refresh: 0");
+}
+
 function td($i)
 {
    return "<td>$i</td>";
@@ -38,9 +45,10 @@ function td($i)
    <div class="container-fluid dynamic-table justify-content-center">
       <nav>
          <ul class="nav list-unstyled bg-transparent">
-            <li class="nav-item account-item"><a id='viewphp' class="nav-link" href="admin.php">View</a></li>
+         <li class="nav-item account-item"><a id='viewphp' class="nav-link" href="admin.php">View</a></li>
+            <li class="nav-item account-item"><a id='insert' class="nav-link" href="insert.php">Insert</a></li>
             <li class="nav-item account-item"><a id="updatephp" class="nav-link" href="update.php">Update</a></li>
-            <li class="nav-item account-item"><a id="deletephp" class="nav-link" href="#">Delete</a></li>
+            <li class="nav-item account-item"><a id="deletephp" class="nav-link" href="delete.php">Delete</a></li>
          </ul>
          <hr class="text-white" width="250px">
       </nav>

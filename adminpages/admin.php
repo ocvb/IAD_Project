@@ -1,13 +1,12 @@
 <?php
 include_once "../db.php";
 
-$array = array('ID', 'Name', 'Course', 'Email', 'Phone');
-$dbarray = array('regid', 'name', 'course', 'email', 'hp_no');
-$dbarray = array('regid', 'name', 'course', 'email', 'hp_no');
+//$array = array('ID', 'Name', 'Course', 'Email', 'Phone', "Date", "");
+$dbarray = array('regid', 'name', 'course', 'email', 'hp_no', 'reg_date', 'administrator');
 
 $email = $_COOKIE['user'];
 //$query = "SELECT `regid`, `name`, `course`, `email`, `hp_no`, `reg_date` FROM members WHERE email = '$email'";
-$query = "SELECT `regid`, `name`, `course`, `email`, `hp_no`, `reg_date` FROM members";
+$query = "SELECT `regid`, `name`, `course`, `email`, `hp_no`, `reg_date`, `administrator` FROM members";
 $result = mysqli_query($db, $query);
 
 
@@ -38,13 +37,14 @@ function td($i)
    <div class="container-fluid dynamic-table justify-content-center">
       <nav>
          <ul class="nav list-unstyled bg-transparent">
-            <li class="nav-item account-item"><a id='viewphp' class="nav-link" href="#">View</a></li>
+            <li class="nav-item account-item"><a id='viewphp' class="nav-link" href="admin.php">View</a></li>
+            <li class="nav-item account-item"><a id='insert' class="nav-link" href="insert.php">Insert</a></li>
             <li class="nav-item account-item"><a id="updatephp" class="nav-link" href="update.php">Update</a></li>
             <li class="nav-item account-item"><a id="deletephp" class="nav-link" href="delete.php">Delete</a></li>
          </ul>
          <hr class="text-white" width="250px">
       </nav>
-      <div class="container data text-white view">
+      <div class="container d-flex data text-white view">
          <!--echo "<tr>".td($row['regid']). td($row['name']). td($row['course'])."</tr>";-->
          <table class="table text-white" cellpadding="3" cellspacing="3">
             <tr>
@@ -53,12 +53,14 @@ function td($i)
                <td scope="col">Course</td>
                <td scope="col">Email</td>
                <td scope="col">Phone</td>
+               <td scope="col">Date</td>
+               <td scope="col">Administrator</td>
             </tr>
             <?php
 
             while ($row = mysqli_fetch_array($result)) {
                //echo "<tr>" . td($row[$dbarray[$i]]) . "</tr>";
-               echo "<tr>" . td($row[$dbarray[0]]) . td($row[$dbarray[1]]) . td($row[$dbarray[2]]) . td($row[$dbarray[3]]) . td($row[$dbarray[4]]) . "</tr>";
+               echo "<tr>" . td($row[$dbarray[0]]) . td($row[$dbarray[1]]) . td($row[$dbarray[2]]) . td($row[$dbarray[3]]) . td($row[$dbarray[4]]) . td($row[$dbarray[5]]) . td($row[$dbarray[6]]) ."</tr>";
             }
             ?>
          </table>

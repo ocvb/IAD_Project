@@ -3,27 +3,37 @@ include_once "../db.php";
 
 $array = array('ID', 'Name', 'Course', 'Email', 'Phone', 'Date', 'Admin');
 $dbarray = array('regid', 'name', 'course', 'email', 'hp_no', 'reg_date');
-$inputname = array('number', 'text', 'text', 'email', 'number', 'text');
 $inputplaceholder = array('ID', 'Name', 'Course', 'Email', 'Phone', '2022-01-01 01:01:01');
 
-$id = $_POST['id'];
-if ($id != '') {
-   if (isset($_POST['getid'])) {
-      $query = "SELECT `regid`, `name`, `course`, `email`, `hp_no`, `reg_date` FROM members WHERE regid = $id";
-      $result = mysqli_query($db, $query);
-      $row = mysqli_fetch_array($result);
-   }
-}
+if (isset($_POST['submit'])) {
+   $date = date('Y-m-d H:i:s');
 
-if (isset($_POST['updatebtn'])) {
-   $id = $_POST['id'];
-   $name = $_POST['name'];
-   $course = $_POST['course'];
-   $email = $_POST['email'];
-   $phone = $_POST['hp_no'];
-   $date = $_POST['date'];
-   $query = "UPDATE `members` SET `regid`=$id,`name`='$name',`course`='$course',`email`='$email',`hp_no`=$phone,`reg_date`='$date' WHERE regid = $id";
-   mysqli_query($db , $query);
+   $name = mysqli_escape_string($db, $_POST['name']);
+   $course = mysqli_escape_string($db, $_POST['course']);
+   $email = mysqli_escape_string($db, $_POST['email']);
+   $phone = mysqli_escape_string($db, $_POST['phone']);
+   $password = mysqli_escape_string($db, md5($_POST['password']));
+   //echo $name . $course . $phone . $email . $password;
+
+   $sql = "INSERT INTO `members` (`name`, `course`, `email`, `hp_no`, `reg_date`, `password`) VALUES ('$name ' , '$course' , '$email' , $phone , '$date' , '$password')";
+   mysqli_query($db, $sql);
+   echo mysqli_error($db);
+
+   $i = 0;
+   if (mysqli_error($db)) {
+      $i = 0;
+   } else {
+      $i = 1;
+   }
+
+   function timeout($set, $here) {
+      $i = 0;
+      while ($i < $set) {
+         sleep(1);
+         $i++;
+      }
+      header("Location: ./$here");
+   }
 }
 
 function td($i)
@@ -53,7 +63,7 @@ function td($i)
    <div class="container-fluid dynamic-table justify-content-center">
       <nav>
          <ul class="nav list-unstyled bg-transparent">
-         <li class="nav-item account-item"><a id='viewphp' class="nav-link" href="admin.php">View</a></li>
+            <li class="nav-item account-item"><a id='viewphp' class="nav-link" href="admin.php">View</a></li>
             <li class="nav-item account-item"><a id='insert' class="nav-link" href="insert.php">Insert</a></li>
             <li class="nav-item account-item"><a id="updatephp" class="nav-link" href="update.php">Update</a></li>
             <li class="nav-item account-item"><a id="deletephp" class="nav-link" href="delete.php">Delete</a></li>

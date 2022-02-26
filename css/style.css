@@ -25,6 +25,10 @@ body {
   color: rgb(145, 145, 145);
 }
 
+.nav-current {
+  color: rgb(255, 205, 205) !important;
+}
+
 .account-item a:hover {
   text-decoration: underline;
 }
