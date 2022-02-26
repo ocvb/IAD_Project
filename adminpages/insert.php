@@ -3,7 +3,7 @@ include_once "../db.php";
 
 $array = array('Name', 'Course', 'Email', 'Phone', 'Password');
 $dbarray = array('name', 'course', 'email', 'hp_no', 'password');
-$inputname = array('text', 'text', 'email', 'number', 'password');
+$inputtype = array('text', 'text', 'email', 'number', 'password');
 $inputplaceholder = array('Name', 'Course', 'Email', 'Phone', "Password");
 
 if (isset($_POST['insert'])) {
@@ -77,7 +77,7 @@ function td($i)
                <?php
                $i = 0;
                while (count($dbarray) > $i) {
-                  echo "<tr>" . td("<label id='$dbarray[$i]'>$array[$i]: </label> <input type='$inputname[$i]' name='$dbarray[$i]' id='$dbarray[$i]' placeholder='$inputplaceholder[$i]'>") . "</tr>";
+                  echo "<tr>" . td("<label id='$dbarray[$i]'>$array[$i]: </label> <input type='$inputtype[$i]' name='$dbarray[$i]' id='$dbarray[$i]' placeholder='$inputplaceholder[$i]'>") . "</tr>";
                   $i++;
                }
                echo "<tr>" . td('<input type="submit" name="insert" value="Insert">') . "</tr>";
