@@ -42,7 +42,7 @@ function td($i)
             <li class="nav-item account-item"><a id="updatephp" class="nav-link" href="update.php">Update</a></li>
             <li class="nav-item account-item"><a id="deletephp" class="nav-link" href="delete.php">Delete</a></li>
          </ul>
-         <hr class="text-white" width="250px">
+         <hr class="text-white" width="320px">
       </nav>
       <div class="container d-flex data text-white view">
          <!--echo "<tr>".td($row['regid']). td($row['name']). td($row['course'])."</tr>";-->
