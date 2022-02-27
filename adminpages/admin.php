@@ -34,7 +34,7 @@ function td($i)
          <li class="nav-item"><a class="nav-link" href="../account.php"><i class="fa-solid fa-user"></i></a></li>
       </ul>
    </nav>
-   <div class="container-fluid dynamic-table justify-content-center">
+   <div class="container dynamic-table justify-content-center">
       <nav>
          <ul class="nav list-unstyled bg-transparent">
             <li class="nav-item account-item"><a id='viewphp' class="nav-link" href="admin.php">View</a></li>
