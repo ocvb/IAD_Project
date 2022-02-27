@@ -9,7 +9,7 @@ p {
 
 .container-media {
   position: relative;
-  background: url("../images/aboutt.jpg") center center;
+  background: url("../images/aboutt.jpg") top;
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
@@ -47,7 +47,7 @@ p {
 }
 
 .container-media .box .icon {
-  text-shadow: 1px 4px 5px black;
+  text-shadow: 1px 4px 5px rgba(2, 2, 2, 0.274);
   position: absolute;
   top: 0;
   left: 0;
