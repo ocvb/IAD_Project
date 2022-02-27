@@ -66,7 +66,7 @@ function td($i)
          <form name="updateform" method="POST">
             <table>
                <tr>
-                  <td class="text-white">Please enter member ID: <input type="number" name="id" value="<?php echo $id; ?>"></td>
+                  <td class="text-white">Please enter member ID: <input type="number" name="id" autofocus='autofocus' value="<?php echo $id; ?>"></td>
                   <td><input type="submit" name="getid" value="Submit"></td>
                </tr>
             </table>

@@ -74,7 +74,7 @@ function td($i)
             </table>
             <table>
                <tr>
-                  <td class="text-white">Please enter member ID to delete: <input type="number" name="id"></td>
+                  <td class="text-white">Please enter member ID to delete: <input type="number" name="id" autofocus='autofocus'></td>
                   <td><input type="submit" name="delete" value="Delete"></td>
                </tr>
             </table>

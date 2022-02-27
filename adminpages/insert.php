@@ -77,7 +77,7 @@ function td($i)
                <?php
                $i = 0;
                while (count($dbarray) > $i) {
-                  echo "<tr>" . td("<label id='$dbarray[$i]'>$array[$i]: </label> <input type='$inputtype[$i]' name='$dbarray[$i]' id='$dbarray[$i]' placeholder='$inputplaceholder[$i]'>") . "</tr>";
+                  echo "<tr>" . td("<label id='$dbarray[$i]'>$array[$i]: </label> <input type='$inputtype[$i]' name='$dbarray[$i]' id='$dbarray[$i]' placeholder='$inputplaceholder[$i]' autofocus='autofocus'>") . "</tr>";
                   $i++;
                }
                echo "<tr>" . td('<input type="submit" name="insert" value="Insert">') . "</tr>";
