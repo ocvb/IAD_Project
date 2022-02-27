@@ -1,3 +1,7 @@
+.navaddpage {
+   margin-right: 17px;
+}
+
 .account-tabs {
    top: 60px;
    width: 100%;
@@ -33,5 +37,5 @@
 
 @keyframes blink {
    from { color: rgba(255, 255, 255, 0.2);}
-   to { color: rgb(255, 196, 196);}
+   to { color: #ebbf73;}
 }

@@ -26,7 +26,7 @@ body {
 }
 
 .nav-current {
-  color: rgb(255, 205, 205) !important;
+  color: #ebbf73 !important;
 }
 
 .account-item a:hover {
