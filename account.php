@@ -1,5 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include_once "db.php";
+
+$dbarray = array('name', 'course', 'email', 'hp_no', 'reg_date');
+
+$current = $_COOKIE['user'];
+$q = "SELECT * FROM members WHERE email = '$current'";
+$result = mysqli_query($db, $q);
+
+function td($i)
+{
+   return "<td>$i</td>";
+}
+
+?>
 
 <head>
    <title>Document</title>
@@ -54,24 +67,43 @@
          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
          <li class="nav-item"><a class="nav-link" href="course.php">Course</a></li>
          <li class="nav-item"><a class="nav-link nav-current" href="account.php"><i class="fa-solid fa-user"></i></a></li>
+
       </ul>
    </nav>
 
    <div class="container py-5">
       <div class="navbar">
-         <div class="navbar">
-            <ul class="navbar list-unstyled" id='accountpage'>
-               <li class="nav-item account-item active">
-                  <a class="nav-link" href="javascript:test()">Account Details</a>
-               </li>
-               <li class="nav-item account-item">
-                  <a class="nav-link" href="#">Order</a>
-               </li>
-               <li class="nav-item account-item">
-                  <a class="nav-link" id="logout" href="#">Logout</a>
-               </li>
-            </ul>
-         </div>
+         <ul class="navbar list-unstyled" id='accountpage'>
+            <li class="nav-item account-item active">
+               <a class="nav-link" href="javascript:accountDetails();">Account Details</a>
+            </li>
+            <li class="nav-item account-item">
+               <a class="nav-link" id="logout" href="#">Logout</a>
+            </li>
+         </ul>
+      </div>
+
+      <div class="container d-flex account-details justify-content-center" style="display: none;">
+         <table class="table text-white w-50">
+            <tr>
+               <td scope="col">Name</td>
+               <td scope="col">Course</td>
+               <td scope="col">Email</td>
+               <td scope="col">Phone</td>
+               <td scope="col">Date</td>
+            </tr>
+            <?php
+            $row = mysqli_fetch_array($result);
+            //echo "<tr>" . td($row[$dbarray[$i]]) . "</tr>";
+            echo "<tr>" . td($row[$dbarray[0]]) . td($row[$dbarray[1]]) . td($row[$dbarray[2]]) . td($row[$dbarray[3]]) . td($row[$dbarray[4]]) . "</tr>";
+
+            ?>
+         </table>
+         <aside style="display:none">
+            <div class="container d-flex text-white">
+               <p>EE</p>
+            </div>
+         </aside>
       </div>
 
       <div class="container payload py-5"></div>
@@ -92,6 +124,11 @@
       function logout() {
          $.post("cookies.php");
          window.location.reload();
+      }
+
+
+      function accountDetails() {
+         $(".account-details").show();
       }
 
       function admin() {
