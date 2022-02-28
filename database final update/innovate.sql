@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 25, 2022 at 09:54 AM
+-- Generation Time: Feb 28, 2022 at 04:07 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -71,8 +71,7 @@ INSERT INTO `members` (`regid`, `name`, `course`, `email`, `hp_no`, `reg_date`, 
 (1, 'john', '0', 'awefwune@gmail.com', 2132132, '2022-02-02 17:49:11', 'c13367945d5d4c91047b3b50234aa7ab', NULL),
 (2, 'Admin', 'null', 'admin@admin.com', 21378213, '2022-02-01 17:49:09', '81dc9bdb52d04dc20036dbd8313ed055', 'yes'),
 (3, 'awfjiawen', 'null', 'awenfio@gmail.com', 21378213, '2022-02-21 17:49:06', '21232f297a57a5a743894a0e4a801fc3', NULL),
-(4, 'awefawef ', 'photoshop', 'awef@gmail.com', 21837129, '2022-02-25 17:48:42', '202cb962ac59075b964b07152d234b70', NULL),
-(5, '21312321 ', 'photoshop', 'awioken@gmail.com', 81273891, '2022-02-25 09:53:19', '202cb962ac59075b964b07152d234b70', NULL);
+(7, 'iajenf', 'aweiufn', 'weuhifb@gmail.com', 82193819, '2022-02-26 18:20:38', '202cb962ac59075b964b07152d234b70', NULL);
 
 -- --------------------------------------------------------
 
@@ -130,7 +129,7 @@ ALTER TABLE `course`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `regid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `regid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `order_info`
