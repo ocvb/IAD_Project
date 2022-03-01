@@ -67,7 +67,7 @@ function product_name($id)
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Apply the courses you want!</h1>
+                    <h1 class="display-4 fw-bolder">Our couses!</h1>
                     <p class="lead fw-normal text-white-50 mb-0">Get your courses today!</p>
                 </div>
             </div>
@@ -192,7 +192,7 @@ function product_name($id)
     <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; ITE 2022</p>
+            <p class="m-0 text-center text-white">Copyright &copy; ITE 2022. All rights Reserved.</p>
         </div>
     </footer>
 

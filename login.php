@@ -6,17 +6,23 @@ if (isset($_COOKIE["user"]) == null) {
    setcookie("user", "notlogged", null, "/");
 }
 if (isset($_POST['submit'])) {
-   $email = mysqli_escape_string($db, $_POST['email']);
+   $inputLogin = mysqli_escape_string($db, $_POST['inputLogin']);
    $password = mysqli_escape_string($db, md5($_POST['password']));
-   $sql = "SELECT email, password FROM `members` WHERE email = '$email'";
-   $result = mysqli_query($db, $sql);
+   if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $inputLogin)) {
+      $sql = "SELECT email, password FROM `members` WHERE email = '$inputLogin'";
+      $result = mysqli_query($db, $sql);
+   } else {
+      $sql = "SELECT name, email, password FROM `members` WHERE name = '$inputLogin'";
+      $result = mysqli_query($db, $sql);
+   }
    while ($row = mysqli_fetch_assoc($result)) {
-      if ($password == $row['password'] && $email == $row['email']) {
-         setcookie("user", $email, null, "/");
+      if ($password == $row['password'] && $inputLogin == $row['email'] OR $password == $row['password'] && $inputLogin == $row['name']) {
+         setcookie("user", $row['email'], null, "/");
          header("Location: ./index.html");
          return false;
       }
    }
+   mysqli_error($db);
 }
 
 ?>
@@ -52,8 +58,8 @@ if (isset($_POST['submit'])) {
             <div class="form">
                <form method="POST" class="col" name="f1">
                   <div class="top-form form-group">
-                     <label for="">Email:</label>
-                     <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
+                     <label for="">Name or Email:</label>
+                     <input type="text" name="inputLogin" id="inputLogin" class="form-control" placeholder="Email" required>
                   </div>
                   <div class="top-form form-group">
                      <label for="">Password:</label>

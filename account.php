@@ -75,7 +75,7 @@ function td($i)
       <div class="navbar">
          <ul class="navbar list-unstyled" id='accountpage'>
             <li class="nav-item account-item active">
-               <a class="nav-link" href="javascript:accountDetails();">Account Details</a>
+               <a class="nav-link fw-bold" href="javascript:accountDetails();">Account Details</a>
             </li>
             <li class="nav-item account-item">
                <a class="nav-link" id="logout" href="#">Logout</a>
@@ -112,7 +112,7 @@ function td($i)
 
    <footer class="py-5 bg-dark">
       <div class="container">
-         <p class="m-0 text-center text-white">Copyright &copy; ITE 2022</p>
+          <p class="m-0 text-center text-white">Copyright &copy; ITE 2022. All rights Reserved.</p>
       </div>
    </footer>
 
