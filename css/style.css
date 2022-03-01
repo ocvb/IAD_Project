@@ -60,14 +60,8 @@ body {
 }
 
 .footer {
-  height: 5px;
-  bottom: 0px;
-  line-height: 20px;
-}
-
-.footer p{
-  line-height: 20px;
-  align-items: center;
+  padding: 20px 0;
+  padding-top: 30px;
 }
 
 @-webkit-keyframes animate-preloader {

@@ -12,7 +12,8 @@ $p = 0;
 $jsql = "SELECT * FROM code WHERE id = 1";
 $coderow = mysqli_fetch_array(mysqli_query($db, $jsql));
 
-function td($i) {
+function td($i)
+{
    return "<td>$i</td>";
 }
 
@@ -85,7 +86,7 @@ function td($i) {
                <? print ($p == 1) ? $coderow['jcode'] : null; ?>
             </ul>
          </div>
-   
+
          <div class="container d-flex account-details justify-content-center" style="display: none;">
             <table class="table text-white text-center w-50">
                <tr>
@@ -97,7 +98,7 @@ function td($i) {
                </tr>
                <?php echo "<tr>" . td($row[$dbarray[0]]) . td($row[$dbarray[1]]) . td($row[$dbarray[2]]) . td($row[$dbarray[3]]) . td($row[$dbarray[4]]) . "</tr>"; ?>
             </table>
-   
+
             <!--Test-->
             <aside style="display:none">
                <div class="container d-flex text-white">
@@ -109,9 +110,9 @@ function td($i) {
       </div>
    </div>
 
-   <footer class="py-5 bg-dark">
+   <footer class="footer">
       <div class="container">
-         <p class="m-0 text-center text-white">Copyright &copy; ITE 2022. All rights Reserved.</p>
+         <p class="text-center text-white">Copyright &copy; ITE 2022. All rights Reserved.</p>
       </div>
    </footer>
 
