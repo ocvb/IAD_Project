@@ -14,7 +14,7 @@ function getID() {
    return $row['regid'];
 }
 
-$sql = "SELECT regid, email, administrator FROM members";
+/*$sql = "SELECT regid, email, administrator FROM members";
 $result = mysqli_query($db, $sql);
 $id = getID();
 while ($row = mysqli_fetch_array($result)) {
@@ -24,5 +24,5 @@ while ($row = mysqli_fetch_array($result)) {
    } else {
       setcookie("adStatus", 'no', null, "/");
    }
-}
+}*/
 ?>

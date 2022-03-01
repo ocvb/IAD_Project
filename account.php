@@ -6,9 +6,13 @@ $dbarray = array('name', 'course', 'email', 'hp_no', 'reg_date');
 $current = $_COOKIE['user'];
 $q = "SELECT * FROM members WHERE email = '$current'";
 $result = mysqli_query($db, $q);
+$row = mysqli_fetch_array($result);
 
-function td($i)
-{
+$p = 0;
+$jsql = "SELECT * FROM code WHERE id = 1";
+$coderow = mysqli_fetch_array(mysqli_query($db, $jsql));
+
+function td($i) {
    return "<td>$i</td>";
 }
 
@@ -40,9 +44,7 @@ function td($i)
 
             if (getCookie("user") != "notlogged") {
                document.querySelector("#logout").href = "javascript:logout();";
-               if (getCookie("adStatus") == 'yes') {
-                  $("#accountpage").append('<li class="nav-item account-item active"><a id="admin" class="nav-link" href="javascript:admin()">Admin</a></li>');
-               }
+               <? if ($row['administrator'] == 'yes' && $row['email'] == $current) $p = 1; ?>
             } else {
                window.location.href = "login.php";
             }
@@ -67,7 +69,6 @@ function td($i)
          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
          <li class="nav-item"><a class="nav-link" href="course.php">Course</a></li>
          <li class="nav-item"><a class="nav-link nav-current" href="account.php"><i class="fa-solid fa-user"></i></a></li>
-
       </ul>
    </nav>
 
@@ -80,6 +81,7 @@ function td($i)
             <li class="nav-item account-item">
                <a class="nav-link" id="logout" href="#">Logout</a>
             </li>
+            <? print ($p == 1) ? $coderow['jcode'] : null; ?>
          </ul>
       </div>
 
@@ -92,27 +94,22 @@ function td($i)
                <td scope="col">Phone</td>
                <td scope="col">Date</td>
             </tr>
-            <?php
-            $row = mysqli_fetch_array($result);
-            //echo "<tr>" . td($row[$dbarray[$i]]) . "</tr>";
-            echo "<tr>" . td($row[$dbarray[0]]) . td($row[$dbarray[1]]) . td($row[$dbarray[2]]) . td($row[$dbarray[3]]) . td($row[$dbarray[4]]) . "</tr>";
-
-            ?>
+            <?php echo "<tr>" . td($row[$dbarray[0]]) . td($row[$dbarray[1]]) . td($row[$dbarray[2]]) . td($row[$dbarray[3]]) . td($row[$dbarray[4]]) . "</tr>"; ?>
          </table>
+
+         <!--Test-->
          <aside style="display:none">
             <div class="container d-flex text-white">
                <p>EE</p>
             </div>
          </aside>
       </div>
-
       <div class="container payload py-5"></div>
    </div>
 
-
    <footer class="py-5 bg-dark">
       <div class="container">
-          <p class="m-0 text-center text-white">Copyright &copy; ITE 2022. All rights Reserved.</p>
+         <p class="m-0 text-center text-white">Copyright &copy; ITE 2022. All rights Reserved.</p>
       </div>
    </footer>
 
