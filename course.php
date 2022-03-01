@@ -4,8 +4,7 @@ include_once "admin_check.php";
 echo "<script>var storage = sessionStorage.getItem('user');</script>";
 $storage = '<script>document.write(storage);</script>';
 
-function update_product($id)
-{
+function update_product($id) {
     global $db;
     $productid = $id;
     $sql = "SELECT price FROM course WHERE course_id = $productid";
@@ -13,8 +12,7 @@ function update_product($id)
     $row = mysqli_fetch_array($result);
     return $row['price'];
 }
-function product_name($id)
-{
+function product_name($id) {
     global $db;
     $productid = $id;
     $sql = "SELECT course_name FROM course WHERE course_id = $productid";
@@ -67,7 +65,7 @@ function product_name($id)
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Our couses</h1>
+                    <h1 class="display-4 fw-bolder">Top courses</h1>
                     <p class="lead fw-normal text-white-50 mb-0">Get your courses today!</p>
                 </div>
             </div>
