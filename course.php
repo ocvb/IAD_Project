@@ -4,7 +4,8 @@ include_once "admin_check.php";
 echo "<script>var storage = sessionStorage.getItem('user');</script>";
 $storage = '<script>document.write(storage);</script>';
 
-function update_product($id) {
+function update_product($id)
+{
     global $db;
     $productid = $id;
     $sql = "SELECT price FROM course WHERE course_id = $productid";
@@ -12,7 +13,8 @@ function update_product($id) {
     $row = mysqli_fetch_array($result);
     return $row['price'];
 }
-function product_name($id) {
+function product_name($id)
+{
     global $db;
     $productid = $id;
     $sql = "SELECT course_name FROM course WHERE course_id = $productid";
@@ -188,9 +190,9 @@ function product_name($id) {
         </section>
     </div>
     <!-- Footer-->
-    <footer class="py-5 bg-dark">
+    <footer class="footer">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; ITE 2022. All rights Reserved.</p>
+            <p class="text-center text-white">Copyright &copy; ITE 2022. All rights Reserved.</p>
         </div>
     </footer>
 
