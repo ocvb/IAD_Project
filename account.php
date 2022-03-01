@@ -75,7 +75,7 @@ function td($i)
       <div class="navbar">
          <ul class="navbar list-unstyled" id='accountpage'>
             <li class="nav-item account-item active">
-               <a class="nav-link" href="javascript:accountDetails();">Account Details</a>
+               <a class="nav-link fw-bold" href="javascript:accountDetails();">Account Details</a>
             </li>
             <li class="nav-item account-item">
                <a class="nav-link" id="logout" href="#">Logout</a>
