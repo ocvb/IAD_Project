@@ -35,9 +35,11 @@ if (isset($_POST['insert'])) {
    }
 }
 
-function td($i)
-{
+function td($i) {
    return "<td>$i</td>";
+}
+function th($i) {
+   return "<th scope='row'>$i</th>";
 }
 ?>
 
@@ -59,45 +61,50 @@ function td($i)
          <li class="nav-item"><a class="nav-link" href="../account.php"><i class="fa-solid fa-user"></i></a></li>
       </ul>
    </nav>
-   <div class="container dynamic-table justify-content-center">
-      <nav>
-         <ul class="nav list-unstyled bg-transparent">
-            <li class="nav-item account-item"><a id='viewphp' class="nav-link" href="admin.php">View</a></li>
-            <li class="nav-item account-item"><a id='insert' class="nav-link" href="insert.php">Insert</a></li>
-            <li class="nav-item account-item"><a id="updatephp" class="nav-link" href="update.php">Update</a></li>
-            <li class="nav-item account-item"><a id="deletephp" class="nav-link" href="delete.php">Delete</a></li>
-         </ul>
-         <hr class="text-white" width="320px">
-      </nav>
 
-      <div class="container data text-white update">
-         <!--echo "<tr>".td($row['regid']). td($row['name']). td($row['course'])."</tr>";-->
-         <form name="updateform" method="POST">
-            <table class="text-white" cellpadding="3" cellspacing="3">
-               <?php
-               $i = 0;
-               while (count($dbarray) > $i) {
-                  echo "<tr>" . td("<label id='$dbarray[$i]'>$array[$i]: </label> <input type='$inputtype[$i]' name='$dbarray[$i]' id='$dbarray[$i]' placeholder='$inputplaceholder[$i]' autofocus='autofocus'>") . "</tr>";
-                  $i++;
-               }
-               echo "<tr>" . td('<input type="submit" name="insert" value="Insert">') . "</tr>";
+   <div class="container-bg">
 
-               $e = 0;
-               while ($e <= 1) {
-                  if (isset($_POST['insert'])) {
-                     echo "<tr>" . td($row[$dbarray[0]]) . td($row[$dbarray[1]]) . td($row[$dbarray[2]]) . td($row[$dbarray[3]]) . "</tr>";
-                     echo mysqli_error($db);
+      <div class="container dynamic-table justify-content-center">
+         <nav>
+            <ul class="nav list-unstyled bg-transparent">
+               <li class="nav-item account-item"><a id='viewphp' class="nav-link" href="admin.php">View</a></li>
+               <li class="nav-item account-item"><a id='insert' class="nav-link" href="insert.php">Insert</a></li>
+               <li class="nav-item account-item"><a id="updatephp" class="nav-link" href="update.php">Update</a></li>
+               <li class="nav-item account-item"><a id="deletephp" class="nav-link" href="delete.php">Delete</a></li>
+            </ul>
+            <hr class="text-white" width="320px">
+         </nav>
+   
+         <div class="container data text-white update">
+            <!--echo "<tr>".td($row['regid']). td($row['name']). td($row['course'])."</tr>";-->
+            <form name="updateform" method="POST">
+               <table class="text-white" cellpadding="3" cellspacing="3">
+                  <?php
+                  $i = 0;
+                  while (count($dbarray) > $i) {
+                     echo "<tr>" . td("<label id='$dbarray[$i]'>$array[$i]: </label> <input type='$inputtype[$i]' name='$dbarray[$i]' id='$dbarray[$i]' placeholder='$inputplaceholder[$i]' autofocus='autofocus'>") . "</tr>";
+                     $i++;
                   }
-                  $e++;
-               }
-               ?>
-               <tr>
-                  <td>
-                     <p class="message"></p>
-                  </td>
-               </tr>
-            </table>
-         </form>
+                  echo "<tr>" . td('<input type="submit" name="insert" value="Insert">') . "</tr>";
+   
+                  $e = 0;
+                  while ($e <= 1) {
+                     if (isset($_POST['insert'])) {
+                        echo "<tr>" . td($row[$dbarray[0]]) . td($row[$dbarray[1]]) . td($row[$dbarray[2]]) . td($row[$dbarray[3]]) . "</tr>";
+                        
+                        echo mysqli_error($db);
+                     }
+                     $e++;
+                  }
+                  ?>
+                  <tr>
+                     <td>
+                        <p class="message"></p>
+                     </td>
+                  </tr>
+               </table>
+            </form>
+         </div>
       </div>
    </div>
    <!-- Javascript -->

@@ -23,12 +23,14 @@ if (isset($_POST['updatebtn'])) {
    $phone = $_POST['hp_no'];
    $date = $_POST['date'];
    $query = "UPDATE `members` SET `regid`=$id,`name`='$name',`course`='$course',`email`='$email',`hp_no`=$phone,`reg_date`='$date' WHERE regid = $id";
-   mysqli_query($db , $query);
+   mysqli_query($db, $query);
 }
 
-function td($i)
-{
+function td($i) {
    return "<td>$i</td>";
+}
+function th($i) {
+   return "<th scope='row'>$i</th>";
 }
 ?>
 
@@ -50,51 +52,54 @@ function td($i)
          <li class="nav-item"><a class="nav-link" href="../account.php"><i class="fa-solid fa-user"></i></a></li>
       </ul>
    </nav>
-   <div class="container dynamic-table justify-content-center">
-      <nav>
-         <ul class="nav list-unstyled bg-transparent">
-         <li class="nav-item account-item"><a id='viewphp' class="nav-link" href="admin.php">View</a></li>
-            <li class="nav-item account-item"><a id='insert' class="nav-link" href="insert.php">Insert</a></li>
-            <li class="nav-item account-item"><a id="updatephp" class="nav-link" href="update.php">Update</a></li>
-            <li class="nav-item account-item"><a id="deletephp" class="nav-link" href="delete.php">Delete</a></li>
-         </ul>
-         <hr class="text-white" width="320px">
-      </nav>
 
-      <div class="container data text-white update">
-         <!--echo "<tr>".td($row['regid']). td($row['name']). td($row['course'])."</tr>";-->
-         <form name="updateform" method="POST">
-            <table>
-               <tr>
-                  <td class="text-white">Please enter member ID: <input type="number" name="id" autofocus='autofocus' value="<?php echo $id; ?>"></td>
-                  <td><input type="submit" name="getid" value="Submit"></td>
-               </tr>
-            </table>
-            <table class="text-white" cellpadding="3" cellspacing="3">
-               <?php
-               if ($id != '') {
-                  if (isset($_POST['getid'])) {
-                     $i = 0;
-                     while (count($dbarray) > $i) {
-                        echo "<tr>" . td("$array[$i]: <input type='$inputname[$i]' name='$dbarray[$i]' placeholder='$inputplaceholder[$i]' value='{$row[$dbarray[$i]]}'>") . "</tr>";
-                        $i++;
+   <div class="container-bg">
+      <div class="container dynamic-table justify-content-center">
+         <nav>
+            <ul class="nav list-unstyled bg-transparent">
+               <li class="nav-item account-item"><a id='viewphp' class="nav-link" href="admin.php">View</a></li>
+               <li class="nav-item account-item"><a id='insert' class="nav-link" href="insert.php">Insert</a></li>
+               <li class="nav-item account-item"><a id="updatephp" class="nav-link" href="update.php">Update</a></li>
+               <li class="nav-item account-item"><a id="deletephp" class="nav-link" href="delete.php">Delete</a></li>
+            </ul>
+            <hr class="text-white" width="320px">
+         </nav>
+   
+         <div class="container data text-white update">
+            <!--echo "<tr>".td($row['regid']). td($row['name']). td($row['course'])."</tr>";-->
+            <form name="updateform" method="POST">
+               <table>
+                  <tr>
+                     <td class="text-white">Please enter member ID: <input type="number" name="id" autofocus='autofocus' value="<?php echo $id; ?>"></td>
+                     <td><input type="submit" name="getid" value="Submit"></td>
+                  </tr>
+               </table>
+               <table class="text-white" cellpadding="3" cellspacing="3">
+                  <?php
+                  if ($id != '') {
+                     if (isset($_POST['getid'])) {
+                        $i = 0;
+                        while (count($dbarray) > $i) {
+                           echo "<tr>" . td("$array[$i]: <input type='$inputname[$i]' name='$dbarray[$i]' placeholder='$inputplaceholder[$i]' value='{$row[$dbarray[$i]]}'>") . "</tr>";
+                           $i++;
+                        }
+                        echo "<tr>" . td('<input type="submit" name="updatebtn" value="Update">') . "</tr>";
                      }
-                     echo "<tr>" . td('<input type="submit" name="updatebtn" value="Update">') . "</tr>";
                   }
-               }
-               ?>
-               <tr>
-                  <td>
-                     <p class="message"></p>
-                  </td>
-               </tr>
-            </table>
-         </form>
+                  ?>
+                  <tr>
+                     <td>
+                        <p class="message"></p>
+                     </td>
+                  </tr>
+               </table>
+            </form>
+         </div>
       </div>
-
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-      <script src="../js/script.js"></script>
+   </div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+   <script src="../js/script.js"></script>
 
 
 </body>
