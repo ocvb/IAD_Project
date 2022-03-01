@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 28, 2022 at 04:07 PM
+-- Generation Time: Mar 01, 2022 at 07:22 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -20,6 +20,24 @@ SET time_zone = "+00:00";
 --
 -- Database: `innovate`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `code`
+--
+
+CREATE TABLE `code` (
+  `id` int(255) NOT NULL,
+  `jcode` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `code`
+--
+
+INSERT INTO `code` (`id`, `jcode`) VALUES
+(1, '<li class=\"nav-item account-item active\"><a id=\"admin\" class=\"nav-link\" href=\"javascript:admin()\">Admin</a></li>');
 
 -- --------------------------------------------------------
 
@@ -68,10 +86,11 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`regid`, `name`, `course`, `email`, `hp_no`, `reg_date`, `password`, `administrator`) VALUES
-(1, 'john', '0', 'awefwune@gmail.com', 2132132, '2022-02-02 17:49:11', 'c13367945d5d4c91047b3b50234aa7ab', NULL),
-(2, 'Admin', 'null', 'admin@admin.com', 21378213, '2022-02-01 17:49:09', '81dc9bdb52d04dc20036dbd8313ed055', 'yes'),
-(3, 'awfjiawen', 'null', 'awenfio@gmail.com', 21378213, '2022-02-21 17:49:06', '21232f297a57a5a743894a0e4a801fc3', NULL),
-(7, 'iajenf', 'aweiufn', 'weuhifb@gmail.com', 82193819, '2022-02-26 18:20:38', '202cb962ac59075b964b07152d234b70', NULL);
+(112, 'john', 'unknown', 'awefwune@gmail.com', 2132132, '2022-02-02 17:49:11', 'c13367945d5d4c91047b3b50234aa7ab', NULL),
+(113, 'admin', '-', 'admin@admin.com', 21378213, '2022-02-01 17:49:09', '81dc9bdb52d04dc20036dbd8313ed055', 'yes'),
+(115, 'iajenf', 'aweiufn', 'weuhifb@gmail.com', 82193819, '2022-02-26 18:20:38', '202cb962ac59075b964b07152d234b70', NULL),
+(121, 'YAH', 'awienf', 'iwefbn@gmail.com', 8123, '2022-03-01 00:13:52', '202cb962ac59075b964b07152d234b70', NULL),
+(212, 'Jayce', 'indesign', 'jayce11@gmail.com', 99123990, '2022-03-01 05:28:49', '202cb962ac59075b964b07152d234b70', NULL);
 
 -- --------------------------------------------------------
 
@@ -98,6 +117,12 @@ INSERT INTO `order_info` (`orderid`, `customer_name`, `email`, `date`) VALUES
 --
 
 --
+-- Indexes for table `code`
+--
+ALTER TABLE `code`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `course`
 --
 ALTER TABLE `course`
@@ -120,6 +145,12 @@ ALTER TABLE `order_info`
 --
 
 --
+-- AUTO_INCREMENT for table `code`
+--
+ALTER TABLE `code`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
@@ -129,7 +160,7 @@ ALTER TABLE `course`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `regid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `regid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=214;
 
 --
 -- AUTO_INCREMENT for table `order_info`
