@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
    while ($row = mysqli_fetch_assoc($result)) {
       if ($password == $row['password'] && $inputLogin == $row['email'] OR $password == $row['password'] && $inputLogin == $row['name']) {
          setcookie("user", $row['email'], null, "/");
-         header("Location: ./index.html");
+         header("Location: ./account.php");
          return false;
       }
    }
