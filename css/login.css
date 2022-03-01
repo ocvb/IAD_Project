@@ -5,19 +5,41 @@ body {
 .nav {
   left: -17;
 }
+.container-bg {
+  /*background: #8e9eab; /* fallback for old browsers */
+  /*background: -webkit-linear-gradient(
+    to bottom,
+    #eef2f3,
+    #8e9eab
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  /*background: linear-gradient(
+    to top,
+    #eef2f3,
+    #8e9eab
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: url("../images/login2.jpg") center right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  background-attachment: fixed;
+  height: 100vh;
+  padding-top: 200px;
+}
 
 .main-container {
-  margin-top: 200px;
-  border-radius: 9px;
+  border-radius: 11px;
   width: 500px;
-  background-color: rgb(206, 206, 206);
+  background-color: rgba(182, 182, 182, 0.747);
+  color: white;
+  text-shadow: 1px 2px 2px black;
 }
 
 .form-container {
   padding: 10px;
   border-radius: inherit;
-  box-shadow: 3px 5px 7px 1px rgb(58, 58, 58);
+  border: 1px solid rgba(255, 255, 255, 0.178);
   padding-bottom: 5px;
+  box-shadow: 3px 5px 4px 0px rgba(58, 58, 58, 0.281);
 }
 .form-container .form-group {
   padding: 5px;

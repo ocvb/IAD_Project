@@ -40,48 +40,50 @@ if (isset($_POST['submit'])) {
       <ul class="nav d-flex justify-content-center fixed-top navaddpage">
          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
          <li class="nav-item"><a class="nav-link" href="course.php">Course</a></li>
-         <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+         <li class="nav-item"><a class="nav-link nav-current" href="login.php">Login</a></li>
          <li class="nav-item"><a class="nav-link" href="account.php"><i class="fa-solid fa-user"></i></a></li>
       </ul>
    </nav>
 
-   <div class="container main-container justify-content-center">
-      <div class="row form-container g-4">
-         <h3 class="h3 text-center">Login Panel</h3>
-         <div class="form">
-            <form method="POST" class="col" name="f1">
-               <div class="top-form form-group">
-                  <label for="">Email:</label>
-                  <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
-               </div>
-               <div class="top-form form-group">
-                  <label for="">Password:</label>
-                  <input type="password" name="password" id="pass" class="form-control" placeholder="Password" required>
-               </div>
-               <div class="form-group loginstatus">
-                  <?php
-                  if (isset($_POST["submit"])) {
-                     if (!$_POST["email"] == '' || !$_POST["password"] == '') {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                           if ($email == $row["email"] and $password == $row["password"]) {
-                              echo "<p style='color: green;'>You have logged in</p>";
-                           } else {
-                              echo "<p style='color: red;'>Invalid login or password</p>";
-                              return false;
+   <div class="container-fluid container-bg">
+      <div class="container main-container justify-content-center">
+         <div class="row form-container g-4">
+            <h3 class="h3 text-center">Login Panel</h3>
+            <div class="form">
+               <form method="POST" class="col" name="f1">
+                  <div class="top-form form-group">
+                     <label for="">Email:</label>
+                     <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
+                  </div>
+                  <div class="top-form form-group">
+                     <label for="">Password:</label>
+                     <input type="password" name="password" id="pass" class="form-control" placeholder="Password" required>
+                  </div>
+                  <div class="form-group loginstatus">
+                     <?php
+                     if (isset($_POST["submit"])) {
+                        if (!$_POST["email"] == '' || !$_POST["password"] == '') {
+                           while ($row = mysqli_fetch_assoc($result)) {
+                              if ($email == $row["email"] and $password == $row["password"]) {
+                                 echo "<p style='color: green;'>You have logged in</p>";
+                              } else {
+                                 echo "<p style='color: red;'>Invalid login or password</p>";
+                                 return false;
+                              }
                            }
+                        } else {
+                           print_r("<p style='color: red;'>Fields are empty!</p>");
                         }
-                     } else {
-                        print_r("<p style='color: red;'>Fields are empty!</p>");
                      }
-                  }
-                  ?>
-               </div>
+                     ?>
+                  </div>
+                  <div class="form-group">
+                     <button type="submit" name="submit" class="btn btn-primary">Login</button>
+                  </div>
+               </form>
                <div class="form-group">
-                  <button type="submit" name="submit" class="btn btn-primary">Login</button>
+                  <p>Don't have an account? <a href="register.php">here</a>.</p>
                </div>
-            </form>
-            <div class="form-group">
-               <p>Don't have an account? <a href="register.php">here</a>.</p>
             </div>
          </div>
       </div>

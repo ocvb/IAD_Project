@@ -66,59 +66,61 @@ if (isset($_POST['submit'])) {
       <ul class="nav d-flex justify-content-center fixed-top navaddpage">
          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
          <li class="nav-item"><a class="nav-link" href="course.php">Course</a></li>
-         <li class="nav-item"><a class="nav-link" href="register.php">Register</a></li>
+         <li class="nav-item"><a class="nav-link nav-current" href="register.php">Register</a></li>
          <li class="nav-item"><a class="nav-link" href="account.php"><i class="fa-solid fa-user"></i></a></li>
       </ul>
    </nav>
 
-   <div class="container main-container justify-content-center">
-      <div class="row form-container g-4">
-         <h3 class="h3 text-center">Register Panel</h3>
-         <form method="POST" class="col">
-            <div class="top-form form-group">
-               <label for="">Name:</label>
-               <input type="text" name="name" placeholder="Name" class="form-control">
-            </div>
-            <div class="form-group">
-               <label for="course">Course:</label><br>
-               <select name="course" id="course">
-                  <?php 
-                  $i = 0;
-                  foreach ($coursearray as $course) {
-                     echo "<option value='$course'>$coursename[$i]</option>";
-                     $i++;
+   <div class="container-bg">
+      <div class="container main-container justify-content-center">
+         <div class="row form-container g-4">
+            <h3 class="h3 text-center">Register Panel</h3>
+            <form method="POST" class="col">
+               <div class="top-form form-group">
+                  <label for="">Name:</label>
+                  <input type="text" name="name" placeholder="Name" class="form-control">
+               </div>
+               <div class="form-group">
+                  <label for="course">Course:</label><br>
+                  <select name="course" id="course">
+                     <?php 
+                     $i = 0;
+                     foreach ($coursearray as $course) {
+                        echo "<option value='$course'>$coursename[$i]</option>";
+                        $i++;
+                     }
+                     ?>
+                  </select>
+               </div>
+               <div class="form-group">
+                  <label for="">Email:</label>
+                  <input type="email" name="email" placeholder="Email" class="form-control">
+               </div>
+               <div class="form-group">
+                  <label for="">Phone Number:</label>
+                  <input type="number" name="phone" placeholder="Phone No." oninput="if (this.value.length > 8) {this.value = this.value.slice(0, 8);}" class="form-control">
+               </div>
+               <div class="form-group">
+                  <label for="">Password:</label>
+                  <input type="password" name="password" placeholder="Password" class="form-control">
+               </div>
+               <div class="form-group loginstatus">
+                  <?php
+                  if (isset($_POST["submit"])) {
+                     if ($i == 0) {
+                        echo "<p style='color: red;'>Something when wrong. try again!</p>";
+                     } else {
+                        echo "<p style='color: green;'>You have registered successfully</p>";
+                        timeout(5, "login.php");
+                     }
                   }
                   ?>
-               </select>
-            </div>
-            <div class="form-group">
-               <label for="">Email:</label>
-               <input type="email" name="email" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-               <label for="">Phone Number:</label>
-               <input type="number" name="phone" placeholder="Phone No." oninput="if (this.value.length > 8) {this.value = this.value.slice(0, 8);}" class="form-control">
-            </div>
-            <div class="form-group">
-               <label for="">Password:</label>
-               <input type="password" name="password" placeholder="Password" class="form-control">
-            </div>
-            <div class="form-group loginstatus">
-               <?php
-               if (isset($_POST["submit"])) {
-                  if ($i == 0) {
-                     echo "<p style='color: red;'>Something when wrong. try again!</p>";
-                  } else {
-                     echo "<p style='color: green;'>You have registered successfully</p>";
-                     timeout(5, "login.php");
-                  }
-               }
-               ?>
-            </div>
-            <div class="form-group">
-               <button type="submit" name="submit" class="btn btn-primary">Register</button>
-            </div>
-         </form>
+               </div>
+               <div class="form-group">
+                  <button type="submit" name="submit" class="btn btn-primary">Register</button>
+               </div>
+            </form>
+         </div>
       </div>
    </div>
 
