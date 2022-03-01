@@ -82,9 +82,13 @@ function td($i)
                }
                echo "<tr>" . td('<input type="submit" name="insert" value="Insert">') . "</tr>";
 
-               if (isset($_POST['insert'])) {
-                  echo "<tr>" . td($row[$dbarray[0]]) . td($row[$dbarray[1]]) . td($row[$dbarray[2]]) . td($row[$dbarray[3]]) . "</tr>";
-                  echo mysqli_error($db);
+               $e = 0;
+               while ($e <= 1) {
+                  if (isset($_POST['insert'])) {
+                     echo "<tr>" . td($row[$dbarray[0]]) . td($row[$dbarray[1]]) . td($row[$dbarray[2]]) . td($row[$dbarray[3]]) . "</tr>";
+                     echo mysqli_error($db);
+                  }
+                  $e++;
                }
                ?>
                <tr>
