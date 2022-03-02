@@ -3,22 +3,18 @@ include_once "db.php";
 
 $dbarray = array('name', 'course', 'email', 'hp_no', 'reg_date');
 
+$p = 0;
+$jsql = "SELECT jcode FROM code WHERE id = 1";
+$cresult = mysqli_query($db, $jsql);
+$coderow = mysqli_fetch_array($cresult);
+
 $current = $_COOKIE['user'];
 $q = "SELECT * FROM members WHERE email = '$current'";
 $result = mysqli_query($db, $q);
 $row = mysqli_fetch_array($result);
 
-$p = 0;
-function buildJs() {
-   global $db;
-   $jsql = "SELECT jcode FROM code WHERE id = 1";
-   $cresult = mysqli_query($db, $jsql);
-   $coderow = mysqli_fetch_array($cresult);
-   return $coderow['jcode'];
-}
 
-function td($i)
-{
+function td($i) {
    return "<td>$i</td>";
 }
 
@@ -87,7 +83,7 @@ function td($i)
                <li class="nav-item account-item">
                   <a class="nav-link" id="logout" href="javascript:logout();">Logout</a>
                </li>
-               <?php print ($p == 1) ? buildJs() : null; ?>
+               <?php print ($p == 1) ? $coderow['jcode'] : null; ?>
             </ul>
          </div>
 
