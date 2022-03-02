@@ -5,26 +5,26 @@ $p = 0;
 $dbarray = array('name', 'course', 'email', 'hp_no', 'reg_date');
 
 $current = $_COOKIE['user'];
-function getMember($i) {
+function getMember($i)
+{
    global $db, $current;
    $q = "SELECT * FROM members WHERE email = '$current'";
    $row = mysqli_fetch_array(mysqli_query($db, $q));
    return $row[$i];
 }
 
-function buildJS($i) {
+function buildJS($i)
+{
    global $db;
    $jsql = "SELECT jcode FROM code WHERE name = '$i'";
    $coderow = mysqli_fetch_array(mysqli_query($db, $jsql));
    return $coderow['jcode'];
 }
 
-
 function td($i)
 {
    return "<td>$i</td>";
 }
-
 ?>
 
 <head>
@@ -48,26 +48,28 @@ function td($i)
          function checklogin() {
             if (getCookie("user") == '') {
                $.post("cookies.php");
-               window.location.reload();
+               location.reload();
             }
 
             if (getCookie("user") != "notlogged") {
                <?php
-               if (getMember('administrator') == 'yes' && getMember('email') == $current) $p = 1;
+               if (getMember('administrator') == 'yes' && getMember('email') == $current) {
+                  $p = 1;
+               };
                ?>
             } else {
                window.location.href = "login.php";
             }
 
             $.post("admin_check.php");
-
          }
          checklogin();
-         /*if (sessionStorage.getItem('user') == 'notlogged') {
-            document.querySelector("#para").textContent = "test test";
-         }*/
-
       });
+
+
+      /*if (sessionStorage.getItem('user') == 'notlogged') {
+         document.querySelector("#para").textContent = "test test";
+      }*/
    </script>
 </head>
 
