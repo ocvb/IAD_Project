@@ -1,14 +1,12 @@
 <?php
 include_once "db.php";
 
+$p = 0;
 $dbarray = array('name', 'course', 'email', 'hp_no', 'reg_date');
 
 $current = $_COOKIE['user'];
 $q = "SELECT * FROM members WHERE email = '$current'";
 $row = mysqli_fetch_array(mysqli_query($db, $q));
-
-$p = 0;
-$jsql = "SELECT * FROM code WHERE name = 'navadmin'";
 
 
 function td($i)
@@ -44,8 +42,12 @@ function td($i)
 
             if (getCookie("user") != "notlogged") {
                <?php
-               $coderow = mysqli_fetch_array(mysqli_query($db, $jsql));
-               if ($row['administrator'] == 'yes' && $row['email'] == $current) $p = 1;
+
+               if ($row['administrator'] == 'yes' && $row['email'] == $current) {
+                  $p = 1;
+                  $jsql = "SELECT * FROM code WHERE name = 'navadmin'";
+                  $coderow = mysqli_fetch_array(mysqli_query($db, $jsql));  
+               };
                ?>
             } else {
                window.location.href = "login.php";
