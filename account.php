@@ -53,10 +53,7 @@ function td($i)
 
             if (getCookie("user") != "notlogged") {
                <?php
-
-               if (getMember('administrator') == 'yes' && getMember('email') == $current) {
-                  $p = 1;
-               };
+               if (getMember('administrator') == 'yes' && getMember('email') == $current) $p = 1;
                ?>
             } else {
                window.location.href = "login.php";

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 01, 2022 at 07:22 PM
+-- Generation Time: Mar 02, 2022 at 02:38 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `code` (
   `id` int(255) NOT NULL,
+  `name` varchar(11) NOT NULL,
   `jcode` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -36,8 +37,8 @@ CREATE TABLE `code` (
 -- Dumping data for table `code`
 --
 
-INSERT INTO `code` (`id`, `jcode`) VALUES
-(1, '<li class=\"nav-item account-item active\"><a id=\"admin\" class=\"nav-link\" href=\"javascript:admin()\">Admin</a></li>');
+INSERT INTO `code` (`id`, `name`, `jcode`) VALUES
+(1, 'navadmin', '<li class=\"nav-item account-item active\"><a id=\"admin\" class=\"nav-link\" href=\"javascript:admin()\">Admin</a></li>');
 
 -- --------------------------------------------------------
 
@@ -160,7 +161,7 @@ ALTER TABLE `course`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `regid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=214;
+  MODIFY `regid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=213;
 
 --
 -- AUTO_INCREMENT for table `order_info`
