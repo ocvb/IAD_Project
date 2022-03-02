@@ -2,7 +2,6 @@
 include_once "db.php";
 
 //$sql = "INSERT INTO `members`(`name`, `phone`, `email`, `address`) VALUES ('john', 2132132, 'awefwune@gmail.com', 'address')"; mysqli_query($db, $sql);
-$coursearray = array('photoshop', 'html5', 'indesign', 'swift');
 $coursename = array();
 $query = "SELECT course_name FROM course";
 $result = mysqli_query($db, $query);
@@ -85,7 +84,7 @@ if (isset($_POST['submit'])) {
                   <select name="course" id="course">
                      <?php 
                      $i = 0;
-                     foreach ($coursearray as $course) {
+                     foreach ($coursename as $course) {
                         echo "<option value='$course'>$coursename[$i]</option>";
                         $i++;
                      }

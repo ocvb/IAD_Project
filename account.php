@@ -1,19 +1,27 @@
 <?php
 include_once "db.php";
 
+$p = 0;
 $dbarray = array('name', 'course', 'email', 'hp_no', 'reg_date');
 
 $current = $_COOKIE['user'];
-$q = "SELECT * FROM members WHERE email = '$current'";
-$result = mysqli_query($db, $q);
-$row = mysqli_fetch_array($result);
+function getMember($i) {
+   global $db, $current;
+   $q = "SELECT * FROM members WHERE email = '$current'";
+   $row = mysqli_fetch_array(mysqli_query($db, $q));
+   return $row[$i];
+}
 
-$p = 0;
-$jsql = "SELECT jcode FROM code WHERE id = 1";
-$cresult = mysqli_query($db, $jsql);
-$coderow = mysqli_fetch_array($cresult);
+function buildJS($i) {
+   global $db;
+   $jsql = "SELECT jcode FROM code WHERE name = '$i'";
+   $coderow = mysqli_fetch_array(mysqli_query($db, $jsql));
+   return $coderow['jcode'];
+}
 
-function td($i) {
+
+function td($i)
+{
    return "<td>$i</td>";
 }
 
@@ -44,7 +52,12 @@ function td($i) {
             }
 
             if (getCookie("user") != "notlogged") {
-               <?php if ($row['administrator'] == 'yes' && $row['email'] == $current) $p = 1; ?>
+               <?php
+
+               if (getMember('administrator') == 'yes' && getMember('email') == $current) {
+                  $p = 1;
+               };
+               ?>
             } else {
                window.location.href = "login.php";
             }
@@ -82,7 +95,7 @@ function td($i) {
                <li class="nav-item account-item">
                   <a class="nav-link" id="logout" href="javascript:logout();">Logout</a>
                </li>
-               <?php print ($p == 1) ? $coderow['jcode'] : null; ?>
+               <?php echo ($p == 1) ? buildJS('navadmin') : null; ?>
             </ul>
          </div>
 
@@ -95,7 +108,10 @@ function td($i) {
                   <td scope="col">Phone</td>
                   <td scope="col">Date</td>
                </tr>
-               <?php echo "<tr>" . td($row[$dbarray[0]]) . td($row[$dbarray[1]]) . td($row[$dbarray[2]]) . td($row[$dbarray[3]]) . td($row[$dbarray[4]]) . "</tr>"; ?>
+               <?php
+
+               echo "<tr>" . td(getMember($dbarray[0])) . td(getMember($dbarray[1])) . td(getMember($dbarray[2])) . td(getMember($dbarray[3])) . td(getMember($dbarray[4])) . "</tr>";
+               ?>
             </table>
 
             <!--Test-->
@@ -118,7 +134,7 @@ function td($i) {
    <!--javascript-->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-   <script src="js/script.js"></script>
+   <script src="./js/script.js"></script>
    <script>
       function logout() {
          $.post("cookies.php");

@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
       $result = mysqli_query($db, $sql);
    }
    while ($row = mysqli_fetch_assoc($result)) {
-      if ($password == $row['password'] && $inputLogin == $row['email'] OR $password == $row['password'] && $inputLogin == $row['name']) {
+      if ($password == $row['password'] && $inputLogin == $row['email'] or $password == $row['password'] && $inputLogin == $row['name']) {
          setcookie("user", $row['email'], null, "/");
          header("Location: ./account.php");
          return false;
@@ -31,7 +31,6 @@ if (isset($_POST['submit'])) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" type="text/css">
    <link rel="stylesheet" href="css/style.css" type="text/css">
@@ -56,7 +55,7 @@ if (isset($_POST['submit'])) {
          <div class="row form-container g-4">
             <h3 class="h3 text-center">Login Panel</h3>
             <div class="form">
-               <form method="POST" class="col" name="f1">
+               <form method="POST" class="col" name="myform">
                   <div class="top-form form-group">
                      <label for="">Name or Email:</label>
                      <input type="text" name="inputLogin" id="inputLogin" class="form-control" placeholder="Email" required>
@@ -69,16 +68,9 @@ if (isset($_POST['submit'])) {
                      <?php
                      if (isset($_POST["submit"])) {
                         if (!$_POST["email"] == '' || !$_POST["password"] == '') {
-                           while ($row = mysqli_fetch_assoc($result)) {
-                              if ($email == $row["email"] and $password == $row["password"]) {
-                                 echo "<p style='color: green;'>You have logged in</p>";
-                              } else {
-                                 echo "<p style='color: red;'>Invalid login or password</p>";
-                                 return false;
-                              }
+                           if ($inputLogin != $row["email"] and $password != $row["password"]) {
+                              echo "<p>Invalid Name / Email or password</p>";
                            }
-                        } else {
-                           print_r("<p style='color: red;'>Fields are empty!</p>");
                         }
                      }
                      ?>
