@@ -44,7 +44,7 @@ function td($i) {
             }
 
             if (getCookie("user") != "notlogged") {
-               <? if ($row['administrator'] == 'yes' && $row['email'] == $current) $p = 1; ?>
+               <?php if ($row['administrator'] == 'yes' && $row['email'] == $current) $p = 1; ?>
             } else {
                window.location.href = "login.php";
             }
@@ -82,7 +82,7 @@ function td($i) {
                <li class="nav-item account-item">
                   <a class="nav-link" id="logout" href="javascript:logout();">Logout</a>
                </li>
-               <? print ($p == 1) ? $coderow['jcode'] : null; ?>
+               <?php print ($p == 1) ? $coderow['jcode'] : null; ?>
             </ul>
          </div>
 
