@@ -19,7 +19,6 @@ if (isset($_POST['submit'])) {
       if ($password == $row['password'] && $inputLogin == $row['email'] or $password == $row['password'] && $inputLogin == $row['name']) {
          setcookie("user", $row['email'], null, "/");
          header("Location: ./account.php");
-         return false;
       }
    }
    mysqli_error($db);
