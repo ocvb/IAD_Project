@@ -3,13 +3,16 @@ include_once "db.php";
 
 $dbarray = array('name', 'course', 'email', 'hp_no', 'reg_date');
 
+$current = $_COOKIE['user'];
+$q = "SELECT * FROM members WHERE email = '$current'";
+$row = mysqli_fetch_array(mysqli_query($db, $q));
+
 $p = 0;
-$jsql = "SELECT jcode FROM code WHERE id = 1";
-$cresult = mysqli_query($db, $jsql);
-$coderow = mysqli_fetch_array($cresult);
+$jsql = "SELECT * FROM code WHERE name = 'navadmin'";
 
 
-function td($i) {
+function td($i)
+{
    return "<td>$i</td>";
 }
 
@@ -40,7 +43,10 @@ function td($i) {
             }
 
             if (getCookie("user") != "notlogged") {
-               <?php if ($row['administrator'] == 'yes' && $row['email'] == $current) $p = 1; ?>
+               <?php
+               $coderow = mysqli_fetch_array(mysqli_query($db, $jsql));
+               if ($row['administrator'] == 'yes' && $row['email'] == $current) $p = 1;
+               ?>
             } else {
                window.location.href = "login.php";
             }
@@ -78,7 +84,7 @@ function td($i) {
                <li class="nav-item account-item">
                   <a class="nav-link" id="logout" href="javascript:logout();">Logout</a>
                </li>
-               <?php print ($p == 1) ? $coderow['jcode'] : null; ?>
+               <?php echo ($p == 1) ? $coderow['jcode'] : null; ?>
             </ul>
          </div>
 
@@ -91,13 +97,10 @@ function td($i) {
                   <td scope="col">Phone</td>
                   <td scope="col">Date</td>
                </tr>
-               <?php 
-               $current = $_COOKIE['user'];
-               $q = "SELECT * FROM members WHERE email = '$current'";
-               $result = mysqli_query($db, $q);
-               $row = mysqli_fetch_array($result);
-               
-               echo "<tr>" . td($row[$dbarray[0]]) . td($row[$dbarray[1]]) . td($row[$dbarray[2]]) . td($row[$dbarray[3]]) . td($row[$dbarray[4]]) . "</tr>"; 
+               <?php
+
+
+               echo "<tr>" . td($row[$dbarray[0]]) . td($row[$dbarray[1]]) . td($row[$dbarray[2]]) . td($row[$dbarray[3]]) . td($row[$dbarray[4]]) . "</tr>";
                ?>
             </table>
 
