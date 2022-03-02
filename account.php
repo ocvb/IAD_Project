@@ -10,7 +10,8 @@ $row = mysqli_fetch_array($result);
 
 $p = 0;
 $jsql = "SELECT * FROM code WHERE id = 1";
-$coderow = mysqli_fetch_array(mysqli_query($db, $jsql));
+$cresult = mysqli_query($db, $jsql);
+$coderow = mysqli_fetch_array($cresult);
 
 function td($i)
 {
