@@ -8,11 +8,6 @@ $jsql = "SELECT jcode FROM code WHERE id = 1";
 $cresult = mysqli_query($db, $jsql);
 $coderow = mysqli_fetch_array($cresult);
 
-$current = $_COOKIE['user'];
-$q = "SELECT * FROM members WHERE email = '$current'";
-$result = mysqli_query($db, $q);
-$row = mysqli_fetch_array($result);
-
 
 function td($i) {
    return "<td>$i</td>";
@@ -96,7 +91,14 @@ function td($i) {
                   <td scope="col">Phone</td>
                   <td scope="col">Date</td>
                </tr>
-               <?php echo "<tr>" . td($row[$dbarray[0]]) . td($row[$dbarray[1]]) . td($row[$dbarray[2]]) . td($row[$dbarray[3]]) . td($row[$dbarray[4]]) . "</tr>"; ?>
+               <?php 
+               $current = $_COOKIE['user'];
+               $q = "SELECT * FROM members WHERE email = '$current'";
+               $result = mysqli_query($db, $q);
+               $row = mysqli_fetch_array($result);
+               
+               echo "<tr>" . td($row[$dbarray[0]]) . td($row[$dbarray[1]]) . td($row[$dbarray[2]]) . td($row[$dbarray[3]]) . td($row[$dbarray[4]]) . "</tr>"; 
+               ?>
             </table>
 
             <!--Test-->
