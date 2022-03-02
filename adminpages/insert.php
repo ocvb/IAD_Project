@@ -63,7 +63,6 @@ function th($i) {
    </nav>
 
    <div class="container-bg">
-
       <div class="container dynamic-table justify-content-center">
          <nav>
             <ul class="nav list-unstyled bg-transparent">
@@ -82,7 +81,7 @@ function th($i) {
                   <?php
                   $i = 0;
                   while (count($dbarray) > $i) {
-                     echo "<tr>" . td("<label id='$dbarray[$i]'>$array[$i]: </label> <input type='$inputtype[$i]' name='$dbarray[$i]' id='$dbarray[$i]' placeholder='$inputplaceholder[$i]' autofocus='autofocus'>") . "</tr>";
+                     echo "<tr>" . td("<label id='$dbarray[$i]'>$array[$i]: </label> <input type='$inputtype[$i]' name='$dbarray[$i]' id='$dbarray[$i]' placeholder='$inputplaceholder[$i]' required autofocus='autofocus'>") . "</tr>";
                      $i++;
                   }
                   echo "<tr>" . td('<input type="submit" name="insert" value="Insert">') . "</tr>";
@@ -111,4 +110,9 @@ function th($i) {
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
    <script src="../js/script.js"></script>
+   <script>
+      $(document).on("input", "#hp_no", function() {
+         if (this.value.length > 8) {this.value = this.value.slice(0, 8);}
+      });
+   </script>
 </body>
