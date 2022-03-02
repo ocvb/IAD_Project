@@ -13,8 +13,7 @@ $jsql = "SELECT jcode FROM code WHERE id = 1";
 $cresult = mysqli_query($db, $jsql);
 $coderow = mysqli_fetch_array($cresult);
 
-function td($i)
-{
+function td($i) {
    return "<td>$i</td>";
 }
 
@@ -45,7 +44,6 @@ function td($i)
             }
 
             if (getCookie("user") != "notlogged") {
-               document.querySelector("#logout").href = "javascript:logout();";
                <? if ($row['administrator'] == 'yes' && $row['email'] == $current) $p = 1; ?>
             } else {
                window.location.href = "login.php";
@@ -82,7 +80,7 @@ function td($i)
                   <a class="nav-link fw-bold" href="javascript:accountDetails();">Account Details</a>
                </li>
                <li class="nav-item account-item">
-                  <a class="nav-link" id="logout" href="#">Logout</a>
+                  <a class="nav-link" id="logout" href="javascript:logout();">Logout</a>
                </li>
                <? print ($p == 1) ? $coderow['jcode'] : null; ?>
             </ul>
