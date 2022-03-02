@@ -13,8 +13,7 @@ $jsql = "SELECT jcode FROM code WHERE id = 1";
 $cresult = mysqli_query($db, $jsql);
 $coderow = mysqli_fetch_array($cresult);
 
-function td($i)
-{
+function td($i) {
    return "<td>$i</td>";
 }
 
