@@ -244,7 +244,7 @@ p {
 
 .container-media::before {
   content: "";
-  background: rgba(255, 255, 255, 0.158);
+  background: rgba(71, 71, 71, 0.185);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -253,7 +253,7 @@ p {
 }
 
 .container-media h1 {
-  text-shadow: 1px 4px 5px rgba(2, 2, 2, 0.274);
+  text-shadow: 1px 2px 5px rgba(2, 2, 2, 0.274);
 }
 
 .container-media a {
@@ -261,7 +261,6 @@ p {
 }
 
 .container-media .box {
-  color: white;
   display: inline-block;
   position: relative;
   width: calc(400px - 40px);
@@ -275,7 +274,7 @@ p {
 }
 
 .container-media .box .icon {
-  text-shadow: 1px 2px 2px rgba(2, 2, 2, 0.11);
+  text-shadow: 2px 2px 7px rgba(2, 2, 2, 0.185);
   position: absolute;
   top: 0;
   left: 0;
@@ -283,6 +282,15 @@ p {
   height: 100%;
   transition: 0.5s;
   z-index: 1;
+}
+.fa-facebook {
+  color: #5c7ab8 !important;
+}
+.fa-twitter {
+  color: #73bae6 !important;
+}
+.fa-instagram {
+  color: #d46c8f !important;
 }
 
 .container-media .box:hover .icon {
@@ -294,10 +302,14 @@ p {
 }
 
 .container-media .box:hover .icon .fa-facebook {
+  color: #4267B2 !important;
   left: 50px;
 }
-
+.container-media .box:hover .icon .fa-twitter {
+  color: #1DA1F2 !important;
+}
 .container-media .box:hover .icon .fa-instagram {
+  color: #E1306C !important;
   left: calc(100% - 30px);
   /*left: 50px;*/
 }
