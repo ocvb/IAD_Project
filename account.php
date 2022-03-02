@@ -9,7 +9,7 @@ $result = mysqli_query($db, $q);
 $row = mysqli_fetch_array($result);
 
 $p = 0;
-$jsql = "SELECT * FROM code WHERE id = 1";
+$jsql = "SELECT jcode FROM code WHERE id = 1";
 $cresult = mysqli_query($db, $jsql);
 $coderow = mysqli_fetch_array($cresult);
 
