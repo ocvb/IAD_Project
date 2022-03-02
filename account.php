@@ -5,8 +5,12 @@ $p = 0;
 $dbarray = array('name', 'course', 'email', 'hp_no', 'reg_date');
 
 $current = $_COOKIE['user'];
-$q = "SELECT * FROM members WHERE email = '$current'";
-$row = mysqli_fetch_array(mysqli_query($db, $q));
+function getMember($i) {
+   global $db, $current;
+   $q = "SELECT * FROM members WHERE email = '$current'";
+   $row = mysqli_fetch_array(mysqli_query($db, $q));
+   return $row[$i];
+}
 
 
 function td($i)
@@ -43,10 +47,10 @@ function td($i)
             if (getCookie("user") != "notlogged") {
                <?php
 
-               if ($row['administrator'] == 'yes' && $row['email'] == $current) {
+               if (getMember('administrator') == 'yes' && getMember('email') == $current) {
                   $p = 1;
                   $jsql = "SELECT * FROM code WHERE name = 'navadmin'";
-                  $coderow = mysqli_fetch_array(mysqli_query($db, $jsql));  
+                  $coderow = mysqli_fetch_array(mysqli_query($db, $jsql));
                };
                ?>
             } else {
@@ -101,8 +105,7 @@ function td($i)
                </tr>
                <?php
 
-
-               echo "<tr>" . td($row[$dbarray[0]]) . td($row[$dbarray[1]]) . td($row[$dbarray[2]]) . td($row[$dbarray[3]]) . td($row[$dbarray[4]]) . "</tr>";
+               echo "<tr>" . td(getMember($dbarray[0])) . td(getMember($dbarray[1])) . td(getMember($dbarray[2])) . td(getMember($dbarray[3])) . td(getMember($dbarray[4])) . "</tr>";
                ?>
             </table>
 
