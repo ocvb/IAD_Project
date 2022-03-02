@@ -9,11 +9,16 @@ $result = mysqli_query($db, $q);
 $row = mysqli_fetch_array($result);
 
 $p = 0;
-$jsql = "SELECT jcode FROM code WHERE id = 1";
-$cresult = mysqli_query($db, $jsql);
-$coderow = mysqli_fetch_array($cresult);
+function buildJs() {
+   global $db;
+   $jsql = "SELECT jcode FROM code WHERE id = 1";
+   $cresult = mysqli_query($db, $jsql);
+   $coderow = mysqli_fetch_array($cresult);
+   return $coderow['jcode'];
+}
 
-function td($i) {
+function td($i)
+{
    return "<td>$i</td>";
 }
 
@@ -82,7 +87,7 @@ function td($i) {
                <li class="nav-item account-item">
                   <a class="nav-link" id="logout" href="javascript:logout();">Logout</a>
                </li>
-               <?php print ($p == 1) ? $coderow['jcode'] : null; ?>
+               <?php print ($p == 1) ? buildJs() : null; ?>
             </ul>
          </div>
 
@@ -118,7 +123,7 @@ function td($i) {
    <!--javascript-->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-   <script src="js/script.js"></script>
+   <script src="./js/script.js"></script>
    <script>
       function logout() {
          $.post("cookies.php");
