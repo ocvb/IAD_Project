@@ -12,6 +12,13 @@ function getMember($i) {
    return $row[$i];
 }
 
+function buildJS($i) {
+   global $db;
+   $jsql = "SELECT jcode FROM code WHERE name = '$i'";
+   $coderow = mysqli_fetch_array(mysqli_query($db, $jsql));
+   return $coderow['jcode'];
+}
+
 
 function td($i)
 {
@@ -49,8 +56,6 @@ function td($i)
 
                if (getMember('administrator') == 'yes' && getMember('email') == $current) {
                   $p = 1;
-                  $jsql = "SELECT * FROM code WHERE name = 'navadmin'";
-                  $coderow = mysqli_fetch_array(mysqli_query($db, $jsql));
                };
                ?>
             } else {
@@ -90,7 +95,7 @@ function td($i)
                <li class="nav-item account-item">
                   <a class="nav-link" id="logout" href="javascript:logout();">Logout</a>
                </li>
-               <?php echo ($p == 1) ? $coderow['jcode'] : null; ?>
+               <?php echo ($p == 1) ? buildJS('navadmin') : null; ?>
             </ul>
          </div>
 
