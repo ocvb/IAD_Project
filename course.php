@@ -4,7 +4,8 @@ include_once "admin_check.php";
 echo "<script>var storage = sessionStorage.getItem('user');</script>";
 $storage = '<script>document.write(storage);</script>';
 
-function update_product($id) {
+function update_product($id)
+{
     global $db;
     $productid = $id;
     $sql = "SELECT price FROM course WHERE course_id = $productid";
@@ -12,7 +13,8 @@ function update_product($id) {
     $row = mysqli_fetch_array($result);
     return $row['price'];
 }
-function product_name($id) {
+function product_name($id)
+{
     global $db;
     $productid = $id;
     $sql = "SELECT course_name FROM course WHERE course_id = $productid";
@@ -21,7 +23,8 @@ function product_name($id) {
     return $row['course_name'];
 }
 
-function product_seat($id) {
+function product_seat($id)
+{
     global $db;
     $sql = "SELECT seats FROM course WHERE course_id = $id";
     $result = mysqli_query($db, $sql);
@@ -29,7 +32,8 @@ function product_seat($id) {
     return $row['seats'];
 }
 
-function course_duration($id) {
+function course_duration($id)
+{
     global $db;
     $sql = "SELECT course_duration FROM course WHERE course_id = $id";
     $result = mysqli_query($db, $sql);
@@ -113,7 +117,10 @@ function course_duration($id) {
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="register.php">Get course</a></div>
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto" href="course_desc.php">Learn More</a>
+                                    <a class="btn btn-outline-dark mt-auto" href="register.php">Get course</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -147,7 +154,10 @@ function course_duration($id) {
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="register.php">Get course</a></div>
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto" href="course_desc.php">Learn More</a>
+                                    <a class="btn btn-outline-dark mt-auto" href="register.php">Get course</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -180,7 +190,10 @@ function course_duration($id) {
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="register.php">Get course</a></div>
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto" href="course_desc.php">Learn More</a>
+                                    <a class="btn btn-outline-dark mt-auto" href="register.php">Get course</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -211,7 +224,10 @@ function course_duration($id) {
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="register.php">Get course</a></div>
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto" href="course_desc.php">Learn More</a>
+                                    <a class="btn btn-outline-dark mt-auto" href="register.php">Get course</a>
+                                </div>
                             </div>
                         </div>
                     </div>
