@@ -26,7 +26,7 @@ function course_id() {
    }
 } course_id();
 
-function product_seat($id) {
+function course_seats($id) {
    global $db;
    $sql = "SELECT seats FROM course WHERE course_id = $id";
    $result = mysqli_query($db, $sql);
@@ -54,12 +54,12 @@ if (isset($_POST['submit'])) {
    //echo $name . $course . $phone . $email . $password;
 
    $sql = "INSERT INTO `members` (`name`, `course`, `email`, `hp_no`, `reg_date`, `password`) VALUES ('$name' , $course , '$email' , $phone , '$date' , '$password')";
-   mysqli_query($db, $sql);
 
-
-   //$checkSeats = product_seat(1) - 1;
-   //echo $checkSeats;
-   //$query = "UPDATE course SET seats = "
+   if (mysqli_query($db, $sql)) {
+      $checkSeats = course_seats($course) - 1;
+      $query = "UPDATE course SET seats = $checkSeats WHERE course_id = $course";
+      mysqli_query($db, $query);
+   }
 }
 ?>
 

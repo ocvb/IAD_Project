@@ -104,7 +104,7 @@ function course_duration($id) {
                                         <div class="bi-star-fill"></div>
                                     </div>
                                     <!-- Product price-->
-                                    Course Duration: <?php echo course_duration(1); ?> Hours
+                                    Course Duration: <?php echo course_duration(1); ?> Days
                                     <br>
                                     Available Seats: <?php echo product_seat(1); ?>
                                     <br>
@@ -136,7 +136,7 @@ function course_duration($id) {
                                         <div class="bi-star-fill">★</div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    Course Duration: <?php echo course_duration(2); ?> Hours
+                                    Course Duration: <?php echo course_duration(2); ?> Days
                                     <br>
                                     Available Seats: <?php echo product_seat(2); ?>
                                     <br>
@@ -170,7 +170,7 @@ function course_duration($id) {
                                         <div class="bi-star-fill"></div>
                                     </div>
                                     <!-- Product price-->
-                                    Course Duration: <?php echo course_duration(3); ?> Hours
+                                    Course Duration: <?php echo course_duration(3); ?> Days
                                     <br>
                                     Available Seats: <?php echo product_seat(3); ?>
                                     <br>
@@ -201,7 +201,7 @@ function course_duration($id) {
                                         <div class="bi-star-fill">★</div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    Course Duration: <?php echo course_duration(4); ?> Hours
+                                    Course Duration: <?php echo course_duration(4); ?> Days
                                     <br>
                                     Available Seats: <?php echo product_seat(4); ?>
                                     <br>
