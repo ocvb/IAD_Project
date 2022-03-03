@@ -68,8 +68,6 @@ function td($i)
             } else {
                window.location.href = "login.php";
             }
-
-            $.post("admin_check.php");
          }
          checklogin();
       });

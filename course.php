@@ -63,7 +63,6 @@ function course_duration($id)
                     $.post("cookies.php");
                     window.location.reload();
                 }
-                $.post("admin_check.php");
             }
             checkadmin();
 
