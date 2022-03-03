@@ -16,8 +16,7 @@ function courseArray()
 }
 courseArray();
 
-function course_id()
-{
+function course_id() {
    global $db, $courseid;
    $query = "SELECT course_id FROM course";
    $result = mysqli_query($db, $query);
@@ -28,8 +27,7 @@ function course_id()
 }
 course_id();
 
-function product_seat($id)
-{
+function product_seat($id) {
    global $db;
    $sql = "SELECT seats FROM course WHERE course_id = $id";
    $result = mysqli_query($db, $sql);
@@ -49,6 +47,11 @@ if (isset($_POST['submit'])) {
 
    $sql = "INSERT INTO `members` (`name`, `course`, `email`, `hp_no`, `reg_date`, `password`) VALUES ('$name ' , $course , '$email' , $phone , '$date' , '$password')";
    mysqli_query($db, $sql);
+
+
+   //$checkSeats = product_seat(1) - 1;
+   //echo $checkSeats;
+   //$query = "UPDATE course SET seats = "
 }
 ?>
 
@@ -147,7 +150,7 @@ if (isset($_POST['submit'])) {
    <script src="js/script.js"></script>
    <script>
       $(document).on("input", "#name", function() {
-         var letters = /^[A-Za-z]+$/
+         var letters = /^[a-zA-Z\s]+$/;
          if (this.value.match(letters)) {
             $("#nameerror").hide();
          } else {
