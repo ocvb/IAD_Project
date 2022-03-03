@@ -49,24 +49,6 @@ if (isset($_POST['submit'])) {
 
    $sql = "INSERT INTO `members` (`name`, `course`, `email`, `hp_no`, `reg_date`, `password`) VALUES ('$name ' , $course , '$email' , $phone , '$date' , '$password')";
    mysqli_query($db, $sql);
-   echo mysqli_error($db);
-
-   $i = 0;
-   if (mysqli_error($db)) {
-      $i = 0;
-   } else {
-      $i = 1;
-   }
-
-   function timeout($set, $here)
-   {
-      $i = 0;
-      while ($i < $set) {
-         sleep(1);
-         $i++;
-      }
-      header("Location: ./$here");
-   }
 }
 ?>
 
@@ -101,6 +83,13 @@ if (isset($_POST['submit'])) {
       <div class="container main-container justify-content-center">
          <div class="row form-container g-4">
             <h3 class="h3 text-center">Register Panel</h3>
+            <?php
+            if (isset($_POST["submit"])) {
+               if (mysqli_error($db)) {
+                  echo "<span id='invalid-db' class='text-center' style='display:show; font-size: 13px; color: rgb(100, 0, 0);'><i class='fa-solid fa-circle-info'></i> Outdated Database</span>";
+               }
+            }
+            ?>
             <form method="POST" class="col">
                <div class="top-form form-group">
                   <label for="">Name:</label>
@@ -135,7 +124,7 @@ if (isset($_POST['submit'])) {
                <div class="form-group loginstatus">
                   <?php
                   if (isset($_POST["submit"])) {
-                     if ($i == 0) {
+                     if (mysqli_error($db)) {
                         echo "<p style='color: red;'>Something when wrong. try again!</p>";
                      } else {
                         echo "<p style='color: green;'>You have registered successfully</p>";
