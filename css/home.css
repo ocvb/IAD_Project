@@ -201,7 +201,8 @@ p {
 .body-review {
   color: white;
   padding: 1.3rem;
-  border-radius: 17px;
+  word-wrap: break-word;
+  text-justify: inter-word;
 }
 
 .name-review {

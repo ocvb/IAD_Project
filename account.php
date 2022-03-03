@@ -100,7 +100,7 @@ function td($i)
          </div>
 
          <div class="container d-flex account-details justify-content-center" style="display: none;">
-            <table class="table text-white text-center w-50">
+            <table class="table text-white text-center">
                <tr>
                   <td scope="col">Name</td>
                   <td scope="col">Course</td>

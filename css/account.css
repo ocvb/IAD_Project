@@ -3,11 +3,6 @@
   right: 0;
   top: 0;
 }
-#navaddpage {
-  left: 0;
-  right: 0;
-  top: 0;
-}
 
 .account-tabs {
   top: 60px;
@@ -19,9 +14,9 @@
   text-decoration: none;
 }
 
-.payload {
-  top: 80px;
-  height: 600px;
+.account-details {
+  width: 70%;
+  flex-wrap: wrap;
 }
 
 .container-bg {
