@@ -30,14 +30,42 @@ body {
   color: white;
 }
 
+.form-group label {
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.459);
+}
+
+#course {
+  width: 260px;
+}
+
+.selectdiv:after {
+  content: '>';
+  font: 17px "Consolas", monospace;
+  color: #333;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  left: 240px;
+  /*Adjust for position however you want*/
+
+  top: 36px;
+  padding: 0 0 2px;
+  /*left line */
+
+  position: absolute;
+  pointer-events: none;
+}
+
 .form-container {
   padding: 10px;
   border-radius: inherit;
   padding-bottom: 25px;
   border: 1px solid rgba(255, 255, 255, 0.178);
   box-shadow: 3px 5px 4px 0px rgba(58, 58, 58, 0.281);
-  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.459);
 }
+
 .form-container .form-group {
+  position: relative;
   padding: 5px;
 }

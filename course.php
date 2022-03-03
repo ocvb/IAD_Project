@@ -4,8 +4,7 @@ include_once "admin_check.php";
 echo "<script>var storage = sessionStorage.getItem('user');</script>";
 $storage = '<script>document.write(storage);</script>';
 
-function update_product($id)
-{
+function update_product($id) {
     global $db;
     $productid = $id;
     $sql = "SELECT price FROM course WHERE course_id = $productid";
@@ -13,14 +12,29 @@ function update_product($id)
     $row = mysqli_fetch_array($result);
     return $row['price'];
 }
-function product_name($id)
-{
+function product_name($id) {
     global $db;
     $productid = $id;
     $sql = "SELECT course_name FROM course WHERE course_id = $productid";
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result);
     return $row['course_name'];
+}
+
+function product_seat($id) {
+    global $db;
+    $sql = "SELECT seats FROM course WHERE course_id = $id";
+    $result = mysqli_query($db, $sql);
+    $row = mysqli_fetch_array($result);
+    return $row['seats'];
+}
+
+function course_duration($id) {
+    global $db;
+    $sql = "SELECT course_duration FROM course WHERE course_id = $id";
+    $result = mysqli_query($db, $sql);
+    $row = mysqli_fetch_array($result);
+    return $row['course_duration'];
 }
 
 ?>
@@ -67,7 +81,7 @@ function product_name($id)
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Top courses</h1>
+                    <h1 class="display-4 fw-bolder">Our Courses</h1>
                     <p class="lead fw-normal text-white-50 mb-0">Get your courses today!</p>
                 </div>
             </div>
@@ -90,6 +104,10 @@ function product_name($id)
                                         <div class="bi-star-fill"></div>
                                     </div>
                                     <!-- Product price-->
+                                    Course Duration: <?php echo course_duration(1); ?> Hours
+                                    <br>
+                                    Available Seats: <?php echo product_seat(1); ?>
+                                    <br>
                                     $<?php echo update_product(1); ?>
                                 </div>
                             </div>
@@ -118,6 +136,10 @@ function product_name($id)
                                         <div class="bi-star-fill">★</div>
                                         <div class="bi-star-fill"></div>
                                     </div>
+                                    Course Duration: <?php echo course_duration(2); ?> Hours
+                                    <br>
+                                    Available Seats: <?php echo product_seat(2); ?>
+                                    <br>
                                     <!-- Product price-->
                                     <span class="text-muted text-decoration-line-through">$420.00</span>
                                     $<?php echo update_product(2); ?>
@@ -148,6 +170,10 @@ function product_name($id)
                                         <div class="bi-star-fill"></div>
                                     </div>
                                     <!-- Product price-->
+                                    Course Duration: <?php echo course_duration(3); ?> Hours
+                                    <br>
+                                    Available Seats: <?php echo product_seat(3); ?>
+                                    <br>
                                     <span class="text-muted text-decoration-line-through">$340.00</span>
                                     $<?php echo update_product(3); ?>
                                 </div>
@@ -175,6 +201,10 @@ function product_name($id)
                                         <div class="bi-star-fill">★</div>
                                         <div class="bi-star-fill"></div>
                                     </div>
+                                    Course Duration: <?php echo course_duration(4); ?> Hours
+                                    <br>
+                                    Available Seats: <?php echo product_seat(4); ?>
+                                    <br>
                                     <!-- Product price-->
                                     $<?php echo update_product(4); ?>
                                 </div>

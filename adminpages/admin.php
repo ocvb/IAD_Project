@@ -74,27 +74,4 @@ function th($i) {
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
    <script src="../js/script.js"></script>
-   <script>
-      $(document).ready(function() {
-         function sendData() {
-            let dataString = $(this).serialize();
-
-            $.ajax({
-               type: $(this).attr('method'),
-               url: $(this).attr('action'),
-               data: dataString,
-               success: function() {
-                  $(".message").html(dataString);
-               }
-            })
-         }
-
-         $('updateform').on('submit', function(e) {
-            //e.preventDefault();
-
-            sendData();
-         });
-
-      })
-   </script>
 </body>
