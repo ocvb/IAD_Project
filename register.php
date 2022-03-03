@@ -24,8 +24,7 @@ function course_id() {
    while ($row = mysqli_fetch_array($result)) {
       $courseid[] = $row['course_id'];
    }
-}
-course_id();
+} course_id();
 
 function product_seat($id) {
    global $db;
@@ -33,6 +32,15 @@ function product_seat($id) {
    $result = mysqli_query($db, $sql);
    $row = mysqli_fetch_array($result);
    return $row['seats'];
+}
+
+function timeout($set, $here){
+   $i = 0;
+   while ($i < $set) {
+      sleep(1);
+      $i++;
+   }
+   header("Location: ./$here");
 }
 
 if (isset($_POST['submit'])) {
