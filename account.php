@@ -145,5 +145,8 @@ function td($i)
       function accountDetails() {
          $(".account-details").show();
       }
+      function admin() {
+         window.location.href = "./adminpages/admin.php";
+      }
    </script>
 </body>

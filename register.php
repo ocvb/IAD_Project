@@ -16,7 +16,8 @@ function courseArray()
 }
 courseArray();
 
-function course_id() {
+function course_id()
+{
    global $db, $courseid;
    $query = "SELECT course_id FROM course";
    $result = mysqli_query($db, $query);
@@ -24,9 +25,11 @@ function course_id() {
    while ($row = mysqli_fetch_array($result)) {
       $courseid[] = $row['course_id'];
    }
-} course_id();
+}
+course_id();
 
-function course_seats($id) {
+function course_seats($id)
+{
    global $db;
    $sql = "SELECT seats FROM course WHERE course_id = $id";
    $result = mysqli_query($db, $sql);
@@ -34,7 +37,8 @@ function course_seats($id) {
    return $row['seats'];
 }
 
-function timeout($set, $here){
+function timeout($set, $here)
+{
    $i = 0;
    while ($i < $set) {
       sleep(1);
@@ -54,11 +58,12 @@ if (isset($_POST['submit'])) {
    //echo $name . $course . $phone . $email . $password;
 
    $sql = "INSERT INTO `members` (`name`, `course`, `email`, `hp_no`, `reg_date`, `password`) VALUES ('$name' , $course , '$email' , $phone , '$date' , '$password')";
-
    if (mysqli_query($db, $sql)) {
-      $checkSeats = course_seats($course) - 1;
-      $query = "UPDATE course SET seats = $checkSeats WHERE course_id = $course";
-      mysqli_query($db, $query);
+      if (course_seats($course) != 0) {
+         $checkSeats = course_seats($course) - 1;
+         $query = "UPDATE course SET seats = $checkSeats WHERE course_id = $course";
+         mysqli_query($db, $query);
+      }
    }
 }
 ?>
@@ -98,6 +103,9 @@ if (isset($_POST['submit'])) {
             if (isset($_POST["submit"])) {
                if (mysqli_error($db)) {
                   echo "<span id='invalid-db' class='text-center' style='display:show; font-size: 13px; color: rgb(100, 0, 0);'><i class='fa-solid fa-circle-info'></i> Outdated Database</span>";
+               }
+               if (course_seats($course) == 0) {
+                  echo "<span id='seats-full' class='text-center' style='display:show; font-size: 13px; color: rgb(100, 0, 0);'><i class='fa-solid fa-circle-info'></i> All Seats are taken!</span>";
                }
             }
             ?>
