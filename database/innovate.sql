@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 03, 2022 at 11:47 AM
+-- Generation Time: Mar 03, 2022 at 12:28 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -60,8 +60,8 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`course_id`, `course_name`, `price`, `description`, `course_duration`, `seats`) VALUES
-(1, 'AdobePhotoshop', '449.99', 'Adobe Photoshop is an extremely powerful application that\'s used by many professional photographers and designers. You can use Photoshop for almost any kind of image editing, such as touching up photos, creating high-quality graphics, and much, much more.', 3, 10),
-(2, 'Creating website\r\nwith HTML5', '399.99', 'with melted cheese, baby gem salad,beef tomato,red onions,gherkin', 2, 2),
+(1, 'AdobePhotoshop', '449.99', 'Adobe Photoshop is an extremely powerful application that\'s used by many professional photographers and designers. You can use Photoshop for almost any kind of image editing, such as touching up photos, creating high-quality graphics, and much, much more.', 3, 9),
+(2, 'Creating website\r\nwith HTML5', '399.99', 'HTML5 is a markup language used for structuring and presenting content on the World Wide Web. It is the fifth and current major version of the HTML standard.', 2, 2),
 (3, 'Adobe InDesgin', '299.99', 'Adobe InDesign is a desktop publishing software application produced by Adobe Systems. It \r\ncan be used to create works such as posters, flyers, brochures, magazines, newspapers, \r\npresentations, books and eBooks.', 3, 3),
 (4, 'Swift programming\r\n', '699.99', 'Swift is a powerful and intuitive programming language for macOS, iOS, watchOS and \r\ntvOS. Writing Swift code is interactive and fun, the syntax is concise yet expressive, and \r\nSwift includes modern features developers love.', 4, 3);
 
@@ -87,7 +87,8 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`regid`, `name`, `course`, `email`, `hp_no`, `reg_date`, `password`, `administrator`) VALUES
-(113, 'admin', 0, 'admin@admin.com', 21378213, '2022-02-01 17:49:09', '81dc9bdb52d04dc20036dbd8313ed055', 'yes');
+(113, 'admin', 0, 'admin@admin.com', 21378213, '2022-02-01 17:49:09', '81dc9bdb52d04dc20036dbd8313ed055', 'yes'),
+(225, 'awefaw', 1, 'awefun@gmail.com', 81313918, '2022-03-03 11:50:19', '202cb962ac59075b964b07152d234b70', NULL);
 
 -- --------------------------------------------------------
 
@@ -157,7 +158,7 @@ ALTER TABLE `course`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `regid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=225;
+  MODIFY `regid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=226;
 
 --
 -- AUTO_INCREMENT for table `order_info`
