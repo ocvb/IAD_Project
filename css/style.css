@@ -20,7 +20,6 @@ body {
   text-decoration: none;
 }
 .nav-item a:hover {
-  text-decoration: overline;
   transition: ease-in 0.15s;
   color: rgb(145, 145, 145);
 }

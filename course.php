@@ -118,8 +118,8 @@ function course_duration($id)
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center">
-                                    <a class="btn btn-outline-dark mt-auto" href="course_desc.php">Learn More</a>
-                                    <a class="btn btn-outline-dark mt-auto" href="register.php">Get course</a>
+                                    <a class="btn btn-outline-dark mt-auto" href="course_info.php">Learn More</a>
+                                    <a class="btn btn-outline-dark mt-auto" href="course_register.php">Get course</a>
                                 </div>
                             </div>
                         </div>
@@ -155,8 +155,8 @@ function course_duration($id)
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center">
-                                    <a class="btn btn-outline-dark mt-auto" href="course_desc.php">Learn More</a>
-                                    <a class="btn btn-outline-dark mt-auto" href="register.php">Get course</a>
+                                    <a class="btn btn-outline-dark mt-auto" href="course_info.php">Learn More</a>
+                                    <a class="btn btn-outline-dark mt-auto" href="course_register.php">Get course</a>
                                 </div>
                             </div>
                         </div>
@@ -191,8 +191,8 @@ function course_duration($id)
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center">
-                                    <a class="btn btn-outline-dark mt-auto" href="course_desc.php">Learn More</a>
-                                    <a class="btn btn-outline-dark mt-auto" href="register.php">Get course</a>
+                                    <a class="btn btn-outline-dark mt-auto" href="course_info.php">Learn More</a>
+                                    <a class="btn btn-outline-dark mt-auto" href="course_register.php">Get course</a>
                                 </div>
                             </div>
                         </div>
@@ -225,8 +225,8 @@ function course_duration($id)
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center">
-                                    <a class="btn btn-outline-dark mt-auto" href="course_desc.php">Learn More</a>
-                                    <a class="btn btn-outline-dark mt-auto" href="register.php">Get course</a>
+                                    <a class="btn btn-outline-dark mt-auto" href="course_info.php">Learn More</a>
+                                    <a class="btn btn-outline-dark mt-auto" href="course_register.php">Get course</a>
                                 </div>
                             </div>
                         </div>

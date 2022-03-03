@@ -79,7 +79,7 @@ if (isset($_POST['submit'])) {
                   </div>
                </form>
                <div class="form-group">
-                  <p>Don't have an account? <a href="register.php">here</a>.</p>
+                  <p>Don't have an account? <a href="course_register.php">here</a>.</p>
                </div>
             </div>
          </div>

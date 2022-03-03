@@ -147,7 +147,7 @@ function td($i)
       }
 
       function admin() {
-         window.location.href = "./adminpages/admin.php";
+         window.location.href = "./admin/admin_view_all.php";
       }
    </script>
 </body>

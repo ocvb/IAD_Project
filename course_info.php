@@ -77,7 +77,7 @@ function course_desc($id)
                            <!-- Product name-->
                            <h5 class="fw-bolder"><?php echo product_name(1); ?></h5>
                            <?php
-                           echo "<div>". course_desc(1). "</div>";
+                           echo "<div>" . course_desc(1) . "</div>";
                            ?>
                         </div>
                      </div>
