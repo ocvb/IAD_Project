@@ -21,6 +21,14 @@ function buildJS($i)
    return $coderow['jcode'];
 }
 
+function course_name($id)
+{
+   global $db;
+   $query = "SELECT course_name FROM course WHERE course_id = $id";
+   $row = mysqli_fetch_array(mysqli_query($db, $query));
+   return $row['course_name'];
+}
+
 function td($i)
 {
    return "<td>$i</td>";
@@ -66,16 +74,12 @@ function td($i)
          checklogin();
       });
 
-
-      /*if (sessionStorage.getItem('user') == 'notlogged') {
-         document.querySelector("#para").textContent = "test test";
-      }*/
    </script>
 </head>
 
 <body>
    <div id="preloader"></div>
-   <!--TODO: Header, Nav, Article, Aside-->
+
    <nav>
       <ul class="nav d-flex justify-content-center fixed-top navaddpage" id="navaddpage">
          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -108,8 +112,7 @@ function td($i)
                   <td scope="col">Date</td>
                </tr>
                <?php
-
-               echo "<tr>" . td(getMember($dbarray[0])) . td(getMember($dbarray[1])) . td(getMember($dbarray[2])) . td(getMember($dbarray[3])) . td(getMember($dbarray[4])) . "</tr>";
+               echo "<tr>" . td(getMember($dbarray[0])) . td(course_name(getMember($dbarray[1]))) . td(getMember($dbarray[2])) . td(getMember($dbarray[3])) . td(getMember($dbarray[4])) . "</tr>";
                ?>
             </table>
 
@@ -139,23 +142,8 @@ function td($i)
          $.post("cookies.php");
          window.location.reload();
       }
-
-
       function accountDetails() {
          $(".account-details").show();
-      }
-
-      function admin() {
-         location.href = "./adminpages/admin.php";
-         //$(".payload").load("admin.php");
-      }
-
-      /*function test() {
-         var text = '<p>YEAYAYA</p>'
-         return this.innerHTML = "fefe";
-      }*/
-      function test() {
-         return `<p>YEAYAYA</p>`;
       }
    </script>
 </body>

@@ -24,6 +24,7 @@ function th($i) {
    <link rel="stylesheet" href="../css/style.css" type="text/css">
    <link rel="stylesheet" href="../css/account.css" type="text/css">
    <script src="https://kit.fontawesome.com/44f557ccce.js"></script>
+   <title>Admin</title>
 </head>
 
 <body>
