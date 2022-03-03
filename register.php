@@ -147,7 +147,7 @@ if (isset($_POST['submit'])) {
                         echo "<p style='color: red;'>Something when wrong. try again!</p>";
                      } else if (course_seats($course) != 0) {
                         echo "<p style='color: green;'>You have registered successfully</p>";
-                        timeout(3, "login.php");
+                        timeout(3, "account.php");
                      }
                   }
                   ?>

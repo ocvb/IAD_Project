@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 02, 2022 at 02:38 PM
+-- Generation Time: Mar 03, 2022 at 11:47 AM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -74,7 +74,7 @@ INSERT INTO `course` (`course_id`, `course_name`, `price`, `description`, `cours
 CREATE TABLE `members` (
   `regid` int(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `course` varchar(18) NOT NULL,
+  `course` int(18) NOT NULL,
   `email` varchar(255) NOT NULL,
   `hp_no` int(8) NOT NULL,
   `reg_date` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -87,11 +87,7 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`regid`, `name`, `course`, `email`, `hp_no`, `reg_date`, `password`, `administrator`) VALUES
-(112, 'john', 'unknown', 'awefwune@gmail.com', 2132132, '2022-02-02 17:49:11', 'c13367945d5d4c91047b3b50234aa7ab', NULL),
-(113, 'admin', '-', 'admin@admin.com', 21378213, '2022-02-01 17:49:09', '81dc9bdb52d04dc20036dbd8313ed055', 'yes'),
-(115, 'iajenf', 'aweiufn', 'weuhifb@gmail.com', 82193819, '2022-02-26 18:20:38', '202cb962ac59075b964b07152d234b70', NULL),
-(121, 'YAH', 'awienf', 'iwefbn@gmail.com', 8123, '2022-03-01 00:13:52', '202cb962ac59075b964b07152d234b70', NULL),
-(212, 'Jayce', 'indesign', 'jayce11@gmail.com', 99123990, '2022-03-01 05:28:49', '202cb962ac59075b964b07152d234b70', NULL);
+(113, 'admin', 0, 'admin@admin.com', 21378213, '2022-02-01 17:49:09', '81dc9bdb52d04dc20036dbd8313ed055', 'yes');
 
 -- --------------------------------------------------------
 
@@ -161,7 +157,7 @@ ALTER TABLE `course`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `regid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=213;
+  MODIFY `regid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=225;
 
 --
 -- AUTO_INCREMENT for table `order_info`

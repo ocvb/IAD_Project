@@ -3,26 +3,40 @@ include_once "../db.php";
 
 $array = array('ID', 'Name', 'Course', 'Email', 'Phone');
 $dbarray = array('regid', 'name', 'course', 'email', 'hp_no');
-$dbarray = array('regid', 'name', 'course', 'email', 'hp_no');
 
 $email = $_COOKIE['user'];
-//$query = "SELECT `regid`, `name`, `course`, `email`, `hp_no`, `reg_date` FROM members WHERE email = '$email'";
 $query = "SELECT `regid`, `name`, `course`, `email`, `hp_no`, `reg_date` FROM members";
 $result = mysqli_query($db, $query);
 
-
-if (isset($_POST['delete'])) {
-   $id = $_POST['id'];
-   $query = "DELETE FROM `members` WHERE regid = $id";
-   mysqli_query($db, $query);
-   header("Refresh: 0");
+function course_seats($id)
+{
+   global $db;
+   $sql = "SELECT seats FROM course WHERE course_id = $id";
+   $result = mysqli_query($db, $sql);
+   $row = mysqli_fetch_array($result);
+   return $row['seats'];
 }
-
 function td($i) {
    return "<td>$i</td>";
 }
 function th($i) {
    return "<th scope='row'>$i</th>";
+}
+
+if (isset($_POST['delete'])) {
+   $id = $_POST['id'];
+   $query = "SELECT course FROM members WHERE regid = $id";
+   $row = mysqli_fetch_array(mysqli_query($db, $query));
+   $course = $row['course'];
+
+   $query = "DELETE FROM `members` WHERE regid = $id";
+   if (mysqli_query($db, $query)) {
+      echo "<p>$course</p>";
+      $checkSeats = course_seats($course) + 1;
+      $query = "UPDATE course SET seats = $checkSeats WHERE course_id = $course";
+      mysqli_query($db, $query);
+   }
+   header("Refresh: 0");
 }
 ?>
 
@@ -62,7 +76,7 @@ function th($i) {
             <form method="POST">
                <table class="table text-center text-white">
                   <tr>
-                     <td scope="col">ID</td>
+                     <th scope="row">ID</th>
                      <td scope="col">Name</td>
                      <td scope="col">Course</td>
                      <td scope="col">Email</td>
@@ -89,46 +103,4 @@ function th($i) {
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
    <script src="../js/script.js"></script>
-   <script>
-      $(document).ready(function() {
-         function sendData() {
-            let dataString = $(this).serialize();
-
-            $.ajax({
-               type: $(this).attr('method'),
-               url: $(this).attr('action'),
-               data: dataString,
-               success: function() {
-                  $(".message").html(dataString);
-               }
-            })
-         }
-
-         $('updateform').on('submit', function(e) {
-            //e.preventDefault();
-
-            sendData();
-         });
-
-
-
-         $("#viewphp").click(function() {
-            $(".view").show();
-            $(".delete").hide();
-            $(".update").hide();
-         });
-         $("#deletephp").click(function() {
-            $(".view").hide();
-            $(".delete").show();
-            $(".update").hide();
-         });
-         $("#updatephp").click(function() {
-            $(".view").hide();
-            $(".delete").hide();
-            $(".update").show();
-         });
-      })
-   </script>
-
-
 </body>

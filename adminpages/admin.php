@@ -53,7 +53,7 @@ function th($i) {
             <!--echo "<tr>".td($row['regid']). td($row['name']). td($row['course'])."</tr>";-->
             <table class="table text-center text-white">
                <tr>
-                  <td scope="col">ID</td>
+                  <th scope="row">ID</th>
                   <td scope="col">Name</td>
                   <td scope="col">Course</td>
                   <td scope="col">Email</td>
