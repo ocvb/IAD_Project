@@ -58,8 +58,8 @@ if (isset($_POST['submit'])) {
    //echo $name . $course . $phone . $email . $password;
 
    $sql = "INSERT INTO `members` (`name`, `course`, `email`, `hp_no`, `reg_date`, `password`) VALUES ('$name' , $course , '$email' , $phone , '$date' , '$password')";
-   if (mysqli_query($db, $sql)) {
-      if (course_seats($course) != 0) {
+   if (course_seats($course) != 0) {
+      if (mysqli_query($db, $sql)) {
          $checkSeats = course_seats($course) - 1;
          $query = "UPDATE course SET seats = $checkSeats WHERE course_id = $course";
          mysqli_query($db, $query);
