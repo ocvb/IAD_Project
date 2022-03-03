@@ -73,7 +73,6 @@ function td($i)
          }
          checklogin();
       });
-
    </script>
 </head>
 
@@ -123,13 +122,13 @@ function td($i)
                </div>
             </aside>
          </div>
-         <div class="container payload py-5"></div>
+         <!--<div class="container payload py-5"></div>-->
       </div>
    </div>
 
    <footer class="footer">
       <div class="container">
-         <p class="text-center text-white">Copyright &copy; ITE 2022. All rights Reserved.</p>
+         <p class="text-center text-white">Copyright &copy; Innovate Training 2022. All rights Reserved.</p>
       </div>
    </footer>
 
@@ -142,9 +141,11 @@ function td($i)
          $.post("cookies.php");
          window.location.reload();
       }
+
       function accountDetails() {
          $(".account-details").show();
       }
+
       function admin() {
          window.location.href = "./adminpages/admin.php";
       }

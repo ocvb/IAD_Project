@@ -85,8 +85,8 @@ function course_duration($id)
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Our Courses</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Get your courses today!</p>
+                    <h1 class="display-4 fw-bolder">We have the best courses!</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Offered by Innovate Training</p>
                 </div>
             </div>
             <div class="container px-4 px-lg-5 mt-5">
@@ -238,7 +238,7 @@ function course_duration($id)
     <!-- Footer-->
     <footer class="footer">
         <div class="container">
-            <p class="text-center text-white">Copyright &copy; ITE 2022. All rights Reserved.</p>
+            <p class="text-center text-white">Copyright &copy; Innovate Training 2022. All rights Reserved.</p>
         </div>
     </footer>
 
