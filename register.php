@@ -100,11 +100,10 @@ if (isset($_POST['submit'])) {
          <div class="row form-container g-4">
             <h3 class="h3 text-center">Register Panel</h3>
             <?php
-            if (isset($_POST["submit"])) {
+            if (isset($_POST['submit'])) {
                if (mysqli_error($db)) {
                   echo "<span id='invalid-db' class='text-center' style='display:show; font-size: 13px; color: rgb(100, 0, 0);'><i class='fa-solid fa-circle-info'></i> Outdated Database</span>";
-               }
-               if (course_seats($course) == 0) {
+               } else if (course_seats($course) == 0) {
                   echo "<span id='seats-full' class='text-center' style='display:show; font-size: 13px; color: rgb(100, 0, 0);'><i class='fa-solid fa-circle-info'></i> All Seats are taken!</span>";
                }
             }
@@ -143,11 +142,12 @@ if (isset($_POST['submit'])) {
                <div class="form-group loginstatus">
                   <?php
                   if (isset($_POST["submit"])) {
+                     $course = mysqli_escape_string($db, $_POST['course']);
                      if (mysqli_error($db)) {
                         echo "<p style='color: red;'>Something when wrong. try again!</p>";
-                     } else {
+                     } else if (course_seats($course) != 0) {
                         echo "<p style='color: green;'>You have registered successfully</p>";
-                        timeout(5, "login.php");
+                        timeout(3, "login.php");
                      }
                   }
                   ?>
